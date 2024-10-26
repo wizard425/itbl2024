@@ -1,0 +1,6 @@
+@ITBL_HostAddress = http://localhost:5085
+
+GET {{ITBL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
