@@ -1,10 +1,32 @@
-mat-grid-list{
+mat-grid-list {
     height: 100%;
     width: auto;
 }
 
-mat-grid-tile{
+mat-grid-tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
+
+.cont {
+    height: 100vh;
+}
+
+.spy {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    justify-content: space-between;
+    background-image: url("../../../../../public/assets/spy.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}

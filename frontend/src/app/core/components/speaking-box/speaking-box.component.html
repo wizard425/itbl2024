@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-content>
+        <app-speaking-text [text]="this.game.getCurrentGameStep().textToSpeech"></app-speaking-text>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+        <button mat-button (click)="goToNextGameStep()"
+            [hidden]="!this.game.getCurrentGameStep().canClickNext">Weiter</button>
+    </mat-card-actions>
+</mat-card>
