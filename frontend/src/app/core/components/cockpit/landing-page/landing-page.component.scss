@@ -5,7 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #CADCFC;
+  background: rgba(0, 0, 0, .80) url("../../../../../../public/assets/office.png");
+  background-blend-mode: darken;
 }
 
 app-header {

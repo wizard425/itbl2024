@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LandingPageComponent } from "./core/components/landing-page/landing-page.component";
+import { LandingPageComponent } from "./core/components/cockpit/landing-page/landing-page.component";
 import { GameService } from './shared/gameUtilities/game.service';
 import { GameStep } from './shared/gameUtilities/GameStep';
 
@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const loadedString = localStorage.getItem("game");
     if (loadedString != null) {
-      console.log("das gespeichert")
       const loadedGameStep: GameStep = (JSON.parse(loadedString) as GameStep);
       this.game.setCurrentGameStep(loadedGameStep);
     }

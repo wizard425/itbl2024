@@ -1,0 +1,17 @@
+<div class="cyber-lab-container">
+    <app-header [userName]="game.getCurrentUser().name" [score]="game.getPoints()" [progress]="75"></app-header>
+
+    <div class="circle-container">
+        <div class="icon dialog"><app-dialog /></div>
+        <div class="icon robot"><app-icon imageSrc="./assets/image/AI.png" iconName="AI" link="./ai"></app-icon></div>
+        <div class="icon shopping"><app-icon imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping"
+                link="shopping"></app-icon></div>
+        <div class="icon cookies"><app-icon imageSrc="./assets/image/Cookies.png" iconName="Cookies"
+                link="./cookies"></app-icon></div>
+        <div class="icon security"><app-icon imageSrc="./assets/image/Laptop.png" iconName="Password"
+                link="./computer"></app-icon></div>
+        <div class="icon social"><app-icon imageSrc="./assets/image/socialmedia.png" iconName="Social Media"
+                link="./socialmedia"></app-icon></div>
+        <div class="icon spion"><app-icon imageSrc="./assets/image/spy.png" iconName="" link=""></app-icon></div>
+    </div>
+</div>

@@ -19,7 +19,6 @@ export class BaseService<T> {
   public create(model: T): Observable<T> {
     let ret = null;
     if (this.controlUrl()){
-      console.log(model);
       ret = this.http.post<T>(environment.baseUrl + this.url, model);
     }
     if (ret == null)

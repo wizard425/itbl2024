@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { interval, Subscription } from 'rxjs';
@@ -13,6 +13,7 @@ import { GameService } from '../../../../shared/gameUtilities/game.service';
 })
 export class SpeakingTextComponent implements OnChanges {
   @Input() text: string = '';
+  @Output() finishedChangedTo = new EventEmitter<boolean>();
   displayedText: string = '';  // Text, der Buchstabe für Buchstabe angezeigt wird
   typingSpeed: number = 25;   // Geschwindigkeit in Millisekunden
   private subscription: Subscription | undefined;
@@ -24,6 +25,7 @@ export class SpeakingTextComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.subscription?.unsubscribe();
     this.displayedText = '';
+    this.finishedChangedTo.emit(false);
     this.startTypingAnimation();
   }
 
@@ -37,6 +39,7 @@ export class SpeakingTextComponent implements OnChanges {
           currentIndex++;
           this.cdr.detectChanges();  // Sicherstellen, dass Angular den Text sofort rendert
         } else {
+          this.finishedChangedTo.emit(true);
           this.subscription?.unsubscribe();  // Animation beenden, wenn der Text vollständig ist
         }
       });
