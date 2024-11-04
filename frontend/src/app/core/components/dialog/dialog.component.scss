@@ -1,0 +1,41 @@
+ .box{
+    width: 100%;
+    height: 100%;
+      margin: auto;
+      position: relative;
+      display: block;
+  }
+  app-speaking-text{
+    margin: 10px;
+  }
+  .center{
+      padding-top: 50%;
+  }
+  app-speaking-text{
+    z-index: 4;
+  }
+  .dialog-1{
+        z-index: 1;
+        color: var(--text);
+        font-family: 'Righteous', sans-serif;
+        font-size: 20px;
+        height: 120px;
+        width: 240px;
+        background-color: var(--background);
+        position: absolute;
+        border-radius: 10%;
+  }
+  
+  .left-point{
+      z-index: 3;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 60px solid var(--background);
+      position: absolute;
+      top: 60%;
+      left: -10%;
+      transform: rotate(60deg);
+  }
+  

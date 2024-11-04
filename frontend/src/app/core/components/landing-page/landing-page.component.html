@@ -1,32 +1,13 @@
-<mat-grid-list cols="3" rowHeight="fit" [gutterSize]="'70px'">
-    <mat-grid-tile>
-        <div style="width: 100%; height: 100%;">
-            <app-section-card [iconName]='"computer"'></app-section-card>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <app-speaking-text
-            [text]='"Hi, ich bin der Spion! Du musst mir mit meiner Mission helfen. Viel Erfolg"'></app-speaking-text>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <div style="width: 100%; height: 100%;">
-            <app-section-card [iconName]='"smart_toy"'> </app-section-card>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <div style="width: 100%; height: 100%;">
-            <app-section-card [iconName]='"smartphone"'> </app-section-card>
-        </div>
-    </mat-grid-tile>
+<div class="cyber-lab-container">
+    <app-header [userName]="'Ruhallah'" [score]="150" [progress]="75"></app-header>
 
-    <mat-grid-tile>
-        <div style="width: 100%; height: 100%;">
-            <app-section-card [iconName]='"fastfood"'> </app-section-card>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <div style="width: 100%; height: 100%;">
-            <app-section-card [iconName]='"shopping_bag"'> </app-section-card>
-        </div>
-    </mat-grid-tile>
-</mat-grid-list>
+    <div class="circle-container">
+        <div class="icon dialog"><app-dialog [dialog] ="'Hi, ich bin der Spion! Du musst mir mit meiner Mission helfen. Viel Erfolg'"></app-dialog></div>
+        <div class="icon robot"><app-icon imageSrc="./assets/image/AI.png" iconName="AI" link="/AI"></app-icon></div>
+        <div class="icon shopping"><app-icon imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping" link="/AI"></app-icon></div>
+        <div class="icon cookies"><app-icon imageSrc="./assets/image/Cookies.png" iconName="Cookies" link="/AI"></app-icon></div>
+        <div class="icon security"><app-icon imageSrc="./assets/image/Laptop.png" iconName="Password" link="/AI"></app-icon></div>
+        <div class="icon social"><app-icon imageSrc="./assets/image/socialmedia.png" iconName="Social Media" link="/AI"></app-icon></div>
+        <div class="icon spion"><app-icon imageSrc="./assets/image/spy.png" iconName="" link=""></app-icon></div>
+    </div>
+</div>

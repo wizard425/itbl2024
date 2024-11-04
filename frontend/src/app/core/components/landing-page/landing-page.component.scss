@@ -1,10 +1,69 @@
-mat-grid-list{
-    height: 100%;
-    width: auto;
+.cyber-lab-container {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CADCFC;
 }
 
-mat-grid-tile{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+app-header {
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.circle-container {
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+
+/* Other icon styles remain unchanged */
+.security {
+  transform: translate(-220%,70%);
+}
+
+.robot {
+  transform: translate(-140%,-40%);
+}
+
+.shopping {
+  transform: translate(0%,-90%);
+}
+
+.cookies {
+  transform: translate(140%,-40%);
+}
+
+.social {
+  transform: translate(220%,70%);
+}
+
+.spion {
+  z-index: 1;
+  transform: translate(0%,70%);
+}
+
+.dialog {
+  z-index: 3;
+  top: 55% ;
+  right: 45%;
+
+}

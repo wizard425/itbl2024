@@ -1,0 +1,52 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #00246B; /* Adjust the color to match your design */
+  color: #CADCFC;
+  padding: 10px 20px;
+  font-family: 'Righteous', sans-serif;
+  height: 50px;
+}
+
+.left, .center, .right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left {
+  left: 20px;
+}
+
+.center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right {
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.progress-box {
+  border: 2px solid #CADCFC; /* Creates the box outline */
+  color: #CADCFC;
+  padding: 0px 6px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.battery{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.Cube{
+  height: 2px;
+  border: 2px solid #CADCFC;
+  background-color: #CADCFC;
+  padding: 1px 1px;
+  border-radius: 1px;
+}
