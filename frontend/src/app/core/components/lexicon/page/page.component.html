@@ -1,0 +1,21 @@
+<div *ngIf="page" class="page-container">
+    <div *ngIf="page.content || page.title">
+        <h2>{{page.title}} </h2>
+        <div [innerHTML]="page.content"></div>
+    </div>
+
+    <div *ngIf="page.component">
+    </div>
+
+    <div class="footer">
+        <div *ngIf="!isLeftPage"></div>
+        <button mat-icon-button *ngIf="isLeftPage" (click)="previousPage()"><mat-icon
+                fontIcon="chevron_left"></mat-icon></button>
+        <p> {{ page.pageNumber }} </p>
+        <div *ngIf="isLeftPage"></div>
+        <button *ngIf="!isLeftPage" mat-icon-button (click)="nextPage()"><mat-icon
+                fontIcon="chevron_right"></mat-icon></button>
+    </div>
+
+</div>
+<div *ngIf="!page" class="page-empty"></div>

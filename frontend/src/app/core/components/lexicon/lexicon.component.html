@@ -1,0 +1,8 @@
+<div class="book-dialog">
+    <div class="book-page left-page">
+        <app-page [page]="lexicon.getCurrentPage().leftPage" [isLeftPage]="true"></app-page>
+    </div>
+    <div class="book-page right-page">
+        <app-page [page]="lexicon.getCurrentPage().rightPage" [isLeftPage]="false"></app-page>
+    </div>
+</div>

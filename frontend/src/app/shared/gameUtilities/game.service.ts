@@ -4,6 +4,7 @@ import { gameStoryLine } from './GameStoryLine';
 import User from '../../core/dtos/User';
 import { environment } from '../../../../environments/environment';
 import { GameScenario } from './GameScenario';
+import { Chapter } from '../lexicon/Chapter';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class GameService {
   private currentScenario: GameScenario;
 
   private points: number = 0;
+  private unlockedChapters: Chapter[] = [];
 
   constructor() {
     this.gameStoryLine = gameStoryLine;
@@ -54,6 +56,10 @@ export class GameService {
 
   getCurrentUser(): User {
     return this.currentUser;
+  }
+
+  getUnlockedChapters() {
+    return this.unlockedChapters;
   }
 
 }
