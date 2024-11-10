@@ -1,3 +1,11 @@
+$breakpoint-medium: 1000px;
+$breakpoint-small: 700px;
+
+.gray {
+  filter: grayscale(1);
+  transition: filter 1s ease;
+}
+
 .cyber-lab-container {
   text-align: center;
   position: relative;
@@ -7,23 +15,26 @@
   align-items: center;
   background: rgba(0, 0, 0, .80) url("../../../../../../public/assets/office.png");
   background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 
 app-header {
-  top: 0px;
-  height: 100%;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 
 .circle-container {
   flex-grow: 1;
-  position: relative;
   width: 100%;
   height: calc(100% - 50px);
   margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  flex-wrap: wrap; // Allows icons to wrap on smaller screens
 }
 
 .icon {
@@ -33,38 +44,112 @@ app-header {
   align-items: center;
   font-size: 2rem;
   border-radius: 50%;
+  transition: opacity 1s ease, transform 1s ease, filter 1s ease;
 }
 
-
-/* Other icon styles remain unchanged */
+// Icon positions for larger screens
 .security {
-  transform: translate(-220%,70%);
+  transform: translate(-40vw, 12vw);
 }
 
 .robot {
-  transform: translate(-140%,-40%);
+  transform: translate(-25vw, -5vw);
 }
 
 .shopping {
-  transform: translate(0%,-90%);
+  transform: translate(0vw, -12vw);
 }
 
 .cookies {
-  transform: translate(140%,-40%);
+  transform: translate(25vw, -5vw);
 }
 
 .social {
-  transform: translate(220%,70%);
+  transform: translate(40vw, 12vw);
+}
+
+.spionanddialog {
+  position: relative;
 }
 
 .spion {
   z-index: 1;
-  transform: translate(0%,70%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0%;
+  right: 45%;
 }
 
 .dialog {
   z-index: 3;
-  top: 55% ;
-  right: 45%;
-
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+@media (max-width: $breakpoint-medium) {
+  .icon {
+    position: absolute;
+    transform: none;
+    font-size: 1.5rem;
+  }
+
+  .circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .shopping {
+    transform: translate(0vw, -25vw);
+  }
+  .security {
+    transform: translate(-40vw, 12vw);
+  }
+  .robot {
+    transform: translate(-25vw, -5vw);
+  }
+  .cookies {
+    transform: translate(25vw, -5vw);
+  }
+  .social {
+    transform: translate(40vw, 12vw);
+}
+
+@media (max-width: $breakpoint-small) {
+  .icon {
+    position: absolute;
+    transform: none;
+    font-size: 1.5rem;
+  }
+
+  .circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .security {
+    transform: translate(-30vw, 12vw);
+  }
+  .robot {
+    transform: translate(-25vw, -16vw);
+  }
+  .shopping {
+    transform: translate(0vw, -37vw);
+  }
+  .cookies {
+    transform: translate(25vw, -16vw);
+  }
+  .social {
+    transform: translate(30vw, 12vw);
+  }
+}}
