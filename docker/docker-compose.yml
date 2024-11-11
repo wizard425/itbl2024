@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  api:
+    container_name: itbl-frontend
+    build:
+      context: ..
+      dockerfile: frontend/Dockerfile
+    ports:
+      - 80:5000“
+    pull_policy: build
