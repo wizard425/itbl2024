@@ -1,52 +1,103 @@
+$breakpoint-hide-content: 1000px;
+
 .header {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #00246B; /* Adjust the color to match your design */
+  background-color: #00246B;
   color: #CADCFC;
   padding: 10px 20px;
   font-family: 'Righteous', sans-serif;
   height: 50px;
-}
 
-.left, .center, .right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  .left,
+  .center,
+  .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-.left {
-  left: 20px;
-}
+  .left {
+    left: 20px;
 
-.center {
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .welcome-message {
+      display: block; // Default display
+    }
 
-.right {
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+    .user-name {
+      display: none; // Only show at smaller screen sizes
+    }
+  }
 
-.progress-box {
-  border: 2px solid #CADCFC; /* Creates the box outline */
-  color: #CADCFC;
-  padding: 0px 6px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.battery{
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-.Cube{
-  height: 2px;
-  border: 2px solid #CADCFC;
-  background-color: #CADCFC;
-  padding: 1px 1px;
-  border-radius: 1px;
+  .center {
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .score1 {
+      display: none;
+    }
+  }
+
+  .right {
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .progress-label {
+      display: block; // Default display
+    }
+  }
+
+  .progress-box {
+    border: 2px solid #CADCFC;
+    color: #CADCFC;
+    padding: 0px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .battery {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .Cube {
+    height: 2px;
+    border: 2px solid #CADCFC;
+    background-color: #CADCFC;
+    padding: 1px 1px;
+    border-radius: 1px;
+  }
+
+  // Media query to hide extra elements on smaller screens
+  @media (max-width: $breakpoint-hide-content) {
+    .left {
+      .welcome-message {
+        display: none; // Hide the full welcome message
+      }
+
+      .user-name {
+        display: inline; // Show only the userName
+      }
+    }
+
+    .center {
+      .score {
+        display: none; // Show Score + Punkte
+      }
+
+      .score1 {
+        display: inline;
+      }
+    }
+
+    .right {
+      .progress-label {
+        display: none; // Hide the "Fortschritt:" label
+      }
+    }
+  }
 }

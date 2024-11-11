@@ -1,0 +1,44 @@
+.page {
+    height: 100%;
+    position: relative;
+}
+
+.page-container {
+    height: calc(100% - 30px);
+    position: relative;
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.page-empty {
+    width: 300px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    /* Klassische Schriftart */
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #333;
+}
+
+p {
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+mat-icon {
+    color: #444;
+}

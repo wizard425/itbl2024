@@ -1,18 +1,20 @@
 <div class="header">
   <div class="left">
-    <span>Willkommen {{ userName }} in deinem Cyber Lab!</span>
+    <!-- Wrapping the username in a div for easier targeting in SCSS -->
+    <span class="welcome-message">Willkommen {{ userName }} in deinem Cyber Lab!</span>
+    <span class="user-name">{{ userName }}</span> <!-- New element to selectively display username -->
   </div>
   <div class="center">
-    <span>Score: {{ score }} Punkte</span>
+    <span class="score">Score: {{ score }} Punkte</span>
+    <span class="score1"> {{ score }} Punkte</span>
   </div>
   <div class="right">
-    <span>Fortschritt:</span>
+    <span class="progress-label">Fortschritt:</span>
     <div class="battery">
       <div class="progress-box">
         <span>{{ progress }} %</span>
       </div>
-      <div class="Cube">
-      </div>
+      <div class="Cube"></div>
     </div>
   </div>
 </div>
