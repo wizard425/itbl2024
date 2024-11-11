@@ -1,27 +1,28 @@
-# Stage 1: Build der Angular-Anwendung
+### STAGE 1:BUILD ###
+# Defining a node image to be used as giving it an alias of "build"
+# Which version of Node image to use depends on project dependencies 
+# This is needed to build and compile our code 
+# while generating the docker image
 FROM node:20-alpine AS build
-
-WORKDIR .
-
-# Kopiere package.json und package-lock.json und installiere Abhängigkeiten
-COPY package*.json ./
-RUN npm install
-
-# Kopiere den Rest des Projekts und baue die Anwendung
+# Create a Virtual directory inside the docker image
+WORKDIR /dist/src/app
+# Copy files to virtual directory
+COPY package.json package-lock.json ./
+# Run command in Virtual directory
+RUN npm cache clean --force
+# Copy files from local machine to virtual directory in docker image
 COPY . .
+RUN npm install
 RUN npm run build --prod
 
-# Stage 2: Serve die Anwendung mit Nginx
-FROM nginx:alpine
 
-# Kopiere das gebaute Angular-Projekt in das Nginx-Verzeichnis
-COPY --from=build /dist/dist/itbl2024 /usr/share/nginx/html
+### STAGE 2:RUN ###
+# Defining nginx image to be used
+FROM nginx:latest AS ngi
+# Copying compiled code and nginx config to different folder
+# NOTE: This path may change according to your project's output folder 
+COPY --from=build /dist/src/app/dist/itbl2024 /usr/share/nginx/html
 
-# Kopiere eine angepasste Nginx-Konfiguration, falls nötig
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Exponiere den Standard-HTTP-Port
+# Exposing a port, here it means that inside the container 
+# the app will be using Port 80 while running
 EXPOSE 80
-
-# Starte Nginx automatisch, wenn der Container startet
-CMD ["nginx", "-g", "daemon off;"]
