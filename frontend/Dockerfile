@@ -1,27 +1,18 @@
-# Stage 1: Build der Angular-Anwendung
 FROM node:20-alpine AS build
 
-WORKDIR .
+WORKDIR /app
 
-# Kopiere package.json und package-lock.json und installiere Abhängigkeiten
-COPY package*.json ./
+COPY . .
+
 RUN npm install
 
-# Kopiere den Rest des Projekts und baue die Anwendung
-COPY . .
-RUN npm run build --prod
+RUN npm run build
 
-# Stage 2: Serve die Anwendung mit Nginx
+# Serve Application using Nginx Server
+
 FROM nginx:alpine
 
-# Kopiere das gebaute Angular-Projekt in das Nginx-Verzeichnis
-COPY --from=build /dist/dist/itbl2024 /usr/share/nginx/html
+COPY --from=build /app/dist/itbl2024/browser/ /usr/share/nginx/html
+COPY /nginx.conf  /etc/nginx/conf.d/default.conf
 
-# Kopiere eine angepasste Nginx-Konfiguration, falls nötig
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Exponiere den Standard-HTTP-Port
 EXPOSE 80
-
-# Starte Nginx automatisch, wenn der Container startet
-CMD ["nginx", "-g", "daemon off;"]
