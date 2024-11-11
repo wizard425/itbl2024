@@ -5,6 +5,7 @@ import User from '../../core/dtos/User';
 import { environment } from '../../../../environments/environment';
 import { GameScenario } from './GameScenario';
 import { Chapter } from '../lexicon/Chapter';
+import { IntroService } from '../../core/services/intro.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class GameService {
   private points: number = 0;
   private unlockedChapters: Chapter[] = [];
 
-  constructor() {
+  constructor(public intro:IntroService) {
     this.gameStoryLine = gameStoryLine;
     this.currentGameStep = gameStoryLine[0];
     this.currentScenario = GameScenario.Start;
@@ -36,6 +37,10 @@ export class GameService {
     return this.currentGameStep;
   }
 
+  setName (Name:string){
+    this.currentUser.name = Name;
+  }
+  
   setCurrentGameStep(gameStep: GameStep) {
     this.currentGameStep = gameStep;
   }
@@ -48,6 +53,7 @@ export class GameService {
     if (this.currentGameStep.order < gameStoryLine.length) {
       // sets the next game step
       this.currentGameStep = { ...gameStoryLine[this.currentGameStep.order + 1] };
+      this.intro.setOutBasedOnOrder(this.currentGameStep.order);
       if (environment.storeGameStep) {
         localStorage.setItem("game", JSON.stringify(this.currentGameStep));
       }
