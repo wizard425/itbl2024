@@ -6,6 +6,6 @@ services:
       context: ..
       dockerfile: frontend/Dockerfile
     ports:
-      - "80:5000“
+      - "80:5000"
     image: frontend_image:latest
     pull_policy: build
