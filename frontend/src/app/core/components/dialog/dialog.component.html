@@ -3,9 +3,9 @@
         <app-speaking-text [text]='game.getCurrentGameStep().textToSpeech'
             (finishedChangedTo)="finishedChanged($event)"></app-speaking-text>
         <div class="dialog-action" *ngIf="game.getCurrentGameStep().canClickNext">
-            <button mat-icon-button (click)="goToNext()"
-                [hidden]="!showNextButton"><mat-icon
-                    fontIcon="chevron_right"></mat-icon></button>
+            <button mat-flat-button (click)="goToNext()"
+                [hidden]="!showNextButton">
+                Weiter <mat-icon iconPositionEnd>chevron_right</mat-icon></button>
         </div>
         <div class="left-point"></div>
     </div>

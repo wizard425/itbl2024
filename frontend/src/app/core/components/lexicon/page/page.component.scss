@@ -3,10 +3,11 @@
     position: relative;
 }
 
+
 .page-container {
     height: calc(100% - 30px);
     position: relative;
-    width: 300px;
+    width: 30vw;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@
 }
 
 .page-empty {
-    width: 300px;
+    width: 30vw;
 }
 
 h2 {

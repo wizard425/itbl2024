@@ -1,6 +1,8 @@
-<mat-card appearance="outlined" (click)="goToChapter()">
+<mat-card  appearance="outlined" (click)="goToChapter()" [ngClass]="{ 'disabled': isLocked() }">
     <mat-card-content class="content">
-        <h3>{{chapter?.name}}</h3>
-        <mat-icon>lock</mat-icon>
+        <p>{{chapter.name}}</p>
+        <div *ngIf="isLocked()">
+        <mat-icon >lock</mat-icon>
+    </div>
     </mat-card-content>
 </mat-card>

@@ -1,0 +1,9 @@
+app-chapter-tile {
+    cursor: pointer;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}

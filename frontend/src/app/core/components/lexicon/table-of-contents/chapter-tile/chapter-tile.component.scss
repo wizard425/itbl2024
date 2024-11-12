@@ -3,3 +3,19 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+mat-card {
+    background-color: white;
+    padding: 0
+}
+
+.disabled {
+    background-color: #f0f0f0;
+    /* Hellgrauer Hintergrund */
+    opacity: 0.6;
+    /* Leicht transparent für einen "disabled"-Effekt */
+    pointer-events: none;
+    cursor: none;
+    /* Deaktiviert Klicks und Interaktionen */
+    color: #a0a0a0;
+}
