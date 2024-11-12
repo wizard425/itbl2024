@@ -4,16 +4,19 @@
         <div [innerHTML]="page.content"></div>
     </div>
 
-    <div *ngIf="page.component">
+    <div class="component-container">
+        <ng-template #container></ng-template>
     </div>
 
     <div class="footer">
         <div *ngIf="!isLeftPage"></div>
-        <button mat-icon-button *ngIf="isLeftPage" (click)="previousPage()"><mat-icon
+        <div *ngIf="isLeftPage && !lexicon.hasPreviousPage()"></div>
+        <button mat-icon-button *ngIf="isLeftPage && lexicon.hasPreviousPage()" (click)="previousPage()"><mat-icon
                 fontIcon="chevron_left"></mat-icon></button>
         <p> {{ page.pageNumber }} </p>
         <div *ngIf="isLeftPage"></div>
-        <button *ngIf="!isLeftPage" mat-icon-button (click)="nextPage()"><mat-icon
+        <div *ngIf="!isLeftPage && !lexicon.hasNextPage()"></div>
+        <button *ngIf="!isLeftPage && lexicon.hasNextPage()" mat-icon-button (click)="nextPage()"><mat-icon
                 fontIcon="chevron_right"></mat-icon></button>
     </div>
 

@@ -28,14 +28,14 @@ export class LexiconService {
   }
 
   nextPage() {
-    if (this.currentIndex < this.lexiconContent.length - 1) {
+    if (this.hasNextPage()) {
       this.currentIndex++;
       this.setPage(this.currentIndex);
     }
   }
 
   previousPage() {
-    if (this.currentIndex > 0) {
+    if (this.hasPreviousPage()) {
       this.currentIndex--;
       this.setPage(this.currentIndex);
     }
@@ -48,12 +48,16 @@ export class LexiconService {
     this.setPage(this.currentIndex);
   }
 
+  hasNextPage(): boolean {
+    return this.currentIndex < this.lexiconContent.length - 1;
+  }
+
+  hasPreviousPage(): boolean {
+    return this.currentIndex > 0;
+  }
 
   private setPage(index: number) {
     this.currentPage = this.lexiconContent[this.currentIndex];
   }
-
-
-
 
 }
