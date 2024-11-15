@@ -24,6 +24,21 @@
   <!-- Body-Bereich für die Posts -->
   <div class="profile-body">
     <p>{{ account.bio }}</p>
-    <img [src]="account.postImage" alt="Posts" class="posts-image">
+    <div class="follow-button-container">
+      <button class="follow-button">Folgen</button>
+    </div>  
+    <div class="follower-info">
+      <div class="profile-images">
+        <img *ngFor="let image of account.folowersImage" [src]="image" alt="Follower Image" class="profile-image">
+      </div>
+      <p class="follower-text">
+        {{ account.fText }}
+      </p>
+    </div>      
+    <div class="posts-container">
+      <div class="post" *ngFor="let post of account.postImage">
+        <img [src]="post" alt="Post Image">
+      </div>
+    </div>
   </div>
 </div>
