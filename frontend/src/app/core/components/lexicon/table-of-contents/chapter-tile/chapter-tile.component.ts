@@ -22,7 +22,7 @@ export class ChapterTileComponent {
   }
 
   goToChapter() {
-    this.game.getUnlockedChapters().forEach(c => {
+    this.game.unlockedChapters.forEach(c => {
       if (c.id == this.chapter?.id) {
         this.lexicon.setChapter(this.chapter);
       }
@@ -30,7 +30,7 @@ export class ChapterTileComponent {
   }
 
   isLocked(): boolean {
-    const chapters = this.game.getUnlockedChapters();
+    const chapters = this.game.unlockedChapters;
     if (this.chapter !== undefined) {
       if (chapters.filter(c => c.id == this.chapter.id).length > 0){
         return false;

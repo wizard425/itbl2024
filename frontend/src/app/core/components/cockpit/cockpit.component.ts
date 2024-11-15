@@ -21,7 +21,7 @@ export class CockpitComponent {
     this.dialog.open(LexiconComponent, {
       height: "70vh",
       width: "fit-content",
-      maxWidth: "1500px"
+      maxWidth: "80vw"
     });
   }
 

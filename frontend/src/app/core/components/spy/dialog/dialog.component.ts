@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { SpeakingTextComponent } from './speaking-text/speaking-text.component';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { GameService } from '../../../shared/gameUtilities/game.service';
 import { CommonModule } from '@angular/common';
+import { GameService } from '../../../../shared/gameUtilities/game.service';
+import { SpeakingTextComponent } from './speaking-text/speaking-text.component';
+import { GameStep } from '../../../../shared/gameUtilities/GameStep';
 
 
 @Component({
@@ -16,16 +17,18 @@ import { CommonModule } from '@angular/common';
 export class DialogComponent {
 
   protected showNextButton: boolean = false;
-
-  constructor(protected game: GameService){
+  @Output() clickedOnNext = new EventEmitter();
+  @Input() gameStep!: GameStep;
+  
+  constructor() {
 
   }
 
   goToNext() {
-    this.game.nextGameStep();
+    this.clickedOnNext.emit();
   }
 
-  finishedChanged(isFinished:boolean){
+  finishedChanged(isFinished: boolean) {
     this.showNextButton = isFinished;
   }
 }
