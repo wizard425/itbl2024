@@ -1,8 +1,8 @@
-<div class="box">
+<div class="box" *ngIf="gameStep ? gameStep.textToSpeech !== '' : false">
     <div class="dialog-1">
-        <app-speaking-text [text]='game.getCurrentGameStep().textToSpeech'
+        <app-speaking-text  [text]='gameStep ? gameStep.textToSpeech : ""'
             (finishedChangedTo)="finishedChanged($event)"></app-speaking-text>
-        <div class="dialog-action" *ngIf="game.getCurrentGameStep().canClickNext">
+        <div class="dialog-action" *ngIf="gameStep ? gameStep.canClickNext : false">
             <button mat-flat-button (click)="goToNext()"
                 [hidden]="!showNextButton">
                 Weiter <mat-icon iconPositionEnd>chevron_right</mat-icon></button>

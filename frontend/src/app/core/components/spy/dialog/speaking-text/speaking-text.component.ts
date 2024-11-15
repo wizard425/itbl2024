@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, O
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { interval, Subscription } from 'rxjs';
-import { GameService } from '../../../../shared/gameUtilities/game.service';
+import { GameService } from '../../../../../shared/gameUtilities/game.service';
 
 @Component({
   selector: 'app-speaking-text',

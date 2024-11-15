@@ -1,0 +1,29 @@
+<div class="account-card">
+  <!-- Header-Bereich -->
+  <header class="profile-header">
+    <img [src]="account.avatar" alt="Avatar" class="avatar">
+    <div class="profile-info">
+      <h2 class="profile-name">{{ account.name }}</h2>
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-number">{{ account.posts }}</span>
+          <span class="stat-label">Beiträge</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">{{ account.followers }}</span>
+          <span class="stat-label">Follower</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">{{ account.following }}</span>
+          <span class="stat-label">Gefolgt</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Body-Bereich für die Posts -->
+  <div class="profile-body">
+    <p>{{ account.bio }}</p>
+    <img [src]="account.postImage" alt="Posts" class="posts-image">
+  </div>
+</div>

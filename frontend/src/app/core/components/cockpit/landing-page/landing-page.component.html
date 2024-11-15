@@ -1,17 +1,25 @@
 <div class="cyber-lab-container">
-        <app-header [userName]="game.getCurrentUser().name" [score]="game.getPoints()" [progress]="75"></app-header>
-        <div class=" dialog"><app-dialog /></div>
-                <div class=" spion"><app-icon imageSrc="./assets/image/spy.png" iconName="" link=""></app-icon></div>
+        <app-header [userName]="game.currentUser.name" [score]="game.points" [progress]="75"></app-header>
+
+        <div class="spion">
+                <app-spy [gameStep]="this.game.currentGameStep" (clickedNext)="this.game.nextGameStep()"></app-spy>
+        </div>
         <div class="circle-container">
-                <div [ngClass]="{ 'gray': !this.intro.getout()[1] }" class="icon robot"><app-icon imageSrc="./assets/image/AI.png" iconName="AI" link="./ai"></app-icon>
+                <div [ngClass]="{ 'gray': !this.intro.getout()[1] }" class="icon robot"><app-icon
+                                imageSrc="./assets/image/AI.png" iconName="AI" link="./ai"></app-icon>
                 </div>
-                <div class="icon shopping" [ngClass]="{ 'gray': !this.intro.getout()[2] }"><app-icon imageSrc="./assets/image/onlineshopping.png"
-                                iconName="Online Shopping" link="shopping"></app-icon></div>
-                <div class="icon cookies" [ngClass]="{ 'gray': !this.intro.getout()[3] }"><app-icon imageSrc="./assets/image/Cookies.png" iconName="Cookies"
-                                link="./cookies"></app-icon></div>
-                <div class="icon security" [ngClass]="{ 'gray': !this.intro.getout()[0] }"><app-icon imageSrc="./assets/image/Laptop.png" iconName="Password"
-                                link="./computer"></app-icon></div>
-                <div class="icon social" [ngClass]="{ 'gray': !this.intro.getout()[4] }"><app-icon imageSrc="./assets/image/socialmedia.png" iconName="Social Media"
+                <div class="icon shopping" [ngClass]="{ 'gray': !this.intro.getout()[2] }"><app-icon
+                                imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping"
+                                link="shopping"></app-icon></div>
+                <div class="icon cookies" [ngClass]="{ 'gray': !this.intro.getout()[3] }"><app-icon
+                                imageSrc="./assets/image/Cookies.png" iconName="Cookies" link="./cookies"></app-icon>
+                </div>
+                <div class="icon security" [ngClass]="{ 'gray': !this.intro.getout()[0] }"><app-icon
+                                imageSrc="./assets/image/Laptop.png" iconName="Password" link="./computer"></app-icon>
+                </div>
+                <div class="icon social" [ngClass]="{ 'gray': !this.intro.getout()[4] }"
+                        (click)="setScenarioService(scenarios.SocialMedia)"><app-icon
+                                imageSrc="./assets/image/socialmedia.png" iconName="Social Media"
                                 link="./socialmedia"></app-icon></div>
         </div>
 </div>

@@ -6,52 +6,69 @@ import { environment } from '../../../../environments/environment';
 import { GameScenario } from './GameScenario';
 import { Chapter, Chapters } from '../lexicon/Chapter';
 import { IntroService } from '../../core/services/intro.service';
+import { BaseScenarioService } from '../../core/services/scenario-services/base-scenario.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  private gameStoryLine: GameStep[] = [];
+  private _gameStoryLine: GameStep[] = [];
+  private _currentGameStep: GameStep;
+  private _currentUser: User;
+  private _points: number = 0;
+  private _unlockedChapters: Chapter[] = [Chapters[1]];
+  private _currentScenarioService: BaseScenarioService | undefined;
 
-  private currentGameStep: GameStep;
 
-  private currentUser: User;
-
-  private currentScenario: GameScenario;
-
-  private points: number = 0;
-  
-  private unlockedChapters: Chapter[] = [Chapters[1]];
-
-  constructor(public intro:IntroService) {
-    this.gameStoryLine = gameStoryLine;
-    this.currentGameStep = gameStoryLine[0];
-    this.currentScenario = GameScenario.Start;
-    this.currentUser = {
+  constructor(public intro: IntroService) {
+    this._gameStoryLine = gameStoryLine;
+    this._currentGameStep = gameStoryLine[0];
+    this._currentUser = {
       name: "notSet",
       points: 0,
     }
   }
 
-  getCurrentGameStep(): GameStep {
-    return this.currentGameStep;
+  public get gameStoryLine(): GameStep[] {
+    return this._gameStoryLine;
   }
-
-  setName (Name:string){
-    this.currentUser.name = Name;
+  public set gameStoryLine(value: GameStep[]) {
+    this._gameStoryLine = value;
   }
-  
-  setCurrentGameStep(gameStep: GameStep) {
-    this.currentGameStep = gameStep;
+  public get currentGameStep(): GameStep {
+    return this._currentGameStep;
   }
-
-  getPoints(): number {
-    return this.points;
+  public set currentGameStep(value: GameStep) {
+    this._currentGameStep = value;
+  }
+  public get currentUser(): User {
+    return this._currentUser;
+  }
+  public set currentUser(value: User) {
+    this._currentUser = value;
+  }
+  public get points(): number {
+    return this._points;
+  }
+  public set points(value: number) {
+    this._points = value;
+  }
+  public get unlockedChapters(): Chapter[] {
+    return this._unlockedChapters;
+  }
+  public set unlockedChapters(value: Chapter[]) {
+    this._unlockedChapters = value;
+  }
+  public get currentScenarioService(): BaseScenarioService | undefined {
+    return this._currentScenarioService;
+  }
+  public set currentScenarioService(value: BaseScenarioService | undefined) {
+    this._currentScenarioService = value;
   }
 
   nextGameStep() {
-    if (this.currentGameStep.order < gameStoryLine.length) {
+    if (this.currentGameStep.order < gameStoryLine.length && !this.scenarioInProgress()) {
       // sets the next game step
       this.currentGameStep = { ...gameStoryLine[this.currentGameStep.order + 1] };
       this.intro.setOutBasedOnOrder(this.currentGameStep.order);
@@ -61,12 +78,12 @@ export class GameService {
     }
   }
 
-  getCurrentUser(): User {
-    return this.currentUser;
-  }
-
-  getUnlockedChapters() {
-    return this.unlockedChapters;
+  scenarioInProgress(): boolean {
+    if (this.currentScenarioService) {
+      return this.currentScenarioService.isInProgress;
+    } else {
+      return false;
+    }
   }
 
 }

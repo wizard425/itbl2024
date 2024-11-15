@@ -1,0 +1,24 @@
+.container {
+    background-image: url('../../../../public/assets/phone/bedroom.png');
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+
+    .mat-grid-list {
+        height: 100vh;
+        padding-bottom: 0;
+    }
+
+    .spy-column {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+    }
+}
+
+.social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

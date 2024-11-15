@@ -1,1 +1,15 @@
-<p>phone works!</p>
+<div class="container">
+    <mat-grid-list cols="3" rowHeight="fit">
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+            <div class="social_media" *ngIf="showPhone">
+                <app-account></app-account>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="spy-column">
+                <app-spy [gameStep]="phoneService.currentGameStep" (clickedNext)="phoneService.next()"></app-spy>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
