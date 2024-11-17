@@ -9,6 +9,8 @@ import { PhoneComponent } from './features/phone/phone.component';
 import { StartComponent } from './features/start/start.component';
 import { StartButtonScreenComponent } from './features/start/start-button-screen/start-button-screen.component';
 import { StartNameComponent } from './features/start/start-name/start-name.component';
+import path from 'path';
+import { Component } from '@angular/core';
 
 export const routes: Routes = [
     {

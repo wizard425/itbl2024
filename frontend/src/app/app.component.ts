@@ -7,7 +7,7 @@ import { GameStep } from './shared/gameUtilities/GameStep';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LandingPageComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     const loadedString = localStorage.getItem("game");
     if (loadedString != null) {
       const loadedGameStep: GameStep = (JSON.parse(loadedString) as GameStep);
-      this.game.setCurrentGameStep(loadedGameStep);
+      this.game.currentGameStep = loadedGameStep;
     }
   }
 }

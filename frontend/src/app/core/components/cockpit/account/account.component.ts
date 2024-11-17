@@ -14,6 +14,7 @@ export class AccountComponent {
     posts: 0,
     followers: 0,
     following: 0,
+    tick: false,
     bio: '',
     avatar: '',
     fText: '',

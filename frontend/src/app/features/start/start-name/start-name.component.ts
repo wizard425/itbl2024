@@ -16,17 +16,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './start-name.component.html',
   styleUrls: ['./start-name.component.scss'] // Corrected 'styleUrl' to 'styleUrls'
 })
-export class StartNameComponent implements AfterViewInit {
+export class StartNameComponent {
   @ViewChild('nameInput') nameInput!: ElementRef;
   constructor(public _GameService: GameService, private router: Router) {}
-  ngAfterViewInit(): void {
-    console.log(this.nameInput);
-  }
 
   start() {
     const name = this.nameInput.nativeElement.value;
     if (name) {
-      this._GameService.setName(name)
+      this._GameService.currentUser.name = name;
       this.router.navigate(['/cockpit']);
     }else{
       alert("please enter ur name")

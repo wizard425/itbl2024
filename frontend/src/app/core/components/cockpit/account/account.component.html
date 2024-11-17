@@ -3,7 +3,7 @@
   <header class="profile-header">
     <img [src]="account.avatar" alt="Avatar" class="avatar">
     <div class="profile-info">
-      <h2 class="profile-name">{{ account.name }}</h2>
+      <h2 class="profile-name">{{ account.name }} <img src="assets/phone/blueT.png" alt="Verified" [hidden]="account.tick" class="verified-icon"></h2>
       <div class="profile-stats">
         <div class="stat">
           <span class="stat-number">{{ account.posts }}</span>
@@ -23,7 +23,7 @@
   
   <!-- Body-Bereich für die Posts -->
   <div class="profile-body">
-    <p>{{ account.bio }}</p>
+    <p class="bio">{{ account.bio }}</p>
     <div class="follow-button-container">
       <button class="follow-button">Folgen</button>
     </div>  
