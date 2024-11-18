@@ -1,15 +1,17 @@
-<div class="container">
-    <mat-grid-list cols="3" rowHeight="fit">
-        <mat-grid-tile></mat-grid-tile>
-        <mat-grid-tile>
-            <div class="social_media" *ngIf="showPhone">
-                <app-account></app-account>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <div class="spy-column">
-                <app-spy [gameStep]="phoneService.currentGameStep" (clickedNext)="phoneService.next()"></app-spy>
-            </div>
-        </mat-grid-tile>
-    </mat-grid-list>
+<div class="container" [class.hidden]="phoneService.Hide">
+    <div class="spy-column">
+        <app-spy [gameStep]="phoneService.currentGameStep" (clickedNext)="phoneService.next()"></app-spy>
+    </div>
+</div>
+<div class="container1" [class.hidden]="!phoneService.Hide">
+    <button class="btn real" [class.hidden]="phoneService.BHide" (click)="onRealClick()">Echt</button>
+    <button class="btn fake" [class.hidden]="phoneService.BHide" (click)="onFakeClick()">FAKE</button>     
+    <div class="spy-column1">
+        <app-spy [gameStep]="phoneService.currentGameStep" (clickedNext)="phoneService.next()"></app-spy>
+    </div>
+    <img src= "assets/phone/Phone.png" alt="Notification Overlay" class="notification-image" />
+    <app-account [account]="AccountArray[0]" class="account " [class.hidden]="!phoneService.Profile[0]"></app-account>
+    <app-account [account]="AccountArray[1]" class="account " [class.hidden]="!phoneService.Profile[1]"></app-account>
+    <app-account [account]="AccountArray[2]" class="account " [class.hidden]="!phoneService.Profile[2]"></app-account>
+    <app-account [account]="AccountArray[3]" class="account " [class.hidden]="!phoneService.Profile[3]"></app-account>
 </div>

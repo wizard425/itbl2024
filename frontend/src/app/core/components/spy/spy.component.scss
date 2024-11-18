@@ -2,3 +2,10 @@
     position: relative;
     width: fit-content;
 }
+
+.sticky {
+    position: absolute;
+    top: 0; /* Stick it to the top of the reference */
+    left: 0; /* Stick it to the left of the reference */
+    background-color: lightgreen;
+  }

@@ -1,25 +1,58 @@
 .account-card {
-  width: 400px;
+  width: 290px;
+  height: 605px;
   border: 1px solid #000000;
-  border-radius: 8px;
+  border-radius: 14%;
   overflow: hidden;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5;
+  background-color: #000000;
+}
+.follow-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%; /* Optional spacing */
+}
+
+.follow-button {
+  background-color: #007bff; /* Blue color */
+  color: #fff; /* White text */
+  border: none;
+  width: 100%;
+  border-radius: 5px; /* Rounded corners */
+  padding: 2.5% 5%;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  &:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle glow */
+  }
+
+  &:active {
+    background-color: #004080; /* Even darker blue when active */
+  }
 }
 
 .profile-header {
   display: flex;
   align-items: center;
-  padding: 15px;
-  background-color: #f5f5f5;
+  padding: 3.75%;
+  background-color: #000000;
+  color: #fff;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 25%;
+  height: 25%;
   border-radius: 50%;
-  margin-right: 30px;
+  margin-right: 7.5%;
 }
 
 .profile-info {
@@ -28,7 +61,7 @@
 }
 
 .profile-name {
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -36,8 +69,8 @@
 
 .profile-stats {
   display: flex;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 4%;
+  margin-top: 2%;
 }
 
 .stat {
@@ -50,22 +83,79 @@
 }
 
 .stat-label {
-  font-size: 15px;
-  color: #666;
+  font-size: 11px;
+  color: #ffffff;
 }
 
 /* Body-Bereich für die Bio und Posts */
+.bio{
+  font-size: 10px;
+}
 .profile-body {
-  padding: 16px;
+  padding: 3.75%;
 }
 
 .profile-body p {
-  margin: 0 0 12px;
-  color: #333;
+  margin: 0 0 3%;
+  color: #ffffff;
+}
+.profile-body {
+  .posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5%; /* Abstand zwischen den Elementen */
+    justify-content: space-between;
+
+    .post {
+      width: calc(33.33% - 2.5%); /* Drei Elemente pro Zeile mit Platz für den Abstand */
+      margin-bottom: 2.5%; /* Abstand zwischen den Zeilen */
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.25; /* Optional: abgerundete Ecken */
+      }
+    }
+  }
 }
 
 .posts-image {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 1%;
 }
+
+
+.follower-info {
+  display: flex;
+  align-items: center; 
+  color: #fff; /* White text color, adjust based on background */
+  .profile-images {
+    display: flex;
+    margin-right: 2.5%;
+
+    .profile-image {
+      width: 24px; /* Size of profile images */
+      height: 24px;
+      border-radius: 50%; /* Makes the images circular */
+      border: 2px solid #ffffff; /* Optional: border for contrast */
+      margin-left: -8px; /* Overlapping effect */
+
+      &:first-child {
+        margin-left: 0; /* No overlap for the first image */
+      }
+    }
+  }
+
+  .follower-text {
+    font-size: 8px; /* Adjust font size as needed */ /* Prevents text wrapping */
+    text-align: center;
+  }
+}
+
+.verified-icon {
+  width: 20px; /* Adjust the size as needed */
+  height: 20px;
+  margin-left: 8px; /* Space between the name and the icon */
+  vertical-align: middle; /* Align the icon with the text */
+}
+

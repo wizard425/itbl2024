@@ -5,10 +5,10 @@ export abstract class BaseScenarioService {
 
   private _currentIndex: number = 0;
   private _scenario: GameScenario = GameScenario.All;
-  private _scenarioSteps: GameStep[] = [];
+  private _scenarioSteps: GameStep[][] = [];
   private _isInProgress: boolean = false;
 
-  constructor(private scenarioStepsFromChild: GameStep[]) {
+  constructor(private scenarioStepsFromChild: GameStep[][]) {
     this.scenarioSteps = scenarioStepsFromChild;
   }
 
@@ -27,10 +27,10 @@ export abstract class BaseScenarioService {
     this._scenario = value;
   }
 
-  public get scenarioSteps(): GameStep[] {
+  public get scenarioSteps(): GameStep[][] {
     return this._scenarioSteps;
   }
-  public set scenarioSteps(value: GameStep[]) {
+  public set scenarioSteps(value: GameStep[][]) {
     this._scenarioSteps = value;
   }
 
@@ -42,9 +42,7 @@ export abstract class BaseScenarioService {
     this._isInProgress = value;
   }
 
-  public get currentGameStep(): GameStep {
-    return this.scenarioSteps[this.currentIndex];
-  }
+  public abstract get currentGameStep(): GameStep;
 
   abstract next() : GameStep;
 
