@@ -1,0 +1,35 @@
+.container {
+    background-image: url('../../../../../public/assets/cookies/bakeryclosed.png');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    app-spy {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+
+    .enterbutton {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        background-color: #cc6236; /* Braune Hintergrundfarbe */
+        border: 3px solid #fff; /* Weiße Umrandung */
+        border-radius: 15px; /* Abgerundete Ecken */
+        cursor: pointer;
+        text-shadow: 2px 2px 2px #000; /* Leichter Schatten für Text */
+        font-family: Arial, sans-serif;
+    }
+
+    .enterbutton:hover {
+        background-color: #862c0f; /* Etwas dunklerer Braunton beim Hover */
+    }
+
+}

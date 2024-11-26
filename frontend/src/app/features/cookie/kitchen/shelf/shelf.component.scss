@@ -1,0 +1,38 @@
+.shelf {
+    background-image: url('../../../../../../public/assets/cookies/shelf.png');
+    background-size: 100% 100%;
+    background-position: center;
+    margin-top: 50px;
+    height: 80%;
+    width: 30vw;
+    background-repeat: no-repeat;
+
+    .grid{
+        height: 100%;
+        width: 100%;
+    }
+
+    .stufe {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .ing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+}
+
+.cookie-banner {
+    display: inline-block; /* Macht die div flexibel */
+    color: white; /* Weißer Text */
+    font-weight: bold; /* Fetter Text */
+    font-size: 1.2rem; /* Schriftgröße anpassen */
+    padding: 10px 20px; /* Innenabstand für Polsterung */
+    border: 4px solid white; /* Weißer Rand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+    text-align: center; /* Text zentriert */
+  }

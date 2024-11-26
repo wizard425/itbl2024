@@ -16,7 +16,7 @@ export const Chapters: Chapter[] = [
     {
         id: 2,
         name: "Cookies",
-        startsAtPage: 2,
+        startsAtPage: 1,
         isLocked: true
     },
     {
