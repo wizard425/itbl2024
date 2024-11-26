@@ -1,0 +1,9 @@
+<div class="container">
+
+    <app-spy [gameStep]="cookieService.currentGameStep" (clickedNext)="cookieService.next()">
+    </app-spy>
+
+    <button class="enterbutton" *ngIf="showButton" (click)="enter()">
+        Bäckerei betreten
+    </button>
+</div>

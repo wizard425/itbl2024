@@ -1,0 +1,12 @@
+<div class="box" *ngIf="gameStep ? gameStep.textToSpeech !== '' : false" [ngClass]="{right: isRight, left: !isRight}">
+    <div class="dialog-1" [ngClass]="who">
+        <app-speaking-text  [text]='gameStep ? gameStep.textToSpeech : ""'
+            (finishedChangedTo)="finishedChanged($event)"></app-speaking-text>
+        <div class="dialog-action" *ngIf="gameStep ? gameStep.canClickNext : false">
+            <button mat-flat-button (click)="goToNext()"
+                [hidden]="!showNextButton">
+                Weiter <mat-icon iconPositionEnd>chevron_right</mat-icon></button>
+        </div>
+        <div class="left-point" [ngClass]="{rightPointer: isRight, leftPointer: !isRight, bakerPointer: who === 'baker'}"></div>
+    </div>
+</div>

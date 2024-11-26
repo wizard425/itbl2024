@@ -9,8 +9,10 @@ import { PhoneComponent } from './features/phone/phone.component';
 import { StartComponent } from './features/start/start.component';
 import { StartButtonScreenComponent } from './features/start/start-button-screen/start-button-screen.component';
 import { StartNameComponent } from './features/start/start-name/start-name.component';
-import path from 'path';
-import { Component } from '@angular/core';
+import { BakeryOutsideComponent } from './features/cookie/bakery-outside/bakery-outside.component';
+import { BakeryInsideComponent } from './features/cookie/bakery-inside/bakery-inside.component';
+import { GameComponent } from './features/cookie/game/game.component';
+import { KitchenComponent } from './features/cookie/kitchen/kitchen.component';
 
 export const routes: Routes = [
     {
@@ -21,7 +23,7 @@ export const routes: Routes = [
     {
         path: "start",
         component: StartComponent,
-        children:[
+        children: [
             {
                 path: "1",
                 component: StartButtonScreenComponent,
@@ -56,7 +58,32 @@ export const routes: Routes = [
             {
                 path: "cookies",
                 component: CookieComponent,
-                title: "Cookies | Spion"
+                title: "Cookies | Spion",
+                children: [
+                    {
+                        path: "",
+                        redirectTo: "bakery",
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: "bakery",
+                        title: "Cookies",
+                        component: BakeryOutsideComponent
+                    },
+                    {
+                        path: "inside",
+                        title: "Cookies",
+                        component: BakeryInsideComponent
+                    }, {
+                        path: "kitchen",
+                        title: "Cookies",
+                        component: KitchenComponent
+                    }, {
+                        path: "game",
+                        title: "Cookies",
+                        component: GameComponent
+                    }
+                ]
             },
             {
                 path: "shopping",

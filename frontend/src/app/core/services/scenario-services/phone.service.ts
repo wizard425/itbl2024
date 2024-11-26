@@ -16,6 +16,7 @@ export class PhoneService extends BaseScenarioService {
   constructor(private router: Router) {
     super(PhoneSteps);
   }
+  
   public override get currentGameStep(): GameStep {
     if(this.currentIndex == 4){
       if(this.Right_Answer[0]==this.Answer){

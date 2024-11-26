@@ -1,0 +1,6 @@
+<div class="container">
+    <button class="enterbutton" *ngIf="showButton" (click)="enter()">
+        Spiel starten
+    </button>
+    <app-baker [gameStep]="cookieService.currentGameStep" (clickedNext)="cookieService.next()"></app-baker>
+</div>
