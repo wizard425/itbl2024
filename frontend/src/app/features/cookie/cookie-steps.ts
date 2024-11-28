@@ -129,5 +129,23 @@ export const CookieSteps: GameStep[][] = [
             scenario: GameScenario.Cookies,
             textToSpeech: "Schau doch mal im Lexikon mehr nach. Da stehen zu jeder Zutat zusätzliche Informationen, die dir sicher helfen werden!"
         }
+    ],
+    [
+        {
+            order: 14,
+            canClickNext: true,
+            reachablePoints: 0,
+            scenario: GameScenario.Cookies,
+            textToSpeech: "Und jetzt geht's los. Hilf dem Bäcker das richtige Cookie-Rezept zu backen!"
+        }
+    ],
+    [
+        {
+            order: 15,
+            canClickNext: true,
+            reachablePoints: 0,
+            scenario: GameScenario.Cookies,
+            textToSpeech: "Ziehe jetzt die Zutaten in die Schüssel"
+        }
     ]
 ]
