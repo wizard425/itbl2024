@@ -1,30 +1,50 @@
 import { Component } from '@angular/core';
-import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop'; 
+import { CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CommonModule } from '@angular/common';
+import { LexiconService } from '../../../shared/lexicon/lexicon.service';
+import { SpyComponent } from "../../../core/components/spy/spy.component";
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [DragDropModule],
   templateUrl: './game.component.html',
-  styleUrl: './game.component.scss'
+  styleUrl: './game.component.scss',
+  imports: [CommonModule, CdkDropList, CdkDrag, SpyComponent]
 })
 export class GameComponent {
+  // Zutatenliste
+  ingredients = [
+    { name: 'Eier', image: 'assets/cookies/eggs.png' },
+    { name: 'Mehl', image: 'assets/cookies/flour.png' },
+    { name: 'Zucker', image: 'assets/cookies/sugar.png' },
+    { name: 'Butter', image: 'assets/cookies/butter.png' },
+    { name: 'Vanille', image: 'assets/cookies/vanilla.png' },
+    { name: 'Schokostreusel', image: 'assets/cookies/sprinkles.png' },
+    { name: 'Schokolade', image: 'assets/cookies/chocolate.png' },
+    { name: 'Milch', image: 'assets/cookies/milk.png' },
+  ];
 
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  bowlContents: any[] = [];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  constructor(protected lexicon: LexiconService) {
+    lexicon.isVisible = true;
+  }
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
+  protected get buttonVisible(): boolean {
+    return this.bowlContents.length > 0;
+  }
+
+
+
+  drop(event: CdkDragDrop<string[]> | any) {
+    transferArrayItem(
+      event.previousContainer.data,
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex,
+    );
+
+    console.log(this.bowlContents)
   }
 
 }

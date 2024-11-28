@@ -1,33 +1,34 @@
-<div class="example-container">
-    <h2>To do</h2>
-  
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="todo"
-      [cdkDropListConnectedTo]="[doneList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of todo; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
+<div class="container">
+  <h2 >Ziehe die Zutaten in die Schüssel!</h2>
+
+  <div class="ingredients" cdkDropList #ingredientDrag="cdkDropList" [cdkDropListData]="ingredients"
+    [cdkDropListConnectedTo]="[bowl]" (cdkDropListDropped)="drop($event)">
+    @for (ingredient of ingredients; track ingredient) {
+    <div class="ingredient" cdkDrag>
+      <img [src]="ingredient.image">
+    </div>
+    }
+  </div>
+
+
+
+  <!-- Schüssel -->
+  <div class="bowl" cdkDropList #bowl="cdkDropList" [cdkDropListData]="bowlContents"
+    [cdkDropListConnectedTo]="[ingredientDrag]" (cdkDropListDropped)="drop($event)">
+    <div class="bowl-contents">
+      @for (ingredient of bowlContents; track ingredient) {
+      <div cdkDrag>
+        <img [src]="ingredient.image" [alt]="ingredient.name" />
+      </div>
       }
     </div>
+
+
+    <button class="bake-button" *ngIf="buttonVisible">Jetzt backen!</button>
+
+
+    <app-spy class="spy">
+
+    </app-spy>
+
   </div>
-  
-  <div class="example-container">
-    <h2>Done</h2>
-  
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="done"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of done; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
-    </div>
-  </div>
-  
-  
