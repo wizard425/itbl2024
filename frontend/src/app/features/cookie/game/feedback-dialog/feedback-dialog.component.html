@@ -1,0 +1,36 @@
+<mat-dialog-content class="container">
+
+    <h3>Gebacken!</h3>
+    <div class="result">
+        <div class="points">
+            {{data.points}}
+        </div>
+        <p style="color: white; font-size: 1.2em;">Punkte erreicht</p>
+        <div class="mes">
+            {{data.message}}
+        </div>
+    </div>
+    <div>
+        <div style="background-color: #444444; border-radius: 10px; padding: 10px; text-align: center;">
+            <p>Drücke auf weiter wenn du mit deinen gebackenen Cookies zufrieden bist, ansonsten kannst du es nochmal
+                probieren!</p>
+        </div>
+
+        <div class="actions">
+
+            <div class="butt">
+                <div class="icon">
+                    <img src="/assets/cookies/icons/restart.png" />
+                </div>
+                <div>Noch 2 Versuche</div>
+            </div>
+            <div class="butt">
+                <div class="icon" (click)="continue()">
+                    <img src="/assets/cookies/icons/continue.png" />
+                </div>
+                <div>Weiter</div>
+            </div>
+
+        </div>
+    </div>
+</mat-dialog-content>

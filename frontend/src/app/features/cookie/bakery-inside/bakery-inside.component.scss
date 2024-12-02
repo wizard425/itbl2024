@@ -1,7 +1,7 @@
 .container {
     background-image: url('../../../../../public/assets/cookies/bakeryinside.png');
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     display: flex;
@@ -36,6 +36,6 @@
 
 app-baker {
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
     right: 50px;
 }

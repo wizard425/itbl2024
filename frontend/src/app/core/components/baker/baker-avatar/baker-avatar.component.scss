@@ -1,16 +1,6 @@
-$breakpoint-medium: 1320px;
 .container {
     img {
-      height: 50vh;
+      height: 70vh;
       width: auto;
     }
 }
-
-@media (max-width: $breakpoint-medium) {
-    .img {
-      min-width: 150px;
-      min-height: 150px;
-  
-    }
-    
-  }

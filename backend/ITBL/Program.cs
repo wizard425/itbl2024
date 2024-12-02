@@ -31,6 +31,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Singletons for services and other
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ISchoolClassService, SchoolClassService>();
 
 var app = builder.Build();
 

@@ -3,6 +3,8 @@ using ITBL.DataModels;
 using ITBL.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Net;
 
 namespace ITBL.Controllers
 {
@@ -22,7 +24,23 @@ namespace ITBL.Controllers
         [HttpPost]
         public async Task<User> Add([FromBody] User entity)
         {
-            User ret = await _userService.Add(entity);
+            try
+            {
+                User ret = await _userService.Add(entity);
+                return ret;
+            }
+            catch (DuplicateNameException dp)
+            {
+                throw dp;
+            }
+        }
+
+        [HttpPost]
+        [Route("/addtoclass/{userId}/{schoolClassName}")]
+        public async Task<User> AddToClass([FromRoute]int userId, [FromRoute] string schoolClassName)
+        {
+            User ret = await _userService.AddToClass(userId, schoolClassName);
+
             return ret;
         }
 

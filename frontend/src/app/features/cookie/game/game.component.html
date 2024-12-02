@@ -24,7 +24,7 @@
     </div>
 
 
-    <button class="bake-button" *ngIf="buttonVisible">Jetzt backen!</button>
+    <button class="bake-button" *ngIf="buttonVisible" (click)="bake()">Jetzt backen!</button>
 
 
     <app-spy class="spy">
