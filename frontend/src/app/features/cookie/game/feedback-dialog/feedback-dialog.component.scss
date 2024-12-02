@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+        text-align: center;
+    }
+
+    .points {
+        font-size: 2.2em;
+        color: yellow;
+    }
+
+    .mes {
+        margin-top: 20px;
+        font-size: 1.2em;
+
+    }
+
+    .result {
+        align-items: center;
+        text-align: center;
+    }
+
+    .actions {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .butt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.5em 1em;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .icon img {
+            height: 4em; /* Adjusts size relative to font size */
+            width: auto;
+        }
+        
+        .icon:hover {
+            background-color: #494949;
+            color: #FFFFFF;
+        }
+    }
+}
