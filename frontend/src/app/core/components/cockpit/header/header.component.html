@@ -1,20 +1,24 @@
 <div class="header">
-  <div class="left">
-    <!-- Wrapping the username in a div for easier targeting in SCSS -->
-    <span class="welcome-message">Willkommen {{ userName }} in deinem Cyber Lab!</span>
-    <span class="user-name">{{ userName }}</span> <!-- New element to selectively display username -->
-  </div>
-  <div class="center">
-    <span class="score">Score: {{ score }} Punkte</span>
-    <span class="score1"> {{ score }} Punkte</span>
-  </div>
-  <div class="right">
-    <span class="progress-label">Fortschritt:</span>
-    <div class="battery">
-      <div class="progress-box">
-        <span>{{ progress }} %</span>
+
+  <mat-grid-list cols="3" rowHeight="60px">
+    <mat-grid-tile >
+      <div style="width: 100%;display: flex; flex-direction: row; justify-content: flex-start;">
+        Willkommen {{ userName }} in deinem Cyber Lab!
       </div>
-      <div class="Cube"></div>
-    </div>
-  </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      Score: {{ score }} Punkte
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div style="width: 100%;display: flex; flex-direction: row; justify-content: flex-end;">
+        <button mat-icon-button (click)="clicked()">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
 </div>

@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from "./core/components/cockpit/landing-page/landing-page.component";
 import { GameService } from './shared/gameUtilities/game.service';
 import { GameStep } from './shared/gameUtilities/GameStep';
+import User from './core/dtos/User';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,12 @@ export class AppComponent implements OnInit {
     if (loadedString != null) {
       const loadedGameStep: GameStep = (JSON.parse(loadedString) as GameStep);
       this.game.currentGameStep = loadedGameStep;
+    }
+
+    const userString = localStorage.getItem("user");
+    if (userString != null) {
+      const loadedUser: User = (JSON.parse(userString) as User);
+      this.game.currentUser = loadedUser;
     }
   }
 }

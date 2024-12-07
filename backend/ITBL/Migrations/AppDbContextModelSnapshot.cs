@@ -69,11 +69,9 @@ namespace ITBL.Migrations
 
             modelBuilder.Entity("ITBL.DataModels.User", b =>
                 {
-                    b.HasOne("ITBL.DataModels.SchoolClass", "SchoolClass")
+                    b.HasOne("ITBL.DataModels.SchoolClass", null)
                         .WithMany("Users")
                         .HasForeignKey("SchoolClassId");
-
-                    b.Navigation("SchoolClass");
                 });
 
             modelBuilder.Entity("ITBL.DataModels.SchoolClass", b =>
