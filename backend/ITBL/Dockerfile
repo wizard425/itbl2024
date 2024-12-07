@@ -16,7 +16,7 @@ WORKDIR /app
 COPY --from=build /out .
 
 # Port freigeben
-EXPOSE 80
+EXPOSE 8080
 
 # Startbefehl
 ENTRYPOINT ["dotnet", "ITBL.dll"]

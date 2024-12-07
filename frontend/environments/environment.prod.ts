@@ -1,4 +1,5 @@
 export const environment = {
-    baseUrl: "https://localhost:5001/api/",
-    storeGameStep: true
+    baseUrl: "http://ample-imagination.railway.internal/api/",
+    storeGameStep: true,
+    storeUser: true
 }
