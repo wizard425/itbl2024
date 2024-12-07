@@ -2,9 +2,7 @@
 using ITBL.DataModels;
 using ITBL.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Net;
 
 namespace ITBL.Controllers
 {
@@ -35,8 +33,8 @@ namespace ITBL.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("/addtoclass/{userId}/{schoolClassName}")]
+        [HttpGet]
+        [Route("addtoclass/{userId}/{schoolClassName}")]
         public async Task<User> AddToClass([FromRoute]int userId, [FromRoute] string schoolClassName)
         {
             User ret = await _userService.AddToClass(userId, schoolClassName);

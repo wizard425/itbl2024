@@ -3,11 +3,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { GameService } from '../../../shared/gameUtilities/game.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../../core/services/user.service';
+import { environment } from '../../../../../environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { DuplicateNameComponent } from '../duplicate-name/duplicate-name.component';
 
 @Component({
   selector: 'app-start-name',
@@ -18,13 +22,29 @@ import { CommonModule } from '@angular/common';
 })
 export class StartNameComponent {
   @ViewChild('nameInput') nameInput!: ElementRef;
-  constructor(public _GameService: GameService, private router: Router) {}
+  constructor(public _GameService: GameService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private dialog: MatDialog
+  ) {}
 
   start() {
     const name = this.nameInput.nativeElement.value;
     if (name) {
-      this._GameService.currentUser.name = name;
-      this.router.navigate(['/cockpit']);
+      this.userService.create({
+        name: name,
+        points: 0
+      }).subscribe(x => {
+        this._GameService.currentUser = x;
+        if(environment.storeUser){
+          localStorage.setItem("user",JSON.stringify(x));
+        }
+        this.router.navigate([`../class`], { relativeTo: this.route });
+      }, err => {
+        this.dialog.open(DuplicateNameComponent);
+      });
+      ;
     }else{
       alert("please enter ur name")
     }

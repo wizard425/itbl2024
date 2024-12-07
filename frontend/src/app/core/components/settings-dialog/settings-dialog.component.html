@@ -1,0 +1,32 @@
+<div class="container">
+
+    <mat-grid-list cols="2" rowHeight="60px">
+
+        <mat-grid-tile>
+            <p>Benutzername</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <p>{{gameService.currentUser.name}}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <p> Eingeschriebene Klasse</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <p> {{gameService.currentUser.schoolClassId ? gameService.currentUser.schoolClassId : 
+            'Nicht eingeschrieben'}}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <p>Aktuelle Punkte</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <p> {{gameService.currentUser.points}}</p>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+</div>

@@ -1,4 +1,5 @@
 ﻿using ITBL.DataModels;
+using ITBL.DTOs;
 using ITBL.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,14 @@ namespace ITBL.Controllers
         public async Task<SchoolClass> Get([FromRoute] int id)
         {
             SchoolClass ret = await _schoolClassService.GetById(id);
+            return ret;
+        }
+
+        [HttpGet]
+        [Route("ranklist/{id}")]
+        public async Task<List<RanklistEntry>> GetRanklist([FromRoute] int id)
+        {
+            List<RanklistEntry> ret = await _schoolClassService.GetRanklist(id);
             return ret;
         }
 

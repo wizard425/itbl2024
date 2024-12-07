@@ -39,7 +39,7 @@ namespace ITBL.Services
 
         public async Task<IEnumerable<User>> GetAllFromClass(int schoolClassId)
         {
-            return await _context.Users.Where(x => x.SchoolClass != null && x.SchoolClass.Id == schoolClassId).ToListAsync();
+            return await _context.Users.Where(x =>x.SchoolClassId == schoolClassId).ToListAsync();
         }
 
         public async Task<User> GetById(int id)

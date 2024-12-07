@@ -1,5 +1,7 @@
 ﻿using ITBL.AppDb;
 using ITBL.DataModels;
+using ITBL.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace ITBL.Services
 {
@@ -42,5 +44,28 @@ namespace ITBL.Services
             throw new NotImplementedException();
         }
 
+
+        public async Task<List<RanklistEntry>> GetRanklist(int schoolClassId)
+        {
+
+            List<RanklistEntry> ranklist = await (from sch in _context.SchoolClasses
+                                            where (sch.Id == schoolClassId)
+                                            join us in _context.Users on sch.Id equals us.SchoolClassId
+                                            select new RanklistEntry()
+                                            {
+                                                Position = 0,
+                                                User = us
+                                            }).ToListAsync();
+;
+            ranklist.Sort((a, b) => b.User.Points.CompareTo(a.User.Points));
+
+            for(int i = 0; i < ranklist.Count; i++)
+            {
+                ranklist.ElementAt(i).Position = i + 1;
+            }
+
+            return ranklist;
+
+        }
     }
 }

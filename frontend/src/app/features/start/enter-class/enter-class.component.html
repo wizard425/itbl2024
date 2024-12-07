@@ -1,0 +1,21 @@
+<div class="container" >
+    <div>
+        <h2>Schreib dich in deine Klasse ein</h2>
+        <p>Den Klassennamen, den du eintragen kannst um auf der Rangliste zu erscheinen, <br> wurde dir vorhin mittgeteilt. Trage ihn jetzt ein!</p>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" style="width: 300px;">
+            <mat-label>Klassenname</mat-label>
+            <input matInput #nameInput formControlName="class" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <a mat-flat-button extended (click)="addClass()">
+            <mat-icon>play_arrow</mat-icon>
+            Der Klasse beitreten
+        </a>
+    </div>
+
+</div>
