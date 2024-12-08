@@ -1,5 +1,5 @@
 <div class="cyber-lab-container">
-        <app-header [userName]="game.currentUser.name" [score]="game.points" [progress]="75"></app-header>
+        <app-header [userName]="game.currentUser ? game.currentUser.name : ''" [score]="game.points" [progress]="75"></app-header>
 
         <div class="spion">
                 <app-spy [gameStep]="this.game.currentGameStep" (clickedNext)="this.game.nextGameStep()"></app-spy>

@@ -25,7 +25,6 @@ export class BakeryInsideComponent {
     private router: Router, private route: ActivatedRoute
   ) {
     this.cookieService.currentIndex = 4;
-
   }
 
   enter() {

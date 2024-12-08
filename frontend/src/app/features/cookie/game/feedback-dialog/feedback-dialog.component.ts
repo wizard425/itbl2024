@@ -15,12 +15,9 @@ export class FeedbackDialogComponent {
 private router: Router, private dialogRef: MatDialogRef<FeedbackDialogComponent>) {
   }
 
-
-
   continue() {
     this.dialogRef.close();
     this.router.navigate([`/cockpit`]);
   }
-
 
 }

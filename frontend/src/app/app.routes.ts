@@ -13,6 +13,10 @@ import { BakeryOutsideComponent } from './features/cookie/bakery-outside/bakery-
 import { BakeryInsideComponent } from './features/cookie/bakery-inside/bakery-inside.component';
 import { GameComponent } from './features/cookie/game/game.component';
 import { KitchenComponent } from './features/cookie/kitchen/kitchen.component';
+import { EnterClassComponent } from './features/start/enter-class/enter-class.component';
+import { RanklistComponent } from './core/components/ranklist/ranklist.component';
+import { GameGuard } from './core/guards/game.guard';
+import { StartGuard } from './core/guards/start.guard';
 
 export const routes: Routes = [
     {
@@ -23,6 +27,7 @@ export const routes: Routes = [
     {
         path: "start",
         component: StartComponent,
+        canActivate: [StartGuard],
         children: [
             {
                 path: "1",
@@ -33,12 +38,18 @@ export const routes: Routes = [
                 path: "2",
                 component: StartNameComponent,
                 title: "Willkommen"
+            },
+            {
+                path: "class",
+                component: EnterClassComponent,
+                title: "Klasse einschreiben"
             }
         ]
     },
     {
         path: "cockpit",
         component: CockpitComponent,
+        canActivate: [GameGuard],
         children: [
             {
                 path: "",
@@ -96,5 +107,10 @@ export const routes: Routes = [
                 title: "Social Media | Spion"
             }
         ]
+    },
+    {
+        path: "ranklist",
+        component: RanklistComponent,
+        title: "Rangliste"
     }
 ];

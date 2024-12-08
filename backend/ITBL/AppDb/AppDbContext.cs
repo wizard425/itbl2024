@@ -15,7 +15,7 @@ namespace ITBL.AppDb
         {
             modelBuilder.Entity<SchoolClass>()
                 .HasMany(e => e.Users)
-                .WithOne(e => e.SchoolClass)
+                .WithOne()
                 .HasForeignKey(e => e.SchoolClassId)
                 .IsRequired(false);
         }
