@@ -20,5 +20,4 @@ export class UserService extends BaseService<User> {
     return this.http.get<User>(environment.baseUrl + this.url + "/addToClass/" + userId + "/" + className);
   }
 
-
 }

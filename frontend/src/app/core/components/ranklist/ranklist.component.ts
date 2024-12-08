@@ -27,7 +27,7 @@ export class RanklistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.gameService.currentUser.schoolClassId) {
+    if (this.gameService.currentUser?.schoolClassId) {
       this.schoolclassService.getRanklist(this.gameService.currentUser.schoolClassId).subscribe(ranklist => {
         this.ranklistSchoolClass = ranklist;
       })
