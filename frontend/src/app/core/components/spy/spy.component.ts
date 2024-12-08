@@ -14,6 +14,7 @@ export class SpyComponent {
 
   @Output() clickedNext = new EventEmitter<string>();
   @Input() gameStep!: GameStep;
-
+  @Input() Role!: string;
+  @Input() isRight: boolean = false;
 
 }

@@ -20,6 +20,7 @@ export class DialogComponent {
   @Output() clickedOnNext = new EventEmitter();
   @Input() gameStep!: GameStep;
   @Input() who: string = "";
+  @Input() BackgroundColor: string = "";
   @Input() isRight : boolean = true;
   
   constructor() {

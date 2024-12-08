@@ -1,0 +1,136 @@
+.spy-column {
+  position: absolute;
+  bottom: 0%; /* Original position */
+  left: 0px; /* Original position */
+  width: 100%;
+  animation: fadeIn 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out; /* Add smooth movement */
+
+  &.move-top-right {
+    /* New position */
+    transform: translate(70%, -150%); /* Move to top-right */
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+  }
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden; /* Hides the element visually but keeps it in the layout */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+:host {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: black; // Matches the fallback
+  overflow: hidden; // Avoid unwanted scrollbars
+}
+
+.container1 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+  font-family: 'Righteous', sans-serif;
+  &.hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden; /* Hides the element visually but keeps it in the layout */
+  }
+
+  .container1-image {
+    position: absolute;
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%); /* Offset by 50% of its own size */
+    display: block;
+    width: 78%; /* Make it responsive */
+  }
+  
+  .container2-image {
+    position: absolute;
+    top: 50%; /* Center the image vertically (same as container1) */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%) translateY(-5.5%); /* Add slight adjustment for vertical alignment */
+    display: block;
+    width: 62.2%; /* Keep it responsive (use % for scaling with the parent container) */
+    &.blurred {
+      filter: blur(5px); /* Apply blur when dialog is active */
+    }
+  }
+  .container3-image {
+    position: absolute;
+    top: 50%; /* Center the image vertically (same as container1) */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%) translateY(-5.5%); /* Add slight adjustment for vertical alignment */
+    display: block;
+    width: 62.2vw;
+    height: 42vw; /* Keep it responsive (use % for scaling with the parent container) */
+    &.blurred {
+      filter: blur(5px); /* Apply blur when dialog is active */
+    }
+  }
+}
+app-product-web{
+  position: absolute;
+    top: 50%; /* Center the image vertically (same as container1) */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%) translateY(-5.5%); /* Add slight adjustment for vertical alignment */
+    display: block;
+}
+.custom-button {
+  font-family: 'Righteous', sans-serif;
+  -webkit-text-stroke: 0.1px black;
+  background-color: #d99a6f; /* Light orange background */
+  position: absolute;
+  color: white; /* White text */
+  font-size: 1vw; /* Font size */
+  font-weight: bold;
+  text-align: center; /* Center text inside the button */
+  border: 2px solid #b8754c; /* Darker border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 15px 20px; /* Padding inside the button */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  z-index: 3;
+
+  /* Hover Effect */
+  &:hover {
+    background-color: #c9885d; /* Darker orange on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  /* Active Effect */
+  &:active {
+    transform: scale(0.98); /* Slightly shrink when clicked */
+  }
+}
+.left{
+  top: 20%;
+  left:20%;
+
+}
+.right{
+  top: 20%;
+  left:50%;
+}

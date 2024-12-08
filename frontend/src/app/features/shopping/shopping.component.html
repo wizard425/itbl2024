@@ -1,1 +1,25 @@
-<p>shopping works!</p>
+<app-out [class.hidden]="shopping.Hide1"></app-out>
+<div class="container1" [class.hidden]="!shopping.Hide1">
+    <img src="assets/shopping/Laptop.png" class="container1-image">
+    <img src="assets/shopping/website.png" class="container2-image" [class.blurred]="shopping.showCookieDialog" *ngIf="!shopping.Product">
+    <img src="assets/shopping/webpages/web1.png" class="container3-image" *ngIf="shopping.web1">
+    <img src="assets/shopping/webpages/web2.png" class="container3-image" *ngIf="shopping.web2">
+    <app-product-web *ngIf="shopping.Product"></app-product-web>
+    <app-cookies *ngIf="shopping.showCookieDialog"></app-cookies>
+    <button class="custom-button left" [class.hidden] = "!shopping.question" (click)="Left()">
+      Schnell zugreifen<br>bevor das Angebot<br>abläuft!
+    </button>
+    <button class="custom-button right" [class.hidden] = "!shopping.question" (click)="Right()">
+      Überprüfen, ob<br>Website authentisch<br>ist!
+    </button>
+    <div class="spy-column" [ngClass]="{
+      'hidden': shopping.showCookieDialog || shopping.question,
+      'move-top-right': shopping.move
+    }">
+      <app-spy #spy
+        [gameStep]="shopping.currentGameStep"
+        (clickedNext)="shopping.next()"
+      ></app-spy>
+    </div>
+</div>
+  

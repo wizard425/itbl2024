@@ -1,0 +1,57 @@
+.overlay-container {
+  position: relative; /* Ensure relative positioning for the container */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 10px;
+  width: 60.7vw;
+  height: 40.5vw;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.grid-item {
+  position: relative; /* Ensure relative positioning for timer placement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.timer {
+  position: absolute;
+  top: 0px;
+  left: 10px; /* Distance from the left edge */
+  color: #fff; /* White text color */
+  font-size: 16px; /* Font size for the countdown */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Padding for better spacing */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1; /* Ensure the timer appears above the image */
+}
+
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@media (max-width: 1000px) {
+    .overlay-container {
+        width: 60.7vw; /* Matches container2-image width */
+        height: 40vw; /* Proportional to the width */
+    }
+  }
+  
