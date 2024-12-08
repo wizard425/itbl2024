@@ -20,6 +20,7 @@ export class KitchenComponent {
     private route: ActivatedRoute
   ){
     lexicon.isVisible = true;
+    this.cookieService.currentIndex = 8;
   }
 
 

@@ -15,6 +15,8 @@ import { GameComponent } from './features/cookie/game/game.component';
 import { KitchenComponent } from './features/cookie/kitchen/kitchen.component';
 import { EnterClassComponent } from './features/start/enter-class/enter-class.component';
 import { RanklistComponent } from './core/components/ranklist/ranklist.component';
+import { GameGuard } from './core/guards/game.guard';
+import { StartGuard } from './core/guards/start.guard';
 
 export const routes: Routes = [
     {
@@ -25,6 +27,7 @@ export const routes: Routes = [
     {
         path: "start",
         component: StartComponent,
+        canActivate: [StartGuard],
         children: [
             {
                 path: "1",
@@ -46,6 +49,7 @@ export const routes: Routes = [
     {
         path: "cockpit",
         component: CockpitComponent,
+        canActivate: [GameGuard],
         children: [
             {
                 path: "",

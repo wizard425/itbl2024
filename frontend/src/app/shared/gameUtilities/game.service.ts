@@ -15,7 +15,7 @@ export class GameService {
 
   private _gameStoryLine: GameStep[] = [];
   private _currentGameStep: GameStep;
-  private _currentUser: User;
+  private _currentUser?: User;
   private _points: number = 0;
   private _unlockedChapters: Chapter[] = [Chapters[1]];
   private _currentScenarioService: BaseScenarioService | undefined;
@@ -24,10 +24,6 @@ export class GameService {
   constructor(public intro: IntroService) {
     this._gameStoryLine = gameStoryLine;
     this._currentGameStep = gameStoryLine[0];
-    this._currentUser = {
-      name: "notSet",
-      points: 0,
-    }
   }
 
   public get gameStoryLine(): GameStep[] {
@@ -42,10 +38,10 @@ export class GameService {
   public set currentGameStep(value: GameStep) {
     this._currentGameStep = value;
   }
-  public get currentUser(): User {
+  public get currentUser(): User | undefined {
     return this._currentUser;
   }
-  public set currentUser(value: User) {
+  public set currentUser(value: User | undefined) {
     this._currentUser = value;
   }
   public get points(): number {
@@ -84,6 +80,12 @@ export class GameService {
     } else {
       return false;
     }
+  }
+
+  logout() {
+    this.currentUser = undefined;
+    this.currentGameStep = gameStoryLine[0];
+    localStorage.clear();
   }
 
 }

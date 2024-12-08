@@ -7,7 +7,7 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <p>{{gameService.currentUser.name}}</p>
+            <p>{{gameService.currentUser?.name}}</p>
         </mat-grid-tile>
 
         <mat-grid-tile>
@@ -15,7 +15,7 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <p> {{gameService.currentUser.schoolClassId ? gameService.currentUser.schoolClassId : 
+            <p> {{gameService.currentUser?.schoolClassId ? gameService.currentUser?.schoolClassId : 
             'Nicht eingeschrieben'}}</p>
         </mat-grid-tile>
 
@@ -24,9 +24,13 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <p> {{gameService.currentUser.points}}</p>
+            <p> {{gameService.currentUser?.points}}</p>
         </mat-grid-tile>
 
     </mat-grid-list>
+
+    <div>
+        <button mat-button (click)="logout()">Ausloggen</button>
+    </div>
 
 </div>

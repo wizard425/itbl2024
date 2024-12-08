@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { GameService } from '../../../shared/gameUtilities/game.service';
 import { UserService } from '../../../core/services/user.service';
 import { environment } from '../../../../../environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -24,10 +25,10 @@ export class EnterClassComponent {
   constructor(private gameService: GameService,
     private userService: UserService,
     private router: Router,
+    private snackBar: MatSnackBar
   ) {
 
   }
-
 
   addClass() {
     if (this.gameService.currentUser != undefined) {
@@ -40,6 +41,9 @@ export class EnterClassComponent {
             if(environment.storeUser){
               localStorage.setItem("user",JSON.stringify(x));
             }
+            this.snackBar.open("Erfolgreich in Klasse eingeschrieben", "Ok", {
+              duration: 2000
+            })
             this.router.navigate([`/cockpit`]);
           });
         } else if (this.gameService.currentUser.id) {
