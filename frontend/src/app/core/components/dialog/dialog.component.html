@@ -7,6 +7,6 @@
                 [hidden]="!showNextButton">
                 Weiter <mat-icon iconPositionEnd>chevron_right</mat-icon></button>
         </div>
-        <div class="left-point" [ngClass]="{rightPointer: isRight, leftPointer: !isRight, bakerPointer: who === 'baker'}"></div>
+        <div class="left-point" [ngClass]="{rightPointer: isRight, leftPointer: !isRight, bakerPointer: who === 'baker'}" [id]="who"></div>
     </div>
 </div>

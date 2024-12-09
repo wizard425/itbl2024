@@ -8,4 +8,10 @@
     top: 0; /* Stick it to the top of the reference */
     left: 0; /* Stick it to the left of the reference */
     background-color: lightgreen;
-  }
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden; /* Hides the element visually but keeps it in the layout */
+}

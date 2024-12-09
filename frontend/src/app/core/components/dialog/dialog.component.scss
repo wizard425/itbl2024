@@ -28,6 +28,7 @@ app-speaking-text {
   z-index: 1;
   color: var(--text);
   font-family: 'Righteous', sans-serif;
+  -webkit-text-stroke: 0.5px black;
   font-size: 20px;
   height: fit-content;
   max-height: 250px;
@@ -41,13 +42,19 @@ app-speaking-text {
   .dialog-action {
     display: flex;
     justify-content: end;
+    -webkit-text-stroke: 0px black;
   }
 }
 
 .baker {
   background-color: #800020;
 }
-
+.shopping{
+  background-color: #DFA071;
+}
+#shopping {
+  border-top: 60px solid #DFA071 ;
+}
 .left-point {
   z-index: 3;
   width: 0;

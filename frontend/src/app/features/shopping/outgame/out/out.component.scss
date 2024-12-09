@@ -1,0 +1,63 @@
+.container {
+    background-image: url('../../../../../../public/assets/shopping/Start.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+    .spy-column {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+        width: 100%;
+        animation: fadeIn 0.7s ease-in-out;
+      
+        &.hidden {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+        }
+      }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      opacity: 0; /* Initially hidden */
+      visibility: hidden;
+      transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+  
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    .animated-button {
+      background-color: red;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-out;
+  
+      &:hover {
+        transform: scale(1.1);
+        background-color: darkred;
+      }
+    }
+  }
+  

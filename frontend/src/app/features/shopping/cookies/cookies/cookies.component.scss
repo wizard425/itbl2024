@@ -1,0 +1,42 @@
+.cookie-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(-5.5%);
+    -webkit-text-stroke: 0.5px black;
+    background-color: #f4a261; /* Match the color in the screenshot */
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    z-index: 10; /* Ensure it appears above everything else */
+    text-align: center;
+  }
+  
+  .cookie-dialog h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Righteous', sans-serif;
+  }
+  
+  .cookie-dialog .option {
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .cookie-dialog button {
+    background-color: #2a9d8f;
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .cookie-dialog button:hover {
+    background-color: #21867a;
+  }
