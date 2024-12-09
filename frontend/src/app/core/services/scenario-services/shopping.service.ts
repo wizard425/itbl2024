@@ -24,6 +24,7 @@ export class ShoppingService extends BaseScenarioService {
     { src: '/assets/shopping/webProduct/p7.png', alt: 'Image 7',countdown: '' },
     { src: '/assets/shopping/webProduct/p8.png', alt: 'Image 8',countdown: '' },
   ];
+  locationPermissionGranted: boolean | null = null;
   question:boolean = false;
   Hide:boolean = false;
   Hide1:boolean = false;
@@ -32,8 +33,15 @@ export class ShoppingService extends BaseScenarioService {
   Start_shopping: boolean = false;
   web1:boolean = false;
   web2:boolean = false;
+  web3:boolean = false;
+  web4:boolean = false;
+  web5:boolean = false;
+  web6:boolean = false;
+  terms:boolean = false;
   move:boolean = false;
-  Answers: boolean[]=[false]
+  moveabit:boolean = false;
+  hiddespy:boolean = false;
+  Answers: boolean[]=[false,false,false]
   eventEmitter = new EventEmitter<void>(); // EventEmitter for notifications
   constructor() {
     super(ShoppingSteps)
@@ -45,6 +53,20 @@ export class ShoppingService extends BaseScenarioService {
     if(this.currentIndex == 8){
       if(this.Answers[0] == true){
         return this.scenarioSteps[this.currentIndex][1];
+      }else{
+        return this.scenarioSteps[this.currentIndex][0];
+      }
+    }
+    else if(this.currentIndex == 12){
+      if(this.Answers[1] == true){
+        return this.scenarioSteps[this.currentIndex][1];
+      }else{
+        return this.scenarioSteps[this.currentIndex][0];
+      }
+    }else if(this.currentIndex == 14){
+      if(this.Answers[2] == true){
+        return this.scenarioSteps[this.currentIndex][1];
+        
       }else{
         return this.scenarioSteps[this.currentIndex][0];
       }
@@ -80,6 +102,37 @@ export class ShoppingService extends BaseScenarioService {
     if(this.currentIndex == 9){
       this.web1 = false;
       this.web2 = true;
+    }
+    if(this.currentIndex == 10){
+      this.web2 = false;
+      this.web3 = true;
+      this.hiddespy = true;
+      this.move = false;
+      this.triggerEvent();
+
+    }
+    if(this.currentIndex == 11){
+      this.hiddespy = false;
+    }
+    if(this.currentIndex == 12){
+      this.hiddespy = true;
+      this.web3 = false;
+      this.web4 = true;
+      this.terms = true;
+    }if(this.currentIndex == 13){
+      this.hiddespy = false;
+      this.terms = false;
+    }if(this.currentIndex==14 && this.Answers[2]){
+      this.currentIndex++
+    }
+    if(this.currentIndex == 15){
+      this.web4 = false;
+      this.web5 = true;
+      this.moveabit = true;
+    }if(this.currentIndex == 16){
+      this.web5 = false;
+      this.web6 = true;
+      this.moveabit = false;
     }
     this.currentIndex++;
     return this.currentGameStep;

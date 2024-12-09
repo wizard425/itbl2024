@@ -10,6 +10,10 @@
     /* New position */
     transform: translate(70%, -150%); /* Move to top-right */
   }
+  &.move-top-right-abit {
+    /* New position */
+    transform: translate(50%, -70%); /* Move to top-right */
+  }
 
   &.hidden {
     opacity: 0;
@@ -134,3 +138,10 @@ app-product-web{
   top: 20%;
   left:50%;
 }
+// app-terms{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%) translateY(-5.5%);
+//   ;
+// }
