@@ -1,0 +1,58 @@
+.popup-overlay {
+    position: fixed;
+    font-family: 'Righteous', sans-serif;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  
+  h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .disagree-button {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .agree-button {
+    background-color: #333;
+    color: #fff;
+  }
+  
