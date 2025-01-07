@@ -23,22 +23,32 @@
   
   <!-- Body-Bereich für die Posts -->
   <div class="profile-body">
-    <p class="bio">{{ account.bio }}</p>
-    <div class="follow-button-container">
-      <button class="follow-button">Folgen</button>
-    </div>  
-    <div class="follower-info">
-      <div class="profile-images">
-        <img *ngFor="let image of account.folowersImage" [src]="image" alt="Follower Image" class="profile-image">
+    <div class="top">
+      <p class="bio" [innerHTML]="account.bio"></p>
+      <div class="follower-info">
+        <div class="profile-images">
+          <img *ngFor="let image of account.folowersImage" [src]="image" alt="Follower Image" class="profile-image">
+        </div>
+        <p class="follower-text">{{ account.fText }}</p>
       </div>
-      <p class="follower-text">
-        {{ account.fText }}
-      </p>
-    </div>      
+      <div class="follow-button-container">
+        <button class="follow-button">Folgen</button>
+      </div>
+      <div class="highlight-section">
+        <div class="highlight" *ngFor="let highlight of account.highlights">
+          <img [src]="highlight.image" alt="Highlighted Image" class="highlight-image">
+          <span class="highlight-name">{{ highlight.name }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <img src="assets/accounts/Tab navi bar.png" alt="Navbar Icon" class="navimage">
+    </div>
     <div class="posts-container">
       <div class="post" *ngFor="let post of account.postImage">
         <img [src]="post" alt="Post Image">
       </div>
     </div>
+      <img src="assets/accounts/scam.png" alt="" class="scam" *ngIf="account.name == 'Lisa Sunshine' ">
   </div>
-</div>
+  

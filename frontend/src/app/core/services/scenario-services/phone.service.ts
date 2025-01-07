@@ -38,7 +38,7 @@ export class PhoneService extends BaseScenarioService {
       }else{
         return this.scenarioSteps[this.currentIndex][0];
       }
-    }else if(this.currentIndex == 19){
+    }else if(this.currentIndex == 20){
       if(this.Right_Answer[3]==this.Answer){
         return this.scenarioSteps[this.currentIndex][1];
       }else{
@@ -68,15 +68,15 @@ export class PhoneService extends BaseScenarioService {
       this.Profile[2] =true;
       this.BHide = false;
     }
-    if(this.currentIndex == 17){
+    if(this.currentIndex == 18){
       this.Profile[2] =false;
       this.Profile[3] =true;
       this.BHide = false;
     }
-    if(this.currentIndex == 23){
+    if(this.currentIndex == 24){
       this.Hide = false;
     }
-    if(this.currentGameStep.order == 25){
+    if(this.currentGameStep.order == 26){
       this.router.navigate(["/cockpit"]);
     }
     this.currentIndex++;

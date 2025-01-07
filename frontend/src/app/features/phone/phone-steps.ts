@@ -172,6 +172,14 @@ export const PhoneSteps: GameStep[][] = [
     ], [
         {
             order: 19,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Außerdem hat dieser User nur einen Follower und keine Beiträge, welches ebenfalls  klare Zeichen für einen Fake-Account sind!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 20,
             canClickNext: false,
             reachablePoints: 0,
             textToSpeech: "Und abschließend deine letzte Anfrage! Entscheide zwischen Echt oder Fake!",
@@ -179,13 +187,13 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 20,
+            order: 21,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Leider falsch! Lass uns gemeinsam die Merkmale durchgehen, welche für ein echtes Profil sprechen!",
             scenario: GameScenario.SocialMedia
         }, {
-            order: 20,
+            order: 21,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Richtig, dieses Profil scheint echt zu sein. Auch hier schauen wir uns nochmal gemeinsam die Merkmale dafür an!",
@@ -193,7 +201,7 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 21,
+            order: 22,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Ihr habt viele gemeinsame Follower! Dies ist ein starkes Indiz für einen echten Account!",
@@ -201,7 +209,7 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 22,
+            order: 23,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Dieses Profil scheint aktiv zu sein. Die Beiträge passen hierbei auch zu den Story-Highlights, welches einen seriösen Eindruck vermittelt!",
@@ -209,7 +217,7 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 23,
+            order: 24,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Abschließend zeigt auch das ausgewogene Verhältnis von Followern und gefolgten Profilen die Authentizität des Profils und unterstreicht dessen Echtheit!",
@@ -217,7 +225,7 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 24,
+            order: 25,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Bei diesem Nutzer fällt auf, dass er eine realistische Verteilung bei der Anzahl an Followern, Gefolgten und Beiträgen hat! Gefälschte Profile haben oft weniger Beiträge und Follower!",
@@ -225,7 +233,7 @@ export const PhoneSteps: GameStep[][] = [
         }
     ], [
         {
-            order: 25,
+            order: 26,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Glückwunsch! Mit diesem Spiel hast du X-Punkte verdient! Checke deinen aktuellen Score auf der Startseite ab!",

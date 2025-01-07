@@ -19,6 +19,7 @@ export class AccountComponent {
     avatar: '',
     fText: '',
     folowersImage: [],
+    highlights: [{image:"",name:""}],
     postImage: []
   };
 
