@@ -11,7 +11,7 @@ export class LexiconService {
   private lexiconContent: DoublePage[] = [];
   private currentIndex = 0;
   private currentPage: DoublePage;
-  private _isVisible = true;
+  private _isVisible = false;
 
 
   constructor() {
