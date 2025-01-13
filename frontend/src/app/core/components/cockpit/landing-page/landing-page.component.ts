@@ -8,6 +8,9 @@ import { PhoneService } from '../../../services/scenario-services/phone.service'
 import { SpyComponent } from "../../spy/spy.component";
 import { HeaderComponent } from '../header/header.component';
 import { IconComponent } from "./icon/icon.component";
+import { RestrictionService } from '../../../services/restriction.service';
+import { LexiconService } from '../../../../shared/lexicon/lexicon.service';
+import { relative } from 'path';
 
 @Component({
   selector: 'app-landing-page',
@@ -20,7 +23,9 @@ export class LandingPageComponent {
   constructor(protected game: GameService, public intro: IntroService,
     private phoneScenarioService: PhoneService,
     private router : Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private restriction : RestrictionService,
+    private lexicon : LexiconService
   ) {
   }
 
@@ -40,4 +45,21 @@ export class LandingPageComponent {
     }
   }
 
+  clicked(scenario: GameScenario, link: string) {
+    console.log(scenario)
+    console.log(this.game.currentGameStep.order)
+    if(this.restriction.canClick(scenario)){
+      this.router.navigate([link], {relativeTo: this.activatedRoute});
+    }
+  }
+
+  next(){
+    this.game.nextGameStep()
+    if(this.game.currentGameStep.order == 18) {
+      this.restriction.free(GameScenario.Computer);
+    }
+    if(this.game.currentGameStep.order == 15) {
+      this.lexicon.isVisible = true;
+    }
+  }
 }
