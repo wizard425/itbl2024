@@ -57,6 +57,67 @@
       visibility: hidden;
     }
   }
+  .arrowp{
+    position: absolute;
+    z-index: 12;
+  }
+  .follower{
+    top: 9%;
+    left: 60%;
+  }
+  .followerel{
+    top: 15%;
+    left: 48%;
+  }
+  .bio{
+    top: 20%;
+    left: 50%; 
+  }
+  .scam{
+    top: 71%;
+    left: 58%; 
+  }
+  .scamel{
+    top: 77%;
+    left: 46%; 
+  }
+  .mufollow{
+    top: 23%;
+    left: 60%; 
+  }
+  .mufollowel{
+    top: 29%;
+    left: 47%; 
+  }
+  .post{
+    top: 37%;
+    left: 60%; 
+  }
+  .postel{
+    top: 43%;
+    left: 42.5%; 
+  }
+  .post1{
+    top: 36%;
+    left: 60%; 
+  }
+  .postel1{
+    top: 42%;
+    left: 42.5%; 
+  }
+  .tick{
+    top: 6%;
+    left: 57%; 
+  }
+  .middle{
+    top: 42%;
+    left: 42.5%; 
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .btn {

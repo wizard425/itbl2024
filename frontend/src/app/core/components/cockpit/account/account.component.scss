@@ -8,6 +8,18 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #000000;
 }
+.navbar {
+  position: relative; /* Stack it directly below the .top section */
+  width: 100%; /* Take full width of parent */
+  background-color: #000; /* Background color matching your design */
+  display: flex; /* Align items in navbar */
+  justify-content: space-around; /* Equal spacing for navbar items */
+  align-items: center; /* Center align items vertically */
+}
+.navimage{
+  position: absolute;
+  width: 100%;
+}
 .follow-button-container {
   display: flex;
   justify-content: center;
@@ -90,11 +102,19 @@
 /* Body-Bereich für die Bio und Posts */
 .bio{
   font-size: 10px;
-}
-.profile-body {
-  padding: 3.75%;
+  margin-top: 0;      /* Removes the space above each paragraph */
+  line-height: 1.2;
 }
 
+.profile-body {
+  position: relative; /* Ensures child elements use this as a reference for positioning */
+  padding: 3.75%;
+  overflow: hidden; /* Prevents content overflow */
+}
+.top {
+  position: relative; /* Default positioning to ensure natural flow above .navbar */
+  margin-bottom: 20px; /* Space between .top and .navbar */
+}
 .profile-body p {
   margin: 0 0 3%;
   color: #ffffff;
@@ -103,19 +123,25 @@
   .posts-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5%; /* Abstand zwischen den Elementen */
-    justify-content: space-between;
-
+    gap: 0px;  // Space between posts
+    justify-content: space-between; // Distribute posts evenly if multiple
+    margin-top: 20px; // Space above posts-container
+  
     .post {
-      width: calc(33.33% - 2.5%); /* Drei Elemente pro Zeile mit Platz für den Abstand */
-      margin-bottom: 2.5%; /* Abstand zwischen den Zeilen */
+      width: calc(33.33% ); // Three items per row with space for the gap
+      
+      &:only-child {
+        margin: auto; // Auto margins for centering horizontally
+        width: 100%; // Full width if only one post (adjust as needed)
+      }
+  
       img {
         width: 100%;
         height: auto;
-        border-radius: 1.25; /* Optional: abgerundete Ecken */
+        border-radius: 1.25; // Rounded corners
       }
     }
-  }
+  }  
 }
 
 .posts-image {
@@ -137,7 +163,6 @@
       width: 24px; /* Size of profile images */
       height: 24px;
       border-radius: 50%; /* Makes the images circular */
-      border: 2px solid #ffffff; /* Optional: border for contrast */
       margin-left: -8px; /* Overlapping effect */
 
       &:first-child {
@@ -148,7 +173,8 @@
 
   .follower-text {
     font-size: 8px; /* Adjust font size as needed */ /* Prevents text wrapping */
-    text-align: center;
+    text-align: left;
+    line-height: 1.2;
   }
 }
 
@@ -157,5 +183,40 @@
   height: 20px;
   margin-left: 8px; /* Space between the name and the icon */
   vertical-align: middle; /* Align the icon with the text */
+}
+
+.highlight-section {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  padding: 2px 0;
+  margin-top: 10px;
+  white-space: nowrap; /* Prevents wrapping on new lines */
+  background-color: #000000; /* Matches the theme, adjust as needed */
+}
+
+.highlight {
+  display: inline-block;
+  margin-right: 10px; /* Space between items */
+  text-align: center; /* Aligns the text below the image */
+}
+
+.highlight-image {
+  width: 45px; /* Size of circular images */
+  height: 45px;
+  border-radius: 50%; /* Makes images circular */
+  object-fit: cover; /* Ensures images cover the space well */
+}
+
+.highlight-name {
+  display: block; /* Ensures the text is below the image */
+  font-size: 10px; /* Smaller font size for names */
+  color: white;
+}
+.scam{
+  position: absolute;
+  width: 85%;
+  bottom: 0px;
+  transform: translate(-50%, 0%);
+  left: 50%;
 }
 
