@@ -1,5 +1,6 @@
 using ITBL;
 using ITBL.AppDb;
+using ITBL.PwModel;
 using ITBL.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,6 +33,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Singletons for services and other
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISchoolClassService, SchoolClassService>();
+builder.Services.AddSingleton<IPwModelService, PWModelService>();
 
 var app = builder.Build();
 
