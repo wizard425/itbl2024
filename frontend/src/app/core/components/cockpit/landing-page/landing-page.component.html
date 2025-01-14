@@ -6,23 +6,51 @@
                 <app-spy [gameStep]="this.game.currentGameStep" (clickedNext)="next()"></app-spy>
         </div>
         <div class="circle-container">
-                <div [ngClass]="{ 'gray': !this.intro.getout()[1] }" class="icon robot"><app-icon
-                                imageSrc="./assets/image/AI.png" iconName="AI"
-                                (click)="clicked(scenarios.AI, './ai')"></app-icon>
+
+                <div [ngClass]="{ 'gray': !this.intro.getout()[1] }" class="icon robot">
+                        <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.AI)">
+                                <img src="./assets/image/checked.png">
+                        </div>
+                        <app-icon imageSrc="./assets/image/AI.png" iconName="AI" (click)="clicked(scenarios.AI, './ai')"
+                                [isCompleted]="completionService.isCompleted(scenarios.AI)"></app-icon>
                 </div>
-                <div class="icon shopping" [ngClass]="{ 'gray': !this.intro.getout()[2] }"><app-icon
-                                imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping"
-                                (click)="clicked(scenarios.Shopping, './shopping')"></app-icon></div>
-                <div class="icon cookies" [ngClass]="{ 'gray': !this.intro.getout()[3] }"><app-icon
-                                imageSrc="./assets/image/Cookies.png" iconName="Cookies"
-                                (click)="clicked(scenarios.Cookies, './cookies')"></app-icon>
+
+                <div class="icon shopping" [ngClass]="{ 'gray': !this.intro.getout()[2] }">
+                        <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Shopping)">
+                                <img src="./assets/image/checked.png">
+                        </div>
+                        <app-icon imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping"
+                                (click)="clicked(scenarios.Shopping, './shopping')"
+                                [isCompleted]="completionService.isCompleted(scenarios.Shopping)"></app-icon>
                 </div>
-                <div class="icon security" [ngClass]="{ 'gray': !this.intro.getout()[0] }"><app-icon
-                                imageSrc="./assets/image/Laptop.png" iconName="Password"
-                                (click)="clicked(scenarios.Computer, './computer')"></app-icon>
+
+                <div class="icon cookies" [ngClass]="{ 'gray': !this.intro.getout()[3] }">
+                        <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Cookies)">
+                                <img src="./assets/image/checked.png">
+                        </div>
+                        <app-icon imageSrc="./assets/image/Cookies.png" iconName="Cookies"
+                                (click)="clicked(scenarios.Cookies, './cookies')"
+                                [isCompleted]="completionService.isCompleted(scenarios.Cookies)"></app-icon>
                 </div>
+
+                <div class="icon security" [ngClass]="{ 'gray': !this.intro.getout()[0] }">
+                        <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Computer)">
+                                <img src="./assets/image/checked.png">
+                        </div>
+                        <app-icon imageSrc="./assets/image/Laptop.png" iconName="Password"
+                                (click)="clicked(scenarios.Computer, './computer')"
+                                [isCompleted]="completionService.isCompleted(scenarios.Computer)">
+                        </app-icon>
+                </div>
+
                 <div class="icon social" [ngClass]="{ 'gray': !this.intro.getout()[4] }"
-                        (click)="clicked(scenarios.SocialMedia, './socialmedia')"><app-icon
-                                imageSrc="./assets/image/socialmedia.png" iconName="Social Media"></app-icon></div>
+                        (click)="clicked(scenarios.SocialMedia, './socialmedia')">
+                        <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.SocialMedia)">
+                                <img src="./assets/image/checked.png">
+                        </div>
+                        <app-icon imageSrc="./assets/image/socialmedia.png" iconName="Social Media"
+                                [isCompleted]="completionService.isCompleted(scenarios.SocialMedia)">
+                        </app-icon>
+                </div>
         </div>
 </div>
