@@ -17,6 +17,8 @@ import { EnterClassComponent } from './features/start/enter-class/enter-class.co
 import { RanklistComponent } from './core/components/ranklist/ranklist.component';
 import { GameGuard } from './core/guards/game.guard';
 import { StartGuard } from './core/guards/start.guard';
+import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
+import { ScorelistComponent } from './features/scoreboard/scorelist/scorelist.component';
 
 export const routes: Routes = [
     {
@@ -109,8 +111,15 @@ export const routes: Routes = [
         ]
     },
     {
-        path: "ranklist",
-        component: RanklistComponent,
-        title: "Rangliste"
+        path: "scoreboard",
+        component: ScoreboardComponent,
+        title: "Rangliste",
+        children: [
+            {
+                path: "list",
+                title: "Rangliste",
+                component: ScorelistComponent
+            }
+        ]
     }
 ];
