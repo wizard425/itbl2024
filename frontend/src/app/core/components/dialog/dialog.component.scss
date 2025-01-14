@@ -41,6 +41,11 @@ app-speaking-text {
   .dialog-action {
     display: flex;
     justify-content: end;
+
+    .next-button:hover {
+      background-color: #016999;
+      color: white;
+    }
   }
 }
 

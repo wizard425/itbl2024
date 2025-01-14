@@ -7,21 +7,28 @@ import { GameScenario } from '../../shared/gameUtilities/GameScenario';
 export class RestrictionService {
 
   // scenarios in this set can be clicked and can be played
-  private clickableList: Set<GameScenario> = new Set<GameScenario>();
+  private clickableList: Array<GameScenario> = [];
 
   lock(scenario: GameScenario) {
-    if (this.clickableList.has(scenario)) {
-      this.clickableList.delete(scenario);
+    if (!this.clickableList.some(a => a === scenario)) {
+      this.clickableList.push(scenario);
+      localStorage.setItem("restrictions", JSON.stringify(this.clickableList));
     }
   }
 
   free(scenario: GameScenario) {
-    if (!this.clickableList.has(scenario)) {
-      this.clickableList.add(scenario);
+    if (this.clickableList.some(a => a === scenario)) {
+      this.clickableList.filter(a => a !== scenario);
+      localStorage.setItem("restrictions", JSON.stringify(this.clickableList));
     }
   }
 
   canClick(request: GameScenario) {
-    return this.clickableList.has(request);
+    return !this.clickableList.some(a => a === request);
   }
+
+  setFullList(setOfRestrictions: Array<GameScenario>){
+    this.clickableList = setOfRestrictions;
+  }
+
 }
