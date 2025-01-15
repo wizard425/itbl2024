@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="list">
+        <div class="header">
+            <div>
+                Klasse 8A
+            </div>
+        </div>
+        <div class="top3">
+            <div class="entry">
+                <div class="medal">
+                    <img src="/assets/scoreboard/gold.png">
+                </div>
+                <div>{{this.data[0].user.name}}</div>
+                <div>{{this.data[0].user.points}}</div>
+            </div>
+            <div class="entry">
+                <div class="medal">
+                    <img src="/assets/scoreboard/silver.png">
+                </div>
+                <div style="height: 100%; vertical-align: middle;">{{this.data[1].user.name}}</div>
+                <div>{{this.data[1].user.points}}</div>
+            </div>
+            <div class="entry">
+                <div class="medal">
+                    <img src="/assets/scoreboard/bronze.png">
+                </div>
+                <div>{{this.data[2].user.name}}</div>
+                <div>{{this.data[2].user.points}}</div>
+            </div>
+        </div>
+        <div class="other">
+
+            <div *ngFor="let item of others" class="entry">
+                <div>{{item.position}}.</div>
+                <div>{{item.user.name}}</div>
+                <div>{{item.user.points}}</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

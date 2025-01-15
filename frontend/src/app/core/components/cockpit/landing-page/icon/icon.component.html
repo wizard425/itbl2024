@@ -1,7 +1,6 @@
 <div class="icon-container">
-    <a [routerLink]="link"><img src="{{ imageSrc }}" alt="{{ iconName }}" class="icon-image" />
-      <div class="icon-name">{{ iconName }}</div>
+    <a [routerLink]="link"><img [ngClass]="{'completed': isCompleted}" src="{{ imageSrc }}" alt="{{ iconName }}" class="icon-image" />
+      <div class="icon-name" *ngIf="!isCompleted">{{ iconName }}</div>
     </a>
-
   </div>
   

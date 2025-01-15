@@ -121,23 +121,37 @@ export const gameStoryLine: GameStep[] = [
         canClickNext: true,
         scenario: GameScenario.SocialMedia
     },
-    // Outro of the Intro
     {
         order: 16,
+        textToSpeech: "Oh, eine Sache habe ich noch! Schau mal nach unten rechts. Da findest du das Lexikon",
+        reachablePoints: 10,
+        canClickNext: true,
+        scenario: GameScenario.SocialMedia
+    },
+    {
+        order: 17,
+        textToSpeech: "Da stehen sehr nützliche Sachen drin, die dir sicher weiterhelfen werden. Also scheue dich nicht, einen Blick rein zu werfen!",
+        reachablePoints: 10,
+        canClickNext: true,
+        scenario: GameScenario.SocialMedia
+    },
+    // Outro of the Intro
+    {
+        order: 18,
         textToSpeech: "Das war die Einführung. Jetzt beginnt deine digitale Mission!",
         reachablePoints: 0,
         canClickNext: true,
         scenario: GameScenario.Cockpit
     },
     {
-        order: 17,
+        order: 19,
         textToSpeech: "Mach dich bereit, deine Fähigkeiten im Cyberspace zu beweisen!",
         reachablePoints: 0,
         canClickNext: true,
         scenario: GameScenario.Cockpit
     },
     {
-        order: 18,
+        order: 20,
         textToSpeech: "Viel Glück! Der Schutz deiner Daten liegt in deinen Händen.",
         reachablePoints: 0,
         canClickNext: false,
