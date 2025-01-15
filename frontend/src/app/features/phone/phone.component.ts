@@ -52,7 +52,7 @@ export class PhoneComponent {
         posts: 14,
         followers: 358,
         following: 242,
-        bio: 'Paul Friedrich <br> Traveler',
+        bio: 'Paul Friedrich <br> Traveler <br> Just enjoy',
         tick: false,
         avatar: 'assets/accounts/paul/profile.png',
         fText: "Gefolgt von paulfriedrich, juliaowczarek und 92 weiteren",
