@@ -52,7 +52,7 @@ export class PhoneComponent {
         posts: 14,
         followers: 358,
         following: 242,
-        bio: 'Paul Friedrich <br> Traveler',
+        bio: 'Paul Friedrich <br> Traveler <br> Just enjoy',
         tick: false,
         avatar: 'assets/accounts/paul/profile.png',
         fText: "Gefolgt von paulfriedrich, juliaowczarek und 92 weiteren",
@@ -82,7 +82,7 @@ export class PhoneComponent {
             return ['follower','followerel','hidden']
         }
         else if(this.phoneService.currentIndex == 6){
-            return['mufollow','mufollowel','hidden']
+            return['mufollow','hidden','hidden']
         }
         else if(this.phoneService.currentIndex == 7){
             return ['post','hidden','postel']
@@ -97,7 +97,7 @@ export class PhoneComponent {
             return ['post1','hidden','postel1']
         }
         else if(this.phoneService.currentIndex == 13){
-            return ['scam','scamel','hidden']
+            return ['scam','hidden','hidden']
         } 
         else if(this.phoneService.currentIndex == 16){
             return ['tick','hidden','hidden']
@@ -109,7 +109,7 @@ export class PhoneComponent {
             return ['follower','followerel','middle']
         }
         else if(this.phoneService.currentIndex == 21){
-            return['mufollow','mufollowel','hidden']
+            return['mufollow','hidden','hidden']
         }  
         else if(this.phoneService.currentIndex == 22){
             return ['post','hidden','postel']

@@ -15,6 +15,6 @@
     <app-account [account]="AccountArray[2]" class="account " [class.hidden]="!phoneService.Profile[2]"></app-account>
     <app-account [account]="AccountArray[3]" class="account " [class.hidden]="!phoneService.Profile[3]"></app-account>
     <img src="assets/phone/Arrow.png" alt="" [ngClass]="getclass()[0]" class="arrowp">
-    <img src="assets/phone/smalel.png" alt="" [ngClass]="getclass()[1]" class="arrowp">
-    <img src="assets/phone/bigel.png" alt="" [ngClass]="getclass()[2]" class="arrowp">
+    <div [ngClass]="getclass()[1]" class="arrowp smallel"></div>
+    <div [ngClass]="getclass()[2]" class="arrowp bigel"></div>
 </div>
