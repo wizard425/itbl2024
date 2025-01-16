@@ -1,11 +1,11 @@
 .account-card {
-  width: 290px;
-  height: 605px;
-  border: 1px solid #000000;
+  width: 19.3vw;
+  height: 40.3vw;
+  border: 0.0653vw solid #000000;
   border-radius: 14%;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.261vw 0.53vw rgba(0, 0, 0, 0.1);
   background-color: #000000;
 }
 .navbar {
@@ -31,9 +31,9 @@
   color: #fff; /* White text */
   border: none;
   width: 100%;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 0.33vw; /* Rounded corners */
   padding: 2.5% 5%;
-  font-size: 12px;
+  font-size: 0.78vw;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -44,7 +44,7 @@
 
   &:focus {
     outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle glow */
+    box-shadow: 0 0 0.33vw rgba(0, 123, 255, 0.5); /* Add a subtle glow */
   }
 
   &:active {
@@ -73,7 +73,7 @@
 }
 
 .profile-name {
-  font-size: 15px;
+  font-size: 0.98vw;
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -95,13 +95,13 @@
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 0.72vw;
   color: #ffffff;
 }
 
 /* Body-Bereich für die Bio und Posts */
 .bio{
-  font-size: 10px;
+  font-size: 0.65vw;
   margin-top: 0;      /* Removes the space above each paragraph */
   line-height: 1.2;
 }
@@ -113,7 +113,7 @@
 }
 .top {
   position: relative; /* Default positioning to ensure natural flow above .navbar */
-  margin-bottom: 20px; /* Space between .top and .navbar */
+  margin-bottom: 1.31vw; /* Space between .top and .navbar */
 }
 .profile-body p {
   margin: 0 0 3%;
@@ -125,7 +125,7 @@
     flex-wrap: wrap;
     gap: 0px;  // Space between posts
     justify-content: space-between; // Distribute posts evenly if multiple
-    margin-top: 20px; // Space above posts-container
+    margin-top: 1.31vw; // Space above posts-container
   
     .post {
       width: calc(33.33% ); // Three items per row with space for the gap
@@ -160,10 +160,10 @@
     margin-right: 2.5%;
 
     .profile-image {
-      width: 24px; /* Size of profile images */
-      height: 24px;
+      width: 1.57vw; /* Size of profile images */
+      height: 1.57vw;
       border-radius: 50%; /* Makes the images circular */
-      margin-left: -8px; /* Overlapping effect */
+      margin-left: -0.53vw; /* Overlapping effect */
 
       &:first-child {
         margin-left: 0; /* No overlap for the first image */
@@ -172,44 +172,44 @@
   }
 
   .follower-text {
-    font-size: 8px; /* Adjust font size as needed */ /* Prevents text wrapping */
+    font-size: 0.53vw; /* Adjust font size as needed */ /* Prevents text wrapping */
     text-align: left;
     line-height: 1.2;
   }
 }
 
 .verified-icon {
-  width: 20px; /* Adjust the size as needed */
-  height: 20px;
-  margin-left: 8px; /* Space between the name and the icon */
+  width: 1.31vw; /* Adjust the size as needed */
+  height: 1.31vw;
+  margin-left: 0.53vw; /* Space between the name and the icon */
   vertical-align: middle; /* Align the icon with the text */
 }
 
 .highlight-section {
   display: flex;
   overflow-x: auto; /* Allows horizontal scrolling */
-  padding: 2px 0;
-  margin-top: 10px;
+  padding: 0.13vw 0;
+  margin-top: 0.65vw;
   white-space: nowrap; /* Prevents wrapping on new lines */
   background-color: #000000; /* Matches the theme, adjust as needed */
 }
 
 .highlight {
   display: inline-block;
-  margin-right: 10px; /* Space between items */
+  margin-right: 0.65vw; /* Space between items */
   text-align: center; /* Aligns the text below the image */
 }
 
 .highlight-image {
-  width: 45px; /* Size of circular images */
-  height: 45px;
+  width: 2.94vw; /* Size of circular images */
+  height: 2.94vw;
   border-radius: 50%; /* Makes images circular */
   object-fit: cover; /* Ensures images cover the space well */
 }
 
 .highlight-name {
   display: block; /* Ensures the text is below the image */
-  font-size: 10px; /* Smaller font size for names */
+  font-size: 0.653vw; /* Smaller font size for names */
   color: white;
 }
 .scam{

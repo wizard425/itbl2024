@@ -17,6 +17,8 @@ import { EnterClassComponent } from './features/start/enter-class/enter-class.co
 import { RanklistComponent } from './core/components/ranklist/ranklist.component';
 import { GameGuard } from './core/guards/game.guard';
 import { StartGuard } from './core/guards/start.guard';
+import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
+import { ScorelistComponent } from './features/scoreboard/scorelist/scorelist.component';
 import { MonitorComponent } from './features/laptop/monitor/monitor.component';
 import { PasswordGameComponent } from './features/laptop/password-game/password-game.component';
 import { AnalyzeComponent } from './features/laptop/analyze/analyze.component';
@@ -127,8 +129,15 @@ export const routes: Routes = [
         ]
     },
     {
-        path: "ranklist",
-        component: RanklistComponent,
-        title: "Rangliste"
+        path: "scoreboard",
+        component: ScoreboardComponent,
+        title: "Rangliste",
+        children: [
+            {
+                path: "list",
+                title: "Rangliste",
+                component: ScorelistComponent
+            }
+        ]
     }
 ];

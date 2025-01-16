@@ -24,6 +24,7 @@
 .container1 {
   background-image: url('/assets/phone/phonebed.png');
   background-size: cover;
+  background-position: center center; /* Ensures the image stays centered */
   height: 100vh;
   position: relative;
   opacity: 1;
@@ -35,6 +36,7 @@
   }
 
   .spy-column1 {
+    z-index: 100;
     position: absolute;
     bottom: 0%;
     left: 0px;
@@ -43,14 +45,14 @@
   }
   .notification-image {
     position: absolute; /* Position relative to the page-container */
-    top: 8%; /* Adjust to move the image to the desired position */
-    left: 43%; /* Center horizontally relative to the container */
-    width: 300px;
+    bottom: 8vh; /* Adjust to move the image to the desired position */
+    left: 43vw; /* Center horizontally relative to the container */
+    width: 20vw;
   }
   .account{
     position: absolute; /* Position relative to the page-container */
-    top: 9%; /* Adjust to move the image to the desired position */
-    left: 43.3%; /* Center horizontally relative to the container */
+    bottom: 9.5vh; /* Adjust to move the image to the desired position */
+    left: 43.3vw; /* Center horizontally relative to the container */
     z-index: 10;
     &.hidden {
       opacity: 0;
@@ -61,57 +63,71 @@
     position: absolute;
     z-index: 12;
   }
+  .smallel{
+    width: 14vw;       // Width of the ellipse
+    height: 4vw;       // Height of the ellipse
+    border: 2px solid red; // Red border with 2px thickness
+    border-radius: 50%;    // Makes the shape rounded
+    background: transparent; // Ensures the inside of the ellipse is transparent
+  }
+  .bigel{
+    width: 20vw;       // Width of the ellipse
+    height: 20vw;       // Height of the ellipse
+    border: 2px solid red; // Red border with 2px thickness
+    border-radius: 50%;    // Makes the shape rounded
+    background: transparent; // Ensures the inside of the ellipse is transparent
+  }
   .follower{
-    top: 9%;
-    left: 60%;
+    bottom: 42vw;
+    left: 60vw;
   }
   .followerel{
-    top: 15%;
-    left: 48%;
+    bottom: 38vw;
+    left: 48vw;
   }
   .bio{
-    top: 20%;
-    left: 50%; 
+    bottom: 35vw;
+    left: 50vw; 
   }
   .scam{
-    top: 71%;
-    left: 58%; 
+    bottom: 10vw;
+    left: 58vw; 
   }
   .scamel{
-    top: 77%;
-    left: 46%; 
+    bottom: 6vw;
+    left: 46vw; 
   }
   .mufollow{
-    top: 23%;
-    left: 60%; 
+    bottom: 34vw;
+    left: 60vw; 
   }
   .mufollowel{
-    top: 29%;
-    left: 47%; 
+    bottom: 30vw;
+    left: 47vw; 
   }
   .post{
-    top: 37%;
-    left: 60%; 
+    bottom: 25vw;
+    left: 60vw; 
   }
   .postel{
-    top: 43%;
-    left: 42.5%; 
+    bottom: 5vw;
+    left: 43vw; 
   }
   .post1{
-    top: 36%;
-    left: 60%; 
+    bottom: 25vw;
+    left: 60vw; 
   }
   .postel1{
-    top: 42%;
-    left: 42.5%; 
+    bottom: 7vw;
+    left: 43vw; 
   }
   .tick{
-    top: 6%;
-    left: 57%; 
+    bottom: 43vw;
+    left: 59vw; 
   }
   .middle{
-    top: 42%;
-    left: 42.5%; 
+    bottom: 9vw;
+    left: 43vw; 
   }
 }
 
@@ -141,12 +157,12 @@
   background-color: #00ff00; /* Bright green */
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 15%;
 }
 
 .btn.fake {
   top: 50%;
-  right: 20%;
+  right: 15%;
   position: absolute;
   background-color: #ff0000; /* Bright red */
 }
