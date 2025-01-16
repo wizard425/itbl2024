@@ -70,6 +70,11 @@ export const routes: Routes = [
                 path: "computer",
                 children: [
                     {
+                        path: "",
+                        redirectTo: "monitor",
+                        pathMatch: 'full'
+                    },
+                    {
                         path: "monitor",
                         title: "Computer | Spion",
                         component: MonitorComponent
