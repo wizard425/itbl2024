@@ -19,6 +19,9 @@ import { GameGuard } from './core/guards/game.guard';
 import { StartGuard } from './core/guards/start.guard';
 import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
 import { ScorelistComponent } from './features/scoreboard/scorelist/scorelist.component';
+import { MonitorComponent } from './features/laptop/monitor/monitor.component';
+import { PasswordGameComponent } from './features/laptop/password-game/password-game.component';
+import { AnalyzeComponent } from './features/laptop/analyze/analyze.component';
 
 export const routes: Routes = [
     {
@@ -65,8 +68,28 @@ export const routes: Routes = [
             },
             {
                 path: "computer",
-                component: LaptopComponent,
-                title: "Computer | Spion"
+                children: [
+                    {
+                        path: "",
+                        redirectTo: "monitor",
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: "monitor",
+                        title: "Computer | Spion",
+                        component: MonitorComponent
+                    },
+                    {
+                        path: "game",
+                        title: "Computer | Spion",
+                        component: PasswordGameComponent
+                    },
+                    {
+                        path: "analyze",
+                        title: "Computer | Spion",
+                        component: AnalyzeComponent
+                    }
+                ]
             },
             {
                 path: "cookies",

@@ -92,8 +92,12 @@ export class GameService {
   // this method is to add points to a user, it adds it in the backend too
   addPoints(pointsToAdd: number) {
     this.points += pointsToAdd;
+    console.log("Points added, now at " + this.points);
     if (this.currentUser?.id) {
-      this.userService.addPoints(this.currentUser?.id, pointsToAdd);
+      this.userService.addPoints(this.currentUser?.id, pointsToAdd).subscribe(d => {
+        console.log(d);
+        console.log("GEUPDATED")
+      });
     }
   }
 

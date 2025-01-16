@@ -1,0 +1,22 @@
+.container {
+    background-image: url('/assets/password/monitor.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+
+    .screen {
+        background-image: url('/assets/password/monitorbackground.jpg');
+        background-size: cover;
+        width: 50vw;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+}
