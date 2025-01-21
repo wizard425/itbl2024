@@ -15,7 +15,6 @@ export class UserService extends BaseService<User> {
     this.setUrl("user");
   }
 
-
   addToClass(userId: number, className: string): Observable<User> {
     return this.http.get<User>(environment.baseUrl + this.url + "/addToClass/" + userId + "/" + className);
   }

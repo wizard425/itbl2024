@@ -7,7 +7,13 @@ import { GameScenario } from '../../shared/gameUtilities/GameScenario';
 export class RestrictionService {
 
   // scenarios in this set can be clicked and can be played
-  private clickableList: Array<GameScenario> = [];
+  private clickableList: Array<GameScenario> = [
+    GameScenario.AI,
+    GameScenario.Computer,
+    GameScenario.Cookies,
+    GameScenario.Shopping,
+    GameScenario.SocialMedia
+  ];
 
   lock(scenario: GameScenario) {
     if (!this.clickableList.some(a => a === scenario)) {
@@ -18,7 +24,7 @@ export class RestrictionService {
 
   free(scenario: GameScenario) {
     if (this.clickableList.some(a => a === scenario)) {
-      this.clickableList.filter(a => a !== scenario);
+      this.clickableList = this.clickableList.filter(a => a !== scenario);
       localStorage.setItem("restrictions", JSON.stringify(this.clickableList));
     }
   }

@@ -23,6 +23,8 @@ import { MonitorComponent } from './features/laptop/monitor/monitor.component';
 import { PasswordGameComponent } from './features/laptop/password-game/password-game.component';
 import { AnalyzeComponent } from './features/laptop/analyze/analyze.component';
 
+const AppTitle = "CyperSpion@TUM"
+
 export const routes: Routes = [
     {
         path: "",
@@ -36,18 +38,17 @@ export const routes: Routes = [
         children: [
             {
                 path: "1",
-                component: StartButtonScreenComponent,
-                title: "Willkommen"
+                component: StartButtonScreenComponent
             },
             {
                 path: "2",
                 component: StartNameComponent,
-                title: "Willkommen"
+                title: "Willkommen " + AppTitle
             },
             {
                 path: "class",
                 component: EnterClassComponent,
-                title: "Klasse einschreiben"
+                title: "Klasse einschreiben " + AppTitle
             }
         ]
     },
@@ -59,12 +60,12 @@ export const routes: Routes = [
             {
                 path: "",
                 component: LandingPageComponent,
-                title: "Cockpit | Spion"
+                title: "Cockpit | " + AppTitle
             },
             {
                 path: "ai",
                 component: AiComponent,
-                title: "AI | Spion"
+                title: "AI | " + AppTitle
             },
             {
                 path: "computer",
@@ -76,17 +77,17 @@ export const routes: Routes = [
                     },
                     {
                         path: "monitor",
-                        title: "Computer | Spion",
+                        title: "Computer | " + AppTitle,
                         component: MonitorComponent
                     },
                     {
                         path: "game",
-                        title: "Computer | Spion",
+                        title: "Computer | " + AppTitle,
                         component: PasswordGameComponent
                     },
                     {
                         path: "analyze",
-                        title: "Computer | Spion",
+                        title: "Computer | " + AppTitle,
                         component: AnalyzeComponent
                     }
                 ]
@@ -124,12 +125,12 @@ export const routes: Routes = [
             {
                 path: "shopping",
                 component: ShoppingComponent,
-                title: "Shopping | Spion"
+                title: "Shopping | " + AppTitle
             },
             {
                 path: "socialmedia",
                 component: PhoneComponent,
-                title: "Social Media | Spion"
+                title: "Social Media | " + AppTitle
             }
         ]
     },
@@ -140,7 +141,7 @@ export const routes: Routes = [
         children: [
             {
                 path: "list",
-                title: "Rangliste",
+                title: "Rangliste | " + AppTitle,
                 component: ScorelistComponent
             }
         ]
