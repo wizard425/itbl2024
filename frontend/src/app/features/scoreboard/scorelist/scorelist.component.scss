@@ -1,7 +1,8 @@
 .container {
-    background-image: url('/assets/scoreboard/background.png');
+    background: rgba(0, 0, 0, .65) url('/assets/scoreboard/background.png');
     background-size: cover;
     background-position: center;
+    background-blend-mode: darken;
     height: 100%;
     width: 100%;
     overflow: scroll;
@@ -28,6 +29,7 @@
             margin-top: 10px;
             font-weight: bold;
             font-size: x-large;
+            border-radius: 10px;
         }
 
         .top3 {
@@ -44,7 +46,7 @@
 
             .entry {
                 background-color: rgba(73, 173, 231, 0.89);
-                padding: 0px 40px;
+                vertical-align: middle;
             }
         }
 

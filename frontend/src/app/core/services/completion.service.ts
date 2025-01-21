@@ -18,11 +18,23 @@ export class CompletionService {
   }
 
   isCompleted(request: GameScenario) {
-    return this.completedList.some(a =>  a === request);
+    return this.completedList.some(a => a === request);
   }
 
-  setFullCompletedList(list : Array<GameScenario>){
+  setFullCompletedList(list: Array<GameScenario>) {
     this.completedList = list;
+  }
+
+  allCompleted(): boolean {
+    const allScenarios: Array<GameScenario> = [GameScenario.AI, GameScenario.Computer, GameScenario.Shopping, GameScenario.SocialMedia, GameScenario.Cookies];
+    let ret = true;
+    for(let i = 0; i < allScenarios.length; i++){
+      if (!this.isCompleted(allScenarios[i])){
+        ret = false;
+        continue;
+      }
+    }
+    return ret;
   }
 
 }

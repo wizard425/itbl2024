@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../../../../shared/gameUtilities/game.service';
 import { GameScenario } from '../../../../shared/gameUtilities/GameScenario';
@@ -20,7 +20,7 @@ import { CompletionService } from '../../../services/completion.service';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
   constructor(protected game: GameService, public intro: IntroService,
     private phoneScenarioService: PhoneService,
     private router : Router,
@@ -29,6 +29,11 @@ export class LandingPageComponent {
     private lexicon : LexiconService,
     protected completionService: CompletionService
   ) {
+  }
+  ngOnInit(): void {
+    if(this.completionService.allCompleted()){
+      this.router.navigate(["../scoreboard/list"], {relativeTo: this.activatedRoute});
+    }
   }
 
   public get scenarios(): typeof GameScenario {
