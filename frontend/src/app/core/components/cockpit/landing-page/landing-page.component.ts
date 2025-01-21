@@ -48,8 +48,6 @@ export class LandingPageComponent {
   }
 
   clicked(scenario: GameScenario, link: string) {
-    console.log(this.restriction.canClick(scenario));
-    console.log(this.completionService.isCompleted(scenario));
     // not restricted and not completed yet
     if(this.restriction.canClick(scenario) && !this.completionService.isCompleted(scenario)){
       this.router.navigate([link], {relativeTo: this.activatedRoute});

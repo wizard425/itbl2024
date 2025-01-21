@@ -3,6 +3,8 @@ import { BaseScenarioService } from './base-scenario.service';
 import { PhoneSteps } from '../../../features/phone/phone-steps';
 import { Router } from '@angular/router';
 import { GameStep } from '../../../shared/gameUtilities/GameStep';
+import { CompletionService } from '../completion.service';
+import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,9 @@ export class PhoneService extends BaseScenarioService {
   Right_Answer: boolean[] = [true,false,false,true];
   Profile:boolean [] = [false,false,false,false];
   Answer: boolean = false;
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private completion: CompletionService
+  ) {
     super(PhoneSteps);
   }
   
@@ -77,6 +81,7 @@ export class PhoneService extends BaseScenarioService {
       this.Hide = false;
     }
     if(this.currentGameStep.order == 26){
+      this.completion.addToCompleted(GameScenario.SocialMedia);
       this.router.navigate(["/cockpit"]);
     }
     this.currentIndex++;
