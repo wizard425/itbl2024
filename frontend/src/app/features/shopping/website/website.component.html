@@ -1,0 +1,31 @@
+<div class="deals-container">
+    <header class="flash-sale">
+        🔥 FLASH SALE: Up to 70% OFF on Premium Brands! Limited Time Only! Don't Miss Out on Exclusive Deals! Shop Now Before It's Gone! 🔥
+    </header>
+
+    <p class="title">Exclusive Fashion Deals</p>
+    <p class="subtitle">Premium brands at unbeatable prices</p>
+
+    <div class="products">
+        <div class="product-card" *ngFor="let product of products">
+            <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="product-image">
+            <div class="discount-badge">{{ product.discount }}</div>
+            <div class="product-info">
+                <h3 class="product-title">{{product.name}}</h3>
+                <div class="pricing">
+                    <span class="current-price">{{product.currentPrice}}</span>
+                    <span class="original-price">{{product.originalPrice}}</span>
+                </div>
+                <button class="category-button">Jackets</button>
+            </div>            
+        </div>                      
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span>© 2024 LuxuryFashion. All rights reserved. Registered in Somewhere™</span>
+            <span>Business ID: XX-XXXXXXXXX Terms & Conditions apply*</span>
+        </div>
+    </footer>
+</div>
+

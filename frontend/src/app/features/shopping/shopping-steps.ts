@@ -7,7 +7,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 1,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Hier lernst du, wie du dich richtig verhältst und deine Daten schützt! Viel Spaß!",
+            textToSpeech: "Du bist auf einer neuen Mission: eine Shoppingliste abzuarbeiten und dabei auf alle Fallen zu achten, die im Internet auf dich lauern!",
             scenario: GameScenario.Shopping
         }
     ],
@@ -16,7 +16,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 2,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Aber denk daran, nicht alles ist so, wie es scheint – überprüfe die Webseiten genau, gib keine unnötigen Daten preis und lass dich nicht unter Druck setzen!",
             scenario: GameScenario.Shopping
         }
     ],
@@ -25,7 +25,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 3,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Willkommen beim Online-Möbel-Shop! Du möchtest nun für dein Spion-Zimmer einige neue Möbel kaufen. Lass uns dies gemeinsam erledigen und schauen worauf du acht geben musst!",
+            textToSpeech: "Hier ist deine Shoppingliste, die du abarbeiten musst. Du kannst sie jederzeit im Lexikon einsehen!",
             scenario: GameScenario.SocialMedia
         }
     ],
@@ -34,7 +34,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 4,
             canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Okay, lass uns nun mit dem ersten Online-Shop beginnen",
             scenario: GameScenario.SocialMedia
         }
     ],
