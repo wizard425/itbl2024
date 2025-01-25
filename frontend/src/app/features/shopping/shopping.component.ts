@@ -15,4 +15,11 @@ import { WebsiteComponent } from "./website/website.component";
 export class ShoppingComponent {  
   constructor(protected shopping: ShoppingService ){
   }
+  spyclass(){
+    if(this.shopping.spyhight == 0){
+      return "spy0";
+    }else if(this.shopping.spyhight == 1){
+      return "spy1";
+    }else{ return "spy2"}
+  }
 }

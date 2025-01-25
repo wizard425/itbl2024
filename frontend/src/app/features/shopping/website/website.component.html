@@ -1,31 +1,38 @@
-<div class="deals-container">
-    <header class="flash-sale">
-        🔥 FLASH SALE: Up to 70% OFF on Premium Brands! Limited Time Only! Don't Miss Out on Exclusive Deals! Shop Now Before It's Gone! 🔥
+<div class="deals-container" [ngClass]="getclasses()[0]">
+    <header class="flash-sale" [ngClass]="getclasses()[1]">
+        {{ websites[shopping.webnumber].header }}
     </header>
 
-    <p class="title">Exclusive Fashion Deals</p>
-    <p class="subtitle">Premium brands at unbeatable prices</p>
+    <p class="title" [ngClass]="getclasses()[2]">{{ websites[shopping.webnumber].title }}</p>
+    <p class="subtitle" [ngClass]="getclasses()[3]">{{ websites[shopping.webnumber].subtitle }}</p>
 
     <div class="products">
-        <div class="product-card" *ngFor="let product of products">
+        <div class="product-card" *ngFor="let product of websites[shopping.webnumber].products">
             <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="product-image">
-            <div class="discount-badge">{{ product.discount }}</div>
-            <div class="product-info">
-                <h3 class="product-title">{{product.name}}</h3>
+            <div class="discount-badge" [ngClass]="getclasses()[4]">{{ product.discount }}</div>
+            <div [ngClass]="getclasses()[9]">Hot!!!</div>
+            <div class="product-info" [ngClass]="getclasses()[7]">
+                <h3 class="product-title">{{ product.name }}</h3>
                 <div class="pricing">
-                    <span class="current-price">{{product.currentPrice}}</span>
-                    <span class="original-price">{{product.originalPrice}}</span>
+                    <span class="current-price" [ngClass]="getclasses()[5]">{{ product.currentPrice }}</span>
+                    <span class="original-price">{{ product.originalPrice }}</span>
                 </div>
-                <button class="category-button">Jackets</button>
-            </div>            
-        </div>                      
+                <button class="category-button" [ngClass]="getclasses()[6]" (click)="onCategoryClick(product.category)">{{ product.category }}</button>
+            </div>
+        </div>
     </div>
 
+    <button class="cta-button" [ngClass]="getclasses()[8]">{{ websites[shopping.webnumber].ctaButton }}</button>
+    <div class="button-container" [class.hidden] = "!shopping.showbuttons">
+        <button class="custom-button" (click)="ab1()" [innerHTML]="websites[shopping.webnumber].buttonTexts[0]"></button>
+        <button class="custom-button" (click)="ab2()" [innerHTML]="websites[shopping.webnumber].buttonTexts[1]"></button>
+        <button class="custom-button" (click)="ab3()" [innerHTML]="websites[shopping.webnumber].buttonTexts[2]"></button>
+        <button class="custom-button" (click)="ab4()" [innerHTML]="websites[shopping.webnumber].buttonTexts[2]"></button>
+      </div>      
     <footer class="footer">
         <div class="footer-content">
-            <span>© 2024 LuxuryFashion. All rights reserved. Registered in Somewhere™</span>
-            <span>Business ID: XX-XXXXXXXXX Terms & Conditions apply*</span>
+            <span [innerHTML]="websites[shopping.webnumber].footerLeft"></span>
+            <span [innerHTML]="websites[shopping.webnumber].footerRight"></span>
         </div>
     </footer>
 </div>
-
