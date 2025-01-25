@@ -12,7 +12,28 @@ import { ShoppingService } from '../../../core/services/scenario-services/shoppi
 export class WebsiteComponent {
 
 onCategoryClick(arg0: string) {
-throw new Error('Method not implemented.');
+  if(this.shopping.currentIndex >= 22){
+    if(arg0 === "Jacken" && !this.shopping.product[0]){
+      this.shopping.product[0] = true
+      this.shopping.Cart = this.shopping.Cart + 1;
+    }
+    if(arg0 === "Schuhe" && !this.shopping.product[1]){
+      this.shopping.product[1] = true
+      this.shopping.Cart = this.shopping.Cart + 1;
+    }
+    if(arg0 === "Accessoires" && !this.shopping.product[2]){
+      this.shopping.product[2] = true
+      this.shopping.Cart = this.shopping.Cart + 1;
+    }
+    if(this.shopping.Cart == 3){
+      setTimeout(() => {
+        this.shopping.showcheckout = true;
+        setTimeout(() => {
+          this.shopping.angebot = true;
+        }, 3000);
+      }, 3000);
+    }
+  }
 }
 
 ab4() {

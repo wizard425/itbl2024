@@ -1,0 +1,44 @@
+<div class="checkout-container">
+    <div class="checkout-header">
+        <h1>MaxStyle Collection</h1>
+    </div>
+    <app-angebot *ngIf="shopping.angebot"></app-angebot>
+    <app-phonenumber *ngIf="shopping.phonenumber"></app-phonenumber>
+    <div class="checkout-content">
+        <div class="cart-section">
+            <h2>Warenkorb</h2>
+            <div class="cart-item" *ngFor="let item of cartItems[shopping.angebotAngenommen]">
+                <img [src]="item.imageUrl" [alt]="item.name" class="cart-item-image" />
+                <div class="cart-item-details">
+                    <p class="item-name">{{ item.name }}</p>
+                    <p class="item-category">{{ item.category }}</p>
+                    <p class="item-price">
+                        <span class="current-price">{{ item.currentPrice }}</span>
+                        <span class="original-price">{{ item.originalPrice }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="summary-card">
+                <h3 class="summary-title">Zusammenfassung</h3>
+                <div class="summary-row">
+                    <span>Zwischensumme</span>
+                    <span>{{ summery[shopping.angebotAngenommen][0] }} $</span>
+                </div>
+                <div class="summary-row savings">
+                    <span>Ersparnis</span>
+                    <span>-{{ summery[shopping.angebotAngenommen][1] }} $</span>
+                </div>
+                <hr class="summary-divider" />
+                <div class="summary-row total">
+                    <span>Gesamt</span>
+                    <span>{{ summery[shopping.angebotAngenommen][2] }} $</span>
+                </div>
+                <button class="checkout-button">Zur Kasse</button>
+                <p class="free-shipping">Kostenloser Versand ab 50€</p>
+            </div>
+        </div>
+    </div>
+</div>

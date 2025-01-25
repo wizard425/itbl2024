@@ -220,15 +220,15 @@ export const ShoppingSteps: GameStep[][] = [
             order: 24,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Gute Wahl! Du hast nicht nur deine Shoppingliste clever abgearbeitet, sondern auch noch Geld gespart – und das ganz ohne unnötige Daten preiszugeben. Weiter so, Agent!",
+            textToSpeech: "Alles klar, du hast das Angebot abgelehnt. Aber denk daran: Nicht jedes Sparangebot ist automatisch eine Falle. Manchmal lohnt es sich, genauer hinzuschauen. Weiter mit der Mission!",
             scenario: GameScenario.SocialMedia
         }
     ],[
         {
             order: 25,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Entscheide dich ob du deine Handynummer für weiteren Rabatt angeben willst oder nicht. Tippe dafür auf das jeweilige Feld!",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -236,26 +236,10 @@ export const ShoppingSteps: GameStep[][] = [
             order: 26,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Entscheide dich ob du deine Handynummer für weiteren Rabatt angeben willst oder nicht. Tippe dafür auf das jeweilige Feld!",
-            scenario: GameScenario.SocialMedia
-        }
-    ],[
-        {
-            order: 27,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.SocialMedia
-        }
-    ],[
-        {
-            order: 28,
-            canClickNext: true,
-            reachablePoints: 0,
             textToSpeech: "Genau richtig! Gib hier besser nicht deine Handynummer an. Jede Angabe bedeutet zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke verwendet werden könnten – auch gegen dich.",
             scenario: GameScenario.SocialMedia
         },{
-            order: 28,
+            order: 26,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Vorsicht! Gib deine Handynummer besser nicht preis. Jede Angabe liefert zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke genutzt werden können – auch gegen dich.",
@@ -263,7 +247,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 29,
+            order: 27,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Fast geschafft! Überprüfe jetzt deinen Warenkorb: Sind alle Produkte richtig? Wenn alles passt, klicke auf Bestellung abschließen, um deine Mission abzuschließen.",
@@ -271,13 +255,13 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 30,
+            order: 28,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Gut gemacht! Du hast aufmerksam geprüft und unnötige Werbung vermieden. Ein wichtiger Schritt, um sicher und datenbewusst einzukaufen!",
             scenario: GameScenario.SocialMedia
         },{
-            order: 30,
+            order: 28,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Oh nein, das Häkchen war schon gesetzt! Dadurch hast du dich unbemerkt für den Newsletter angemeldet. Das zeigt, wie wichtig es ist, auch die kleinsten Details im Checkout zu prüfen.",
@@ -285,7 +269,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 31,
+            order: 29,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Gut gemacht, Agent! Beim Online-Shopping ist es wichtig, dass die Webseite, auf der du einkaufen möchtest, vertrauenswürdig ist. Ein gutes Impressum und echte Kontaktmöglichkeiten sind ein Muss!",
@@ -293,7 +277,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 32,
+            order: 30,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Aber Achtung! Auch auf vertrauenswürdigen Webseiten können Fallen lauern. Manchmal wirst du mit Angeboten gelockt, die deine persönlichen Daten verlangen – wie zum Beispiel deine Telefonnummer. Das kann später zu personalisierter Werbung führen.",
@@ -301,7 +285,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 33,
+            order: 31,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Natürlich gibt es auch legitime Angebote, bei denen du sparen kannst – du musst immer abwägen, ob es wirklich sinnvoll ist!",
@@ -309,7 +293,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 34,
+            order: 32,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Generell solltest du beim Online-Shopping auf sogenannte Dark Patterns achten. Das sind Designelemente, die dich unbewusst zu Entscheidungen drängen, die nicht in deinem besten Interesse sind.",
@@ -317,7 +301,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 35,
+            order: 33,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Ein Beispiel, das wir in unserem Spiel hatten, war die Pre-Checked Box – ein automatisch gesetztes Häkchen, das dich z. B. für einen Newsletter anmeldet, wenn du nicht aufpasst.",
@@ -325,7 +309,7 @@ export const ShoppingSteps: GameStep[][] = [
         }
     ],[
         {
-            order: 36,
+            order: 34,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Hier sind noch ein paar weitere wichtige Dark Patterns - wenn du mehr darüber erfahren willst, lies im Lexikon nach.",

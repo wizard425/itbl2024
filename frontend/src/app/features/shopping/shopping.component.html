@@ -1,7 +1,9 @@
 <div class="container">
-  <app-website [ngClass]="{'hidden': (shopping.currentIndex < 4)}" class="webapp"></app-website>
+  <app-website [ngClass]="{'hidden': (shopping.currentIndex < 4)}" class="webapp" *ngIf="!shopping.showcheckout"></app-website>
    <app-shopping-list class="shoppinglist" [ngClass]="{'hidden': !(shopping.currentIndex == 2)}"></app-shopping-list>
   <div class="spy-column" [class.hidden] = "shopping.Hidespy" [ngClass]="spyclass()">
       <app-spy [isRight] = "true" [gameStep]="shopping.currentGameStep" (clickedNext)="shopping.next()"></app-spy>
   </div>
+  <!-- <app-website></app-website> -->
+   <app-checkout *ngIf="shopping.showcheckout"></app-checkout>
 </div>

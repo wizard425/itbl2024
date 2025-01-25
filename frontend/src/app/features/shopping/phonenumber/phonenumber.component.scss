@@ -1,0 +1,77 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  
+    .phone-offer-container {
+      max-width: 600px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .offer-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+  
+      .offer-description {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 20px;
+  
+        strong {
+          color: #4caf50;
+        }
+      }
+  
+      .phone-input {
+        width: 90%;
+        border: 2px solid #4caf50;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
+  
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+  
+      .offer-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+  
+        .decline-button {
+          background-color: #fff;
+          border: 2px solid #ccc;
+          color: #ccc;
+          font-size: 14px;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            border-color: #999;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+  
