@@ -6,7 +6,7 @@ import { GameStep } from "./GameStep";
 export const gameStoryLine: GameStep[] = [
     {
         order: 0,
-        textToSpeech: "Hallo ITBL!\nDas ist unser Protoyp",
+        textToSpeech: "Hallo Agent!\n",
         reachablePoints: 0,
         canClickNext: true,
         scenario: GameScenario.Cockpit
