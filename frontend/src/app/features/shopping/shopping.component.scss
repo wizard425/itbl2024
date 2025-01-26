@@ -20,17 +20,26 @@
   .spy-column {
     position: absolute;
     bottom: 0px;
-    right: 0px;
     animation: fadeIn 0.7s ease-in-out;
   }
   .spy0{
     bottom: 0px;
+    right: 0px;
   }
   .spy1{
     bottom: 48px;
+    right: 0px;
   }
   .spy2{
     bottom: 100px;
+    right: 0px;
+  }
+  .spy3{
+    bottom: 0px;
+    left: 0px;
+  }
+  .check{
+    width: 30vw;
   }
 }
 

@@ -258,13 +258,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 28,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Gut gemacht! Du hast aufmerksam geprüft und unnötige Werbung vermieden. Ein wichtiger Schritt, um sicher und datenbewusst einzukaufen!",
-            scenario: GameScenario.SocialMedia
-        },{
-            order: 28,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Oh nein, das Häkchen war schon gesetzt! Dadurch hast du dich unbemerkt für den Newsletter angemeldet. Das zeigt, wie wichtig es ist, auch die kleinsten Details im Checkout zu prüfen.",
+            textToSpeech: "",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -272,7 +266,13 @@ export const ShoppingSteps: GameStep[][] = [
             order: 29,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Gut gemacht, Agent! Beim Online-Shopping ist es wichtig, dass die Webseite, auf der du einkaufen möchtest, vertrauenswürdig ist. Ein gutes Impressum und echte Kontaktmöglichkeiten sind ein Muss!",
+            textToSpeech: "Gut gemacht! Du hast aufmerksam geprüft und unnötige Werbung vermieden. Ein wichtiger Schritt, um sicher und datenbewusst einzukaufen!",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 29,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Oh nein, das Häkchen war schon gesetzt! Dadurch hast du dich unbemerkt für den Newsletter angemeldet. Das zeigt, wie wichtig es ist, auch die kleinsten Details im Checkout zu prüfen.",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -280,7 +280,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 30,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Aber Achtung! Auch auf vertrauenswürdigen Webseiten können Fallen lauern. Manchmal wirst du mit Angeboten gelockt, die deine persönlichen Daten verlangen – wie zum Beispiel deine Telefonnummer. Das kann später zu personalisierter Werbung führen.",
+            textToSpeech: "Gut gemacht, Agent! Beim Online-Shopping ist es wichtig, dass die Webseite, auf der du einkaufen möchtest, vertrauenswürdig ist. Ein gutes Impressum und echte Kontaktmöglichkeiten sind ein Muss!",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -288,7 +288,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 31,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Natürlich gibt es auch legitime Angebote, bei denen du sparen kannst – du musst immer abwägen, ob es wirklich sinnvoll ist!",
+            textToSpeech: "Aber Achtung! Auch auf vertrauenswürdigen Webseiten können Fallen lauern.",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -296,7 +296,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 32,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Generell solltest du beim Online-Shopping auf sogenannte Dark Patterns achten. Das sind Designelemente, die dich unbewusst zu Entscheidungen drängen, die nicht in deinem besten Interesse sind.",
+            textToSpeech: "Manchmal wirst du mit Angeboten gelockt, die deine persönlichen Daten verlangen – wie zum Beispiel deine Telefonnummer. Das kann später zu personalisierter Werbung führen.",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -304,12 +304,28 @@ export const ShoppingSteps: GameStep[][] = [
             order: 33,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Ein Beispiel, das wir in unserem Spiel hatten, war die Pre-Checked Box – ein automatisch gesetztes Häkchen, das dich z. B. für einen Newsletter anmeldet, wenn du nicht aufpasst.",
+            textToSpeech: "Natürlich gibt es auch legitime Angebote, bei denen du sparen kannst – du musst immer abwägen, ob es wirklich sinnvoll ist!",
             scenario: GameScenario.SocialMedia
         }
     ],[
         {
             order: 34,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Generell solltest du beim Online-Shopping auf sogenannte Dark Patterns achten. Das sind Designelemente, die dich unbewusst zu Entscheidungen drängen, die nicht in deinem besten Interesse sind.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 35,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Ein Beispiel, das wir in unserem Spiel hatten, war die Pre-Checked Box – ein automatisch gesetztes Häkchen, das dich z. B. für einen Newsletter anmeldet, wenn du nicht aufpasst.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 36,
             canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "Hier sind noch ein paar weitere wichtige Dark Patterns - wenn du mehr darüber erfahren willst, lies im Lexikon nach.",

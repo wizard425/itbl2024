@@ -1,9 +1,11 @@
 <div class="container">
-  <app-website [ngClass]="{'hidden': (shopping.currentIndex < 4)}" class="webapp" *ngIf="!shopping.showcheckout"></app-website>
+  <app-website [ngClass]="{'hidden': (shopping.currentIndex < 4 || shopping.currentIndex > 22)}" class="webapp" *ngIf="!shopping.showcheckout"></app-website>
    <app-shopping-list class="shoppinglist" [ngClass]="{'hidden': !(shopping.currentIndex == 2)}"></app-shopping-list>
+   <img src="assets/shopping/check1.png" class="check shoppinglist" alt="" [ngClass]="{'hidden': !(shopping.currentIndex == 34)}">
+   <img src="assets/shopping/check2.png" class="check shoppinglist" alt="" [ngClass]="{'hidden': !(shopping.currentIndex == 35)}">
   <div class="spy-column" [class.hidden] = "shopping.Hidespy" [ngClass]="spyclass()">
-      <app-spy [isRight] = "true" [gameStep]="shopping.currentGameStep" (clickedNext)="shopping.next()"></app-spy>
+      <app-spy [isRight] = "shopping.isspyright" [gameStep]="shopping.currentGameStep" (clickedNext)="shopping.next()"></app-spy>
   </div>
-  <!-- <app-website></app-website> -->
    <app-checkout *ngIf="shopping.showcheckout"></app-checkout>
+   <app-payout *ngIf="shopping.payout"></app-payout>
 </div>

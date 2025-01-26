@@ -30,8 +30,8 @@ onCategoryClick(arg0: string) {
         this.shopping.showcheckout = true;
         setTimeout(() => {
           this.shopping.angebot = true;
-        }, 3000);
-      }, 3000);
+        }, 2000);
+      }, 2000);
     }
   }
 }
