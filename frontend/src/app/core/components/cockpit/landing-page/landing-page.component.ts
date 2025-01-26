@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit {
     private phoneScenarioService: PhoneService,
     private router : Router,
     private activatedRoute: ActivatedRoute,
-    private restriction : RestrictionService,
+    protected restriction : RestrictionService,
     private lexicon : LexiconService,
     protected completionService: CompletionService
   ) {

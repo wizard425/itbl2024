@@ -11,35 +11,47 @@
                         <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.AI)">
                                 <img src="./assets/image/checked.png">
                         </div>
+                        <div class="image-overlay" *ngIf="!restriction.canClick(scenarios.AI)">
+                                <img src="./assets/image/lock.png">
+                        </div>
                         <app-icon imageSrc="./assets/image/AI.png" iconName="AI" (click)="clicked(scenarios.AI, './ai')"
-                                [isCompleted]="completionService.isCompleted(scenarios.AI)"></app-icon>
+                                [isCompleted]="completionService.isCompleted(scenarios.AI) || !restriction.canClick(scenarios.AI)"></app-icon>
                 </div>
 
                 <div class="icon shopping" [ngClass]="{ 'gray': !this.intro.getout()[2] }">
                         <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Shopping)">
                                 <img src="./assets/image/checked.png">
                         </div>
+                        <div class="image-overlay" *ngIf="!restriction.canClick(scenarios.Shopping)">
+                                <img src="./assets/image/lock.png">
+                        </div>
                         <app-icon imageSrc="./assets/image/onlineshopping.png" iconName="Online Shopping"
                                 (click)="clicked(scenarios.Shopping, './shopping')"
-                                [isCompleted]="completionService.isCompleted(scenarios.Shopping)"></app-icon>
+                                [isCompleted]="completionService.isCompleted(scenarios.Shopping) || !restriction.canClick(scenarios.Shopping)"></app-icon>
                 </div>
 
                 <div class="icon cookies" [ngClass]="{ 'gray': !this.intro.getout()[3] }">
                         <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Cookies)">
                                 <img src="./assets/image/checked.png">
                         </div>
+                        <div class="image-overlay" *ngIf="!restriction.canClick(scenarios.Cookies)">
+                                <img src="./assets/image/lock.png">
+                        </div>
                         <app-icon imageSrc="./assets/image/Cookies.png" iconName="Cookies"
                                 (click)="clicked(scenarios.Cookies, './cookies')"
-                                [isCompleted]="completionService.isCompleted(scenarios.Cookies)"></app-icon>
+                                [isCompleted]="completionService.isCompleted(scenarios.Cookies) || !restriction.canClick(scenarios.Cookies)"></app-icon>
                 </div>
 
                 <div class="icon security" [ngClass]="{ 'gray': !this.intro.getout()[0] }">
                         <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.Computer)">
                                 <img src="./assets/image/checked.png">
                         </div>
+                        <div class="image-overlay" *ngIf="!restriction.canClick(scenarios.Computer)">
+                                <img src="./assets/image/lock.png">
+                        </div>
                         <app-icon imageSrc="./assets/image/Laptop.png" iconName="Password"
                                 (click)="clicked(scenarios.Computer, './computer')"
-                                [isCompleted]="completionService.isCompleted(scenarios.Computer)">
+                                [isCompleted]="completionService.isCompleted(scenarios.Computer) || !restriction.canClick(scenarios.Computer)">
                         </app-icon>
                 </div>
 
@@ -48,8 +60,11 @@
                         <div class="image-overlay" *ngIf="completionService.isCompleted(scenarios.SocialMedia)">
                                 <img src="./assets/image/checked.png">
                         </div>
+                        <div class="image-overlay" *ngIf="!restriction.canClick(scenarios.SocialMedia)">
+                                <img src="./assets/image/lock.png">
+                        </div>
                         <app-icon imageSrc="./assets/image/socialmedia.png" iconName="Social Media"
-                                [isCompleted]="completionService.isCompleted(scenarios.SocialMedia)">
+                                [isCompleted]="completionService.isCompleted(scenarios.SocialMedia) || !restriction.canClick(scenarios.SocialMedia)">
                         </app-icon>
                 </div>
         </div>
