@@ -28,7 +28,7 @@
                     <span class="original-price">{{ product.originalPrice }}</span>
                 </div>
                 <button class="category-button" [ngClass]="getclasses()[6]"
-                    (click)="onCategoryClick(product.category)">{{ product.category }}</button>
+                    (click)="onCategoryClick(product.name)">{{ product.category }}</button>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <button class="custom-button" (click)="ab3()"
             [innerHTML]="websites[shopping.webnumber].buttonTexts[2]"></button>
         <button class="custom-button" (click)="ab4()"
-            [innerHTML]="websites[shopping.webnumber].buttonTexts[2]"></button>
+            [innerHTML]="websites[shopping.webnumber].buttonTexts[3]"></button>
     </div>
     <footer class="footer">
         <div class="footer-content">

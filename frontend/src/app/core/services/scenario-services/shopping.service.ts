@@ -94,6 +94,7 @@ export class ShoppingService extends BaseScenarioService {
     if (this.currentIndex == 21) {
       this.Hidespy = true;
       this.hidecart = false;
+      this.webnumber = 3
     }
     if (this.currentIndex == 22) {
       this.Hidespy = false;

@@ -13,15 +13,15 @@ export class WebsiteComponent {
 
 onCategoryClick(arg0: string) {
   if(this.shopping.currentIndex >= 22){
-    if(arg0 === "Jacken" && !this.shopping.product[0]){
+    if(arg0 === "Premium Winterjacke" && !this.shopping.product[0]){
       this.shopping.product[0] = true
       this.shopping.Cart = this.shopping.Cart + 1;
     }
-    if(arg0 === "Schuhe" && !this.shopping.product[1]){
+    if(arg0 === "Sportliche Sneaker" && !this.shopping.product[1]){
       this.shopping.product[1] = true
       this.shopping.Cart = this.shopping.Cart + 1;
     }
-    if(arg0 === "Accessoires" && !this.shopping.product[2]){
+    if(arg0 === "Wollmütze" && !this.shopping.product[2]){
       this.shopping.product[2] = true
       this.shopping.Cart = this.shopping.Cart + 1;
     }
@@ -179,6 +179,45 @@ ab1() {
           originalPrice: '€39.99',
           discount: '-13%',
           category: 'Accessoires'
+        }
+      ]
+    },{
+      header: 'Saisonale Angebote – Qualität trifft auf Stil – Kostenloser Versand ab 50€',
+      title: 'MaxStyle Collection',
+      subtitle: 'Qualität und Stil für jeden Anlass',
+      footerLeft: '<p style="font-size: 16px; font-weight: bold;">MaxStyle GmbH</p> <br>Geschäftsführer: Max Mustermann<br>Handelsregister: HRB 123456<br>USt-IdNr: DE123456789',
+      footerRight: 'Musterstraße 123<br>12345 Musterstadt<br>Deutschland<br>Tel: +49 (0) 123 456789<br>E-Mail: kontakt@maxstyle.de',
+      buttonTexts: [
+        'Ja, weil es keine unseriösen<br>Angebote gibt',
+        'Ja, weil das Impressum vollständig<br>vorhanden ist!',
+        'Nein, da die Seite keine<br>verlockenden Angebote hat',
+        'Das kann ich nicht sagen, ohne mir<br>das Impressum und die<br>Kontaktmöglichkeiten anzuschauen'
+      ]
+      ,
+      products: [
+        {
+          name: 'Premium Winterjacke',
+          imageUrl: 'assets/shopping/jaket.png',
+          currentPrice: '€249.99',
+          originalPrice: '€299.99',
+          discount: '-17%',
+          category: 'In den Warenkorb'
+        },
+        {
+          name: 'Sportliche Sneaker',
+          imageUrl: 'assets/shopping/redshoe.png',
+          currentPrice: '€99.99',
+          originalPrice: '€129.99',
+          discount: '-23%',
+          category: 'In den Warenkorb'
+        },
+        {
+          name: 'Wollmütze',
+          imageUrl: 'assets/shopping/cap.png',
+          currentPrice: '€34.99',
+          originalPrice: '€39.99',
+          discount: '-13%',
+          category: 'In den Warenkorb'
         }
       ]
     }
