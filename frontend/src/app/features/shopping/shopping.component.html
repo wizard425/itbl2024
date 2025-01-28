@@ -1,30 +1,11 @@
-<app-out [class.hidden]="shopping.Hide1"></app-out>
-<div class="container1" [class.hidden]="!shopping.Hide1">
-    <img src="assets/shopping/Laptop.png" class="container1-image">
-    <img src="assets/shopping/website.png" class="container2-image" [class.blurred]="shopping.showCookieDialog" *ngIf="!shopping.Product">
-    <img src="assets/shopping/webpages/web1.png" class="container3-image" *ngIf="shopping.web1">
-    <img src="assets/shopping/webpages/web2.png" class="container3-image" *ngIf="shopping.web2">
-    <img src="assets/shopping/webpages/web3.png" class="container3-image" *ngIf="shopping.web3">
-    <img src="assets/shopping/webpages/web4.png" class="container3-image" *ngIf="shopping.web4">
-    <img src="assets/shopping/webpages/web5.png" class="container3-image" *ngIf="shopping.web5">
-    <img src="assets/shopping/webpages/web6.png" class="container3-image" *ngIf="shopping.web6">
-    <app-terms [class.hidden]="!shopping.terms"></app-terms>
-    <app-product-web *ngIf="shopping.Product"></app-product-web>
-    <app-cookies *ngIf="shopping.showCookieDialog"></app-cookies>
-    <button class="custom-button left" [class.hidden] = "!shopping.question" (click)="Left()">
-      Schnell zugreifen<br>bevor das Angebot<br>abläuft!
-    </button>
-    <button class="custom-button right" [class.hidden] = "!shopping.question" (click)="Right()">
-      Überprüfen, ob<br>Website authentisch<br>ist!
-    </button>
-    <div class="spy-column" [ngClass]="{
-      'hidden': shopping.showCookieDialog || shopping.question || shopping.hiddespy,
-      'move-top-right': shopping.move, 'move-top-right-abit': shopping.moveabit
-    }">
-      <app-spy #spy
-        [gameStep]="shopping.currentGameStep"
-        (clickedNext)="shopping.next()"
-      ></app-spy>
-    </div>
+<div class="container">
+  <app-website [ngClass]="{'hidden': (shopping.currentIndex < 4 || shopping.currentIndex > 22)}" class="webapp" *ngIf="!shopping.showcheckout"></app-website>
+   <app-shopping-list class="shoppinglist" [ngClass]="{'hidden': !(shopping.currentIndex == 2)}"></app-shopping-list>
+   <img src="assets/shopping/check1.png" class="check shoppinglist" alt="" [ngClass]="{'hidden': !(shopping.currentIndex == 34)}">
+   <img src="assets/shopping/check2.png" class="check shoppinglist" alt="" [ngClass]="{'hidden': !(shopping.currentIndex == 35)}">
+  <div class="spy-column" [class.hidden] = "shopping.Hidespy" [ngClass]="spyclass()">
+      <app-spy [isRight] = "shopping.isspyright" [gameStep]="shopping.currentGameStep" (clickedNext)="shopping.next()"></app-spy>
+  </div>
+   <app-checkout *ngIf="shopping.showcheckout"></app-checkout>
+   <app-payout *ngIf="shopping.payout"></app-payout>
 </div>
-  

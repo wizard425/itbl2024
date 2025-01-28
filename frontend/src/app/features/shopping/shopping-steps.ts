@@ -7,7 +7,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 1,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Hier lernst du, wie du dich richtig verhältst und deine Daten schützt! Viel Spaß!",
+            textToSpeech: "Du bist auf einer neuen Mission: eine Shoppingliste abzuarbeiten und dabei auf alle Fallen zu achten, die im Internet auf dich lauern!",
             scenario: GameScenario.Shopping
         }
     ],
@@ -16,7 +16,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 2,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Aber denk daran, nicht alles ist so, wie es scheint – überprüfe die Webseiten genau, gib keine unnötigen Daten preis und lass dich nicht unter Druck setzen!",
             scenario: GameScenario.Shopping
         }
     ],
@@ -25,16 +25,16 @@ export const ShoppingSteps: GameStep[][] = [
             order: 3,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Willkommen beim Online-Möbel-Shop! Du möchtest nun für dein Spion-Zimmer einige neue Möbel kaufen. Lass uns dies gemeinsam erledigen und schauen worauf du acht geben musst!",
+            textToSpeech: "Hier ist deine Shoppingliste, die du abarbeiten musst. Du kannst sie jederzeit im Lexikon einsehen!",
             scenario: GameScenario.SocialMedia
         }
     ],
     [
         {
             order: 4,
-            canClickNext: false,
+            canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Okay, lass uns nun mit dem ersten Online-Shop beginnen",
             scenario: GameScenario.SocialMedia
         }
     ],
@@ -43,24 +43,30 @@ export const ShoppingSteps: GameStep[][] = [
             order: 5,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Sieh dir die Angebote im Shop an. Viele sind stark rabattiert. Lass uns mal eines der Produkte genauer anschauen.",
+            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 6,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "",
             scenario: GameScenario.SocialMedia
         }
     ],
     [
         {
-            order: 6,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Plötzlich ploppt beim Angebot für den Stuhl ein Timer auf, der droht abzulaufen.",
-            scenario: GameScenario.SocialMedia
-        }
-    ], [
-        {
             order: 7,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Nun musst du dich entscheiden, ob du den Stuhl direkt zum Warenkorb hinzufügst oder das Angebot nochmal überprüfst.",
+            textToSpeech: "Richtig! Diese Seite ist nicht nicht vertrauenswürdig! Lass uns gemeinsam auf die Merkmale schauen...",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 7,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Leider Falsch! Auch wenn diese Seite verlockende Angebote hat, solltest du auf folgende Merkmale achten...",
             scenario: GameScenario.SocialMedia
         }
     ], [
@@ -68,7 +74,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 8,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Hier handelt es sich um ein Fake Impressum! Achte auf möglichst seriöse Angaben. “Registered in Somewhere” scheint hier auf eine Fake-Angabe hinzuweisen",
             scenario: GameScenario.SocialMedia
         }
     ], [
@@ -76,13 +82,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 9,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Achtung! Lass dich nicht von vermeintlich zeitlich begrenzten Angebot unter druck setzen, die dich zum schnellen Kauf drängen. Meist gibt es die Angebote noch länger!",
-            scenario: GameScenario.SocialMedia
-        },{
-            order: 9,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Richtig! Du hast dich nicht vom Angebot unter druck setzen lassen und triffst deine Kauf Entscheidungen bewusst! Super!",
+            textToSpeech: "Sehr hohe Rabatte (70%) sind ebenfalls ein Indiz für Fake-Angebote ",
             scenario: GameScenario.SocialMedia
         }
     ], [
@@ -90,7 +90,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 10,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Schau, ob es Kundenbewertungen gibt und ob das Unternehmen eine Impressum-Seite hat.",
+            textToSpeech: "Außerdem finden wir hier keine Kontaktangaben zu dem Onlineshop. Ein weiteres Zeichen für einen Fake-Shop.",
             scenario: GameScenario.SocialMedia
         }
     ], [
@@ -98,13 +98,13 @@ export const ShoppingSteps: GameStep[][] = [
             order: 11,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Oftmals haben solche betrügerischen Seiten nicht genügend Informationen oder zeigen gefälschte Rezensionen.",
+            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
             scenario: GameScenario.SocialMedia
         }
-    ],[
+    ], [
         {
             order: 12,
-            canClickNext: false,
+            canClickNext: true,
             reachablePoints: 0,
             textToSpeech: "",
             scenario: GameScenario.SocialMedia
@@ -114,21 +114,21 @@ export const ShoppingSteps: GameStep[][] = [
             order: 13,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Stop! Gib keine unnötigen Standortabfragen frei! Für den Kaufprozess ist eine Standortabfrage völlig unnötig und vermindern deinen Datenschutz!",
+            textToSpeech: "Richtig! Diese Seite ist nicht nicht vertrauenswürdig! Lass uns gemeinsam auf die Merkmale schauen...",
             scenario: GameScenario.SocialMedia
         },{
             order: 13,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Super! In diesem Kontext ist es richtig eine unnötige Standortabfrage abzulehnen, da sie für den Kauf nicht erforderlich ist freizugeben!",
+            textToSpeech: "Leider Falsch! Auch wenn diese Seite verlockende Angebote hat, solltest du auf folgende Merkmale achten...",
             scenario: GameScenario.SocialMedia
         }
     ],[
         {
             order: 14,
-            canClickNext: false,
+            canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Diesmal ist das Impressum zwar vorhanden. Aber nicht ganz vollständig! ",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -136,13 +136,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 15,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Falsch, ohne Zustimmung zu den Nutzungsbedingungen kannst du leider nicht weiter shoppen.",
-            scenario: GameScenario.SocialMedia
-        },{
-            order: 15,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Richtig, die Terms and agreements musst du bei so gut wie jeder Seite akzeptieren. Ein kurzer Blick in diese lohnt sich dennoch, um zu sehen, was du alles akzeptierst!",
+            textToSpeech: "Der Name ist zwar vorhanden, jedoch ist die Adresse nicht sichtbar. “Irgendwo in Deutschland” ist hier auffällig!",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -150,7 +144,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 16,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Die Zustimmung zu den Nutzungsbedingungen ist erforderlich, da sie die Regeln und den Schutz deiner Daten im Shop festlegen. Stimme den Terms and Agreements zu, um den Einkauf sicher fortzusetzen.",
+            textToSpeech: "Außerdem haben wir hier unseriöse Rabatte und Angebote, die den Kunden unter Druck setzen sollen! ",
             scenario: GameScenario.SocialMedia
         }
     ],[
@@ -158,15 +152,183 @@ export const ShoppingSteps: GameStep[][] = [
             order: 17,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Stelle zudem sicher, dass du - vor allem wenn du nicht vor hast in nächster Zeit noch einmal zu bestellen - keine Daten in deinem Profil speicherst!",
+            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
             scenario: GameScenario.SocialMedia
         }
     ],[
         {
             order: 18,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 19,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Richtig diese Seite ist vertrauenswürdig! Lass uns gemeinsam analysieren, woran du das erkennen kannst",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 19,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Leider falsch! Diese Seite scheint vertrauenswürdig zu sein! Aber nicht schlimm, ich zeige dir, woran du das erkennen kannst!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 20,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Das Impressum ist vollständig vorhanden mit Namen , Adresse und weiteren Kontaktangaben",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 21,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Zudem enthält die Seite keine unrealistischen Angebote oder Rabatte! Dies ist ein seriöses Zeichen!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 22,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Wir haben jetzt eine seriöse Webseite gefunden – es kann losgehen! Arbeite deine Shoppingliste ab und füge die benötigten Produkte in den Warenkorb hinzu. Falls du dir unsicher bist, kannst du die Liste jederzeit im Lexikon nachschauen",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 23,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 24,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Gute Wahl! Du hast nicht nur deine Shoppingliste clever abgearbeitet, sondern auch noch Geld gespart – und das ganz ohne unnötige Daten preiszugeben. Weiter so, Agent!",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 24,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Alles klar, du hast das Angebot abgelehnt. Aber denk daran: Nicht jedes Sparangebot ist automatisch eine Falle. Manchmal lohnt es sich, genauer hinzuschauen. Weiter mit der Mission!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 25,
             canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Auch optionale Angaben wie beispielsweise deine Handynummer solltest zum besseren Schutz deiner Daten nicht angeben!",
+            textToSpeech: "Entscheide dich ob du deine Handynummer für weiteren Rabatt angeben willst oder nicht. Tippe dafür auf das jeweilige Feld!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 26,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Genau richtig! Gib hier besser nicht deine Handynummer an. Jede Angabe bedeutet zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke verwendet werden könnten – auch gegen dich.",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 26,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Vorsicht! Gib deine Handynummer besser nicht preis. Jede Angabe liefert zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke genutzt werden können – auch gegen dich.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 27,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Fast geschafft! Überprüfe jetzt deinen Warenkorb: Sind alle Produkte richtig? Wenn alles passt, klicke auf Bestellung abschließen, um deine Mission abzuschließen.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 28,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 29,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Gut gemacht! Du hast aufmerksam geprüft und unnötige Werbung vermieden. Ein wichtiger Schritt, um sicher und datenbewusst einzukaufen!",
+            scenario: GameScenario.SocialMedia
+        },{
+            order: 29,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Oh nein, das Häkchen war schon gesetzt! Dadurch hast du dich unbemerkt für den Newsletter angemeldet. Das zeigt, wie wichtig es ist, auch die kleinsten Details im Checkout zu prüfen.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 30,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Gut gemacht, Agent! Beim Online-Shopping ist es wichtig, dass die Webseite, auf der du einkaufen möchtest, vertrauenswürdig ist. Ein gutes Impressum und echte Kontaktmöglichkeiten sind ein Muss!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 31,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Aber Achtung! Auch auf vertrauenswürdigen Webseiten können Fallen lauern.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 32,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Manchmal wirst du mit Angeboten gelockt, die deine persönlichen Daten verlangen – wie zum Beispiel deine Telefonnummer. Das kann später zu personalisierter Werbung führen.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 33,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Natürlich gibt es auch legitime Angebote, bei denen du sparen kannst – du musst immer abwägen, ob es wirklich sinnvoll ist!",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 34,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Generell solltest du beim Online-Shopping auf sogenannte Dark Patterns achten. Das sind Designelemente, die dich unbewusst zu Entscheidungen drängen, die nicht in deinem besten Interesse sind.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 35,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Ein Beispiel, das wir in unserem Spiel hatten, war die Pre-Checked Box – ein automatisch gesetztes Häkchen, das dich z. B. für einen Newsletter anmeldet, wenn du nicht aufpasst.",
+            scenario: GameScenario.SocialMedia
+        }
+    ],[
+        {
+            order: 36,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Hier sind noch ein paar weitere wichtige Dark Patterns - wenn du mehr darüber erfahren willst, lies im Lexikon nach.",
             scenario: GameScenario.SocialMedia
         }
     ]

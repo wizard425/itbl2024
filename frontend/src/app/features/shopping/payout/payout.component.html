@@ -1,0 +1,79 @@
+<div class="checkout-container">
+    <h1 class="title">MaxStyle Collection</h1>
+
+    <div class="checkout-content">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="delivery-address">
+                <h2 class="section-title">Kasse</h2>
+                <div class="address-box">
+                    <h3>Lieferadresse</h3>
+                    <p>{{gameService.currentUser?.name}}</p>
+                    <p>Lindenstraße 18</p>
+                    <p>Wohnung 4B</p>
+                    <p>70435 Stuttgart</p>
+                    <p>Deutschland</p>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h3 class="section-title">Zahlungsmethode</h3>
+                <div class="payment-option">
+                    <input type="radio" id="credit-card" name="payment" checked />
+                    <label for="credit-card">
+                        <img src="assets/shopping/kredit.png" alt="Credit Card" />
+                        <span>Kreditkarte</span>
+                    </label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="paypal" name="payment" />
+                    <label for="paypal">
+                        <img src="assets/shopping/paypal.png" alt="Paypal" />
+                        <span>Paypal</span>
+                    </label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="klarna" name="payment" />
+                    <label for="klarna">
+                        <img src="assets/shopping/klarna.png" alt="Klarna" />
+                        <span>Klarna</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="order-summary">
+                <h3 class="section-title">Bestellübersicht</h3>
+                <ul>
+                    <li>Premium Winterjacke <span>249.99$</span></li>
+                    <li>Sport-Sneakers <span>99.99$</span></li>
+                    <li>Wollmütze <span>34.99$</span></li>
+                </ul>
+                <hr />
+                <div class="summary">
+                    <div class="row">
+                        <span>Zwischensumme</span>
+                        <span>384.97$</span>
+                    </div>
+                    <div class="row">
+                        <span>Versand</span>
+                        <span class="free">Frei</span>
+                    </div>
+                    <div class="row total">
+                        <span>Gesamt</span>
+                        <span>384.97$</span>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <input type="checkbox" id="newsletter" [(ngModel)]="isNewsletterChecked" />
+                    <label for="newsletter">Abonnieren Sie unseren Newsletter für exklusive Angebote</label>
+                </div>
+                <button class="checkout-button" (click)="handleCheckout()">Bestellung abschließen</button>
+                <p class="free-shipping">Kostenloser Versand ab 50$ Bestellwert</p>
+            </div>
+        </div>
+
+    </div>
+</div>

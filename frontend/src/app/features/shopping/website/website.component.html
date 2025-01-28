@@ -1,0 +1,53 @@
+<div class="deals-container" [ngClass]="getclasses()[0]">
+    <header class="flash-sale" [ngClass]="getclasses()[1]">
+        {{ websites[shopping.webnumber].header }}
+    </header>
+
+    <div calss = "text-cart">
+        <div class="text">
+            <p class="title" [ngClass]="getclasses()[2]">{{ websites[shopping.webnumber].title }}</p>
+            <p class="subtitle" [ngClass]="getclasses()[3]">{{ websites[shopping.webnumber].subtitle }}</p>
+        </div>
+        <div class="shopping-cart" [class.hidden] = "shopping.hidecart">
+            <div class="cart-icon">
+                <span class="item-count">{{shopping.Cart}}</span>
+                <img src="assets/shopping/warenkorb.png" alt="Shopping Cart" class="cart-image" />
+            </div>
+            <p class="cart-label">Warenkorb</p>
+        </div>
+    </div>
+    <div class="products">
+        <div class="product-card" *ngFor="let product of websites[shopping.webnumber].products">
+            <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="product-image">
+            <div class="discount-badge" [ngClass]="getclasses()[4]">{{ product.discount }}</div>
+            <div [ngClass]="getclasses()[9]">Hot!!!</div>
+            <div class="product-info" [ngClass]="getclasses()[7]">
+                <h3 class="product-title">{{ product.name }}</h3>
+                <div class="pricing">
+                    <span class="current-price" [ngClass]="getclasses()[5]">{{ product.currentPrice }}</span>
+                    <span class="original-price">{{ product.originalPrice }}</span>
+                </div>
+                <button class="category-button" [ngClass]="getclasses()[6]"
+                    (click)="onCategoryClick(product.name)">{{ product.category }}</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="cta-button" [ngClass]="getclasses()[8]">{{ websites[shopping.webnumber].ctaButton }}</button>
+    <div class="button-container" [class.hidden]="!shopping.showbuttons">
+        <button class="custom-button" (click)="ab1()"
+            [innerHTML]="websites[shopping.webnumber].buttonTexts[0]"></button>
+        <button class="custom-button" (click)="ab2()"
+            [innerHTML]="websites[shopping.webnumber].buttonTexts[1]"></button>
+        <button class="custom-button" (click)="ab3()"
+            [innerHTML]="websites[shopping.webnumber].buttonTexts[2]"></button>
+        <button class="custom-button" (click)="ab4()"
+            [innerHTML]="websites[shopping.webnumber].buttonTexts[3]"></button>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <span [innerHTML]="websites[shopping.webnumber].footerLeft"></span>
+            <span [innerHTML]="websites[shopping.webnumber].footerRight"></span>
+        </div>
+    </footer>
+</div>

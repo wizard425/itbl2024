@@ -1,8 +1,0 @@
-<div class="overlay-container">
-  <div class="grid-item" *ngFor="let image of shopping.images; let i = index">
-    <!-- Show Timer Only for Second Element -->
-    <div class="timer" *ngIf="i === 1">{{ image.countdown }}</div>
-    <!-- Image -->
-    <img [src]="image.src" [alt]="image.alt" class="grid-image">
-  </div>
-</div>
