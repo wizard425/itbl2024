@@ -1,0 +1,24 @@
+<div class="full-screen-container">
+    <div class="virtual-chat-header">
+        <h1>VIRTUELLER KI-CHAT</h1>
+    </div>
+    <div class="chat-interface">
+        <div *ngFor="let message of messages"
+            [ngClass]="{'user-message-box': message.sender === 'user', 'bot-message-box': message.sender === 'bot'}" class="message">
+            <p *ngIf="message.sender === 'user'" class="message-text">{{ message.text }}</p>
+            <app-speaking-text [text]='message.text' [typingSpeed]="10" *ngIf="message.sender === 'bot'"></app-speaking-text>
+        </div>
+        <p class="help-text" *ngIf="showHelpText">Wie kann ich dir helfen?</p>
+        <div class="input-container">
+            <textarea #textarea placeholder="Gib hier deine Nachricht ein."
+                (keydown.enter)="sendMessage(); $event.preventDefault()"></textarea>
+            <button class="icon-button upload-button">
+                <img src="/assets/ai/plusi.png" alt="Upload">
+            </button>
+            <button class="icon-button send-button" (click)="sendMessage()">
+                <img src="/assets/ai/sendi.png" alt="Send">
+            </button>
+        </div>
+    </div>
+    <img src="/assets/ai/navbar.png" alt="Navbar" class="navbar">
+</div>

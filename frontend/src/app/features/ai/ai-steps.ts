@@ -1,14 +1,14 @@
 import { GameScenario } from "../../shared/gameUtilities/GameScenario";
 import { GameStep } from "../../shared/gameUtilities/GameStep";
 
-export const ShoppingSteps: GameStep[][] = [
+export const AISteps: GameStep[][] = [
     [
         {
             order: 1,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Du bist auf einer neuen Mission: eine Shoppingliste abzuarbeiten und dabei auf alle Fallen zu achten, die im Internet auf dich lauern!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Willkommen, Agent, bei unserer gemeinsamen KI-Mission!",
+            scenario: GameScenario.AI
         }
     ],
     [
@@ -16,8 +16,8 @@ export const ShoppingSteps: GameStep[][] = [
             order: 2,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Aber denk daran, nicht alles ist so, wie es scheint – überprüfe die Webseiten genau, gib keine unnötigen Daten preis und lass dich nicht unter Druck setzen!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Lass uns gemeinsam deine Hausaufgabe für heute anschauen.",
+            scenario: GameScenario.AI
         }
     ],
     [
@@ -25,8 +25,8 @@ export const ShoppingSteps: GameStep[][] = [
             order: 3,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Hier ist deine Shoppingliste, die du abarbeiten musst. Du kannst sie jederzeit im Lexikon einsehen!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Die KI kann dir dabei als zusätzliche Hilfe dienen – aber denk daran, deine Aufgaben selbstständig zu lösen und nur die Unterstützung zu nutzen, die du wirklich brauchst!",
+            scenario: GameScenario.AI
         }
     ],
     [
@@ -34,8 +34,8 @@ export const ShoppingSteps: GameStep[][] = [
             order: 4,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Okay, lass uns nun mit dem ersten Online-Shop beginnen",
-            scenario: GameScenario.Shopping
+            textToSpeech: "",
+            scenario: GameScenario.AI
         }
     ],
     [
@@ -43,7 +43,7 @@ export const ShoppingSteps: GameStep[][] = [
             order: 5,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
+            textToSpeech: "Deine Mission: Schreibe einen Aufsatz mit Hilfe einer KI – aber Vorsicht! Die KI fordert persönliche Informationen, und du musst entscheiden, welche du preisgibst. Deine Aufgabe ist es, deine Identität zu schützen und trotzdem erfolgreich zu bleiben. Viel Glück, Spion!",
             scenario: GameScenario.Shopping
         }
     ],[
