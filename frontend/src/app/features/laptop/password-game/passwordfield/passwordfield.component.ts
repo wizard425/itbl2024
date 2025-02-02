@@ -11,7 +11,6 @@ import { LexiconService } from '../../../../shared/lexicon/lexicon.service';
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
-    console.log(control?.invalid);
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }

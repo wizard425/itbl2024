@@ -16,7 +16,6 @@ export class BakeryInsideComponent {
   private _showButton: boolean = false;
 
   protected get showButton(): boolean {
-    console.log(this.cookieService.currentIndex)
     return this.cookieService.currentIndex == 7;
   }
 

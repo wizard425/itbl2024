@@ -42,7 +42,6 @@ private ac : ActivatedRoute) {
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.currentStep = (this.currentStep + 1);
-      console.log(this.currentStep)
       if (this.currentStep > 3) {
         clearInterval(this.intervalId);
       }
@@ -57,7 +56,6 @@ private ac : ActivatedRoute) {
   checkPwd(pwd: string) {
     this.onlinePwd.getLevenshteinDistanceToCommonPWD(pwd).subscribe(data => {
       this.levenshtein = data;
-      console.log("HIHSAJ " + data)
     }
     );
   }

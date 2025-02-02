@@ -50,12 +50,6 @@ export class GameComponent {
       event.currentIndex,
     );
 
-    console.log(event.container)
-
-    if (event.container == this.bowlContents) {
-      console.log("jetzt hat was in bowlcontent")
-    }
-
   }
 
 

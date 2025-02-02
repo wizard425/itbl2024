@@ -35,7 +35,6 @@ export class EnterClassComponent {
       {
         const name = this.nameInput.nativeElement.value;
         if (name && this.gameService.currentUser.id) {
-          console.log("subscribe to class now")
           this.userService.addToClass(this.gameService.currentUser.id, name).subscribe(x => {
             this.gameService.currentUser = x;
             if(environment.storeUser){
@@ -47,7 +46,6 @@ export class EnterClassComponent {
             this.router.navigate([`/cockpit`]);
           });
         } else if (this.gameService.currentUser.id) {
-          console.log("do not subscribe, but navigate")
           this.router.navigate([`/cockpit`]);
         } else {
           console.log("something went wrong");
