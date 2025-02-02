@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CompletionService } from '../../../core/services/completion.service';
 import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
+import { GameService } from '../../../shared/gameUtilities/game.service';
 
 @Component({
   selector: 'app-analyze',
@@ -35,7 +36,8 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
     protected onlinePwd: OnlinePasswordService,
     private router: Router,
     private ac: ActivatedRoute,
-    private com: CompletionService) {
+    private com: CompletionService,
+    private game: GameService) {
     this.passwordService.currentIndex = 4;
     this.checkPwd(passwordService.password);
     this.pass = this.passwordService.password;
@@ -61,6 +63,29 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
       this.levenshtein = data;
     }
     );
+  }
+
+
+  overAllPoints(): number {
+    let points = 0;
+    points += this.lengthPoints()
+    if (this.uppercase() > 0) {
+      points++;
+    }
+    if (this.lowercase() > 0) {
+      points++;
+    }
+    if (this.num() > 0) {
+      points++;
+    }
+    if(this.sonderzeichen() > 0){
+      points++;
+    }
+    if(this.wdh()[1] == 0){
+      points++;
+    }
+
+    return points
   }
 
 
@@ -111,6 +136,7 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
   goToEnd() {
     // TODO add points to user
     this.com.addToCompleted(GameScenario.Computer);
+    this.game.addPoints(this.overAllPoints());
     this.router.navigate(['../../'], { relativeTo: this.ac });
   }
 
