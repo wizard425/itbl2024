@@ -14,7 +14,6 @@ import { BakeryInsideComponent } from './features/cookie/bakery-inside/bakery-in
 import { GameComponent } from './features/cookie/game/game.component';
 import { KitchenComponent } from './features/cookie/kitchen/kitchen.component';
 import { EnterClassComponent } from './features/start/enter-class/enter-class.component';
-import { RanklistComponent } from './core/components/ranklist/ranklist.component';
 import { GameGuard } from './core/guards/game.guard';
 import { StartGuard } from './core/guards/start.guard';
 import { ScoreboardComponent } from './features/scoreboard/scoreboard.component';
@@ -22,8 +21,9 @@ import { ScorelistComponent } from './features/scoreboard/scorelist/scorelist.co
 import { MonitorComponent } from './features/laptop/monitor/monitor.component';
 import { PasswordGameComponent } from './features/laptop/password-game/password-game.component';
 import { AnalyzeComponent } from './features/laptop/analyze/analyze.component';
+import { EndComponent } from './features/laptop/end/end.component';
 
-const AppTitle = "CyperSpion@TUM"
+const AppTitle = "CyberSpion@TUM"
 
 export const routes: Routes = [
     {
@@ -89,6 +89,11 @@ export const routes: Routes = [
                         path: "analyze",
                         title: "Computer | " + AppTitle,
                         component: AnalyzeComponent
+                    },
+                    {
+                        path: "end",
+                        title: "Computer | " + AppTitle,
+                        component: EndComponent
                     }
                 ]
             },

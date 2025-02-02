@@ -10,13 +10,14 @@ import { HeaderComponent } from '../header/header.component';
 import { IconComponent } from "./icon/icon.component";
 import { RestrictionService } from '../../../services/restriction.service';
 import { LexiconService } from '../../../../shared/lexicon/lexicon.service';
-import { relative } from 'path';
 import { CompletionService } from '../../../services/completion.service';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AllcompletedDialogComponent } from './allcompleted-dialog/allcompleted-dialog.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HeaderComponent, IconComponent, CommonModule, SpyComponent],
+  imports: [HeaderComponent, IconComponent, CommonModule, SpyComponent, MatDialogModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -27,12 +28,17 @@ export class LandingPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     protected restriction : RestrictionService,
     private lexicon : LexiconService,
-    protected completionService: CompletionService
+    protected completionService: CompletionService,
+    private dialog: MatDialog
   ) {
   }
   ngOnInit(): void {
     if(this.completionService.allCompleted()){
-      this.router.navigate(["../scoreboard/list"], {relativeTo: this.activatedRoute});
+
+      this.dialog.open(AllcompletedDialogComponent, {
+        width: '400px',
+      });
+
     }
   }
 
