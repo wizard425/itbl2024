@@ -14,21 +14,19 @@ export class MonitorComponent {
 
 
   constructor(protected passwordService: PasswordService,
-    protected router : Router,
-    protected ac : ActivatedRoute
-  ){
+    protected router: Router,
+    protected ac: ActivatedRoute
+  ) {
 
   }
 
 
-  next(){
-    console.log("INIASHIDBASDBkj")
-    if(this.passwordService.currentIndex == 3){
-      
-      this.router.navigate(['../game'], {relativeTo: this.ac});
-    }else{
+  next() {
+    if (this.passwordService.currentIndex == 3) {
+      this.router.navigate(['../game'], { relativeTo: this.ac });
+    } else {
       this.passwordService.next();
     }
-  
+
   }
 }

@@ -95,7 +95,7 @@ export class GameService {
     console.log("Points added, now at " + this.points);
     if (this.currentUser?.id) {
       this.userService.addPoints(this.currentUser?.id, pointsToAdd).subscribe(d => {
-        
+        console.log(d);
       });
     }
   }

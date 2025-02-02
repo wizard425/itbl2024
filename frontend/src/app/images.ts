@@ -15,9 +15,9 @@ export const imageUrls = [
     'assets/office.png',
 
     // cookies
-    'assets/cookies/icons/continnue.png',
+    'assets/cookies/icons/continue.png',
     'assets/cookies/icons/restart.png',
-    'assets/cookies/Backofen.png',
+    'assets/cookies/Backofen.webp',
     'assets/cookies/baker.png',
     'assets/cookies/baker_thumbsup.png',
     'assets/cookies/baker_thumbsdown.png',
@@ -25,7 +25,6 @@ export const imageUrls = [
     'assets/cookies/bakeryinside.png',
     'assets/cookies/bakeryopen.png',
     'assets/cookies/bowl_image.png',
-    'assets/cookies/butter.png',
     'assets/cookies/butter.png',
     'assets/cookies/chocolate.png',
     'assets/cookies/cookies.png',
@@ -44,12 +43,97 @@ export const imageUrls = [
     'assets/password/monitor.jpg',
     'assets/password/gameback.jpg',
     'assets/password/monitorbackground.jpg',
+    'assets/password/gear.png',
+    'assets/password/ruler.png',
+    'assets/password/network.png',
+    'assets/password/star.png',
 
     // socialmedia
     'assets/phone/bedroom.png',
 
     // shopping
+    'assets/shopping/1back.png',
+    'assets/shopping/cap.png',
+    'assets/shopping/check1.png',
+    'assets/shopping/check2.png',
+    'assets/shopping/greenshoe.png',
+    'assets/shopping/jaket.png',
+    'assets/shopping/klarna.png',
+    'assets/shopping/kredit.png',
+    'assets/shopping/paypal.png',
+    'assets/shopping/redshoe.png',
+    'assets/shopping/shoppinglist.png',
+    'assets/shopping/warenkorb.png',
 
+
+    // scoreboard
+    'assets/scoreboard/background.png',
+    'assets/scoreboard/bronze.png',
+    'assets/scoreboard/gold.png',
+    'assets/scoreboard/silver.png',
+
+    // phone
+    'assets/phone/Arrow.png',
+    'assets/phone/bedroom.png',
+    'assets/phone/bigel.png',
+    'assets/phone/blueT.png',
+    'assets/phone/Phone.png',
+    'assets/phone/phonebed.png',
+    'assets/phone/smalel.png',
+
+
+    // accounts
+    'assets/accounts/John/nimage.png',
+    'assets/accounts/John/profile.png',
+    'assets/accounts/robertIcon.png',
+    'assets/accounts/scam.png',
+    'assets/accounts/robertPosts.png',
+    'assets/accounts/Tab navi bar.png',
+    // accounts/lisa
+    'assets/accounts/Lisa/profile.png',
+    'assets/accounts/Lisa/Post1.png',
+    'assets/accounts/Lisa/Post2.png',
+    'assets/accounts/Lisa/Post3.png',
+    'assets/accounts/Lisa/Post4.png',
+    'assets/accounts/Lisa/Post5.png',
+    'assets/accounts/Lisa/Post6.png',
+    'assets/accounts/Lisa/Post7.png',
+    'assets/accounts/Lisa/Post8.png',
+    'assets/accounts/Lisa/Post9.png',
+    'assets/accounts/Lisa/profile.png',
+    // accounts/paul
+    'assets/accounts/paul/H1.png',
+    'assets/accounts/paul/H2.png',
+    'assets/accounts/paul/H3.png',
+    'assets/accounts/paul/H4.png',
+    'assets/accounts/paul/mfol1.png',
+    'assets/accounts/paul/mfol2.png',
+    'assets/accounts/paul/mfol3.png',
+    'assets/accounts/paul/Post1.png',
+    'assets/accounts/paul/Post2.png',
+    'assets/accounts/paul/Post3.png',
+    'assets/accounts/paul/Post4.png',
+    'assets/accounts/paul/Post5.png',
+    'assets/accounts/paul/Post6.png',
+    'assets/accounts/paul/Post7.png',
+    'assets/accounts/paul/Post8.png',
+    'assets/accounts/paul/Post9.png',
+    'assets/accounts/paul/profile.png',
+    // accounts/sophiekaiser
+    'assets/accounts/sophiekaiser/cat.png',
+    'assets/accounts/sophiekaiser/mufo1.png',
+    'assets/accounts/sophiekaiser/mufo2.png',
+    'assets/accounts/sophiekaiser/mufo3.png',
+    'assets/accounts/sophiekaiser/Post1.png',
+    'assets/accounts/sophiekaiser/Post2.png',
+    'assets/accounts/sophiekaiser/Post3.png',
+    'assets/accounts/sophiekaiser/Post4.png',
+    'assets/accounts/sophiekaiser/Post5.png',
+    'assets/accounts/sophiekaiser/Post6.png',
+    'assets/accounts/sophiekaiser/Post7.png',
+    'assets/accounts/sophiekaiser/Post8.png',
+    'assets/accounts/sophiekaiser/Post9.png',
+    'assets/accounts/sophiekaiser/profile.png',
 
 
 ];
