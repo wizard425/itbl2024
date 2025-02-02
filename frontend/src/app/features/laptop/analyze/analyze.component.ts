@@ -6,6 +6,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SpyComponent } from "../../../core/components/spy/spy.component";
 import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CompletionService } from '../../../core/services/completion.service';
+import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
 
 @Component({
   selector: 'app-analyze',
@@ -31,8 +33,9 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
 
   constructor(protected passwordService: PasswordService,
     protected onlinePwd: OnlinePasswordService,
-  private router: Router,
-private ac : ActivatedRoute) {
+    private router: Router,
+    private ac: ActivatedRoute,
+    private com: CompletionService) {
     this.passwordService.currentIndex = 4;
     this.checkPwd(passwordService.password);
     this.pass = this.passwordService.password;
@@ -45,7 +48,7 @@ private ac : ActivatedRoute) {
       if (this.currentStep > 3) {
         clearInterval(this.intervalId);
       }
-    }, 2500);
+    }, 3000);
   }
 
   ngOnDestroy() {
@@ -97,7 +100,7 @@ private ac : ActivatedRoute) {
     let max = '';
     let maxl = 0;
     for (let st of m) {
-      if(st.length > maxl){
+      if (st.length > maxl) {
         max = st[0];
         maxl = st.length;
       }
@@ -105,8 +108,10 @@ private ac : ActivatedRoute) {
     return [max, maxl];
   }
 
-  goToEnd(){
-    this.router.navigate(['../end'], {relativeTo: this.ac});
+  goToEnd() {
+    // TODO add points to user
+    this.com.addToCompleted(GameScenario.Computer);
+    this.router.navigate(['../../'], { relativeTo: this.ac });
   }
 
 }
