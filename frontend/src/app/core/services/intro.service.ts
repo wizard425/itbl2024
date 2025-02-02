@@ -45,4 +45,12 @@ export class IntroService {
       }
     }
   }
+
+  logout() {
+    this.currnet = 0;
+    this.senario_array = [GameScenario.Computer, GameScenario.AI, GameScenario.Shopping, GameScenario.Cookies, GameScenario.SocialMedia];
+    this.start = true;
+    this.end = false;
+    this.out = [true, true, true, true, true];
+  }
 }
