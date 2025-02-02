@@ -6,6 +6,7 @@ import { FormControl, FormGroupDirective, NgForm, Validators, ReactiveFormsModul
 import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { PasswordService } from '../../../../core/services/scenario-services/password.service';
+import { LexiconService } from '../../../../shared/lexicon/lexicon.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -30,8 +31,10 @@ export class PasswordfieldComponent {
 
   public passwordField: string = "";
 
-  constructor(private router: Router, private act: ActivatedRoute, private passwordService: PasswordService) {
-
+  constructor(private router: Router, private act: ActivatedRoute, private passwordService: PasswordService,
+    protected lex: LexiconService
+  ) {
+lex.isVisible = true;
   }
 
   goToAnalyze() {
