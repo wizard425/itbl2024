@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+@if(this.isLoading){
+    <app-image-loading></app-image-loading>
+}
+@if(!this.isLoading){
+    <router-outlet></router-outlet>
+}
