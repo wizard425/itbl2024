@@ -34,7 +34,7 @@ export const AISteps: GameStep[][] = [
             order: 4,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
+            textToSpeech: "Hier sind deine heutigen Hausaufgaben. Fange mit der ersten an und schreibe einen Aufsatz über Datenschutz!",
             scenario: GameScenario.AI
         }
     ],
@@ -43,16 +43,16 @@ export const AISteps: GameStep[][] = [
             order: 5,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Deine Mission: Schreibe einen Aufsatz mit Hilfe einer KI – aber Vorsicht! Die KI fordert persönliche Informationen, und du musst entscheiden, welche du preisgibst. Deine Aufgabe ist es, deine Identität zu schützen und trotzdem erfolgreich zu bleiben. Viel Glück, Spion!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 6,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Deine Mission: Schreibe einen Aufsatz mit Hilfe einer KI – aber Vorsicht! Die KI fordert persönliche Informationen, und du musst entscheiden, welche du preisgibst.",
+            scenario: GameScenario.AI
         }
     ],
     [
@@ -60,276 +60,226 @@ export const AISteps: GameStep[][] = [
             order: 7,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Richtig! Diese Seite ist nicht nicht vertrauenswürdig! Lass uns gemeinsam auf die Merkmale schauen...",
-            scenario: GameScenario.Shopping
-        },{
-            order: 7,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Leider Falsch! Auch wenn diese Seite verlockende Angebote hat, solltest du auf folgende Merkmale achten...",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Deine Aufgabe ist es, deine Identität zu schützen und trotzdem erfolgreich zu bleiben. Viel Glück, Spion!",
+            scenario: GameScenario.AI
         }
-    ], [
-        {
-            order: 8,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Hier handelt es sich um ein Fake Impressum! Achte auf möglichst seriöse Angaben. “Registered in Somewhere” scheint hier auf eine Fake-Angabe hinzuweisen",
-            scenario: GameScenario.Shopping
-        }
-    ], [
+    ], [{
+        order: 8,
+        canClickNext: true,
+        reachablePoints: 0,
+        textToSpeech: "",
+        scenario: GameScenario.AI
+    }], [
         {
             order: 9,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Sehr hohe Rabatte (70%) sind ebenfalls ein Indiz für Fake-Angebote ",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Das ist nicht ganz richtig, Partner. Unsere Aufgabe ist, Informationen über den Datenschutz zu finden. Versuch es nochmal!",
+            scenario: GameScenario.AI
         }
     ], [
         {
             order: 10,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Außerdem finden wir hier keine Kontaktangaben zu dem Onlineshop. Ein weiteres Zeichen für einen Fake-Shop.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Antworte nun der KI mit “Schreibe einen Aufsatz zum Thema Datenschutz”",
+            scenario: GameScenario.AI
         }
     ], [
         {
             order: 11,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Das ist nicht ganz richtig, Partner. Antworte nun der KI mit “Schreibe einen Aufsatz zum Thema Datenschutz”. Versuch es nochmal!",
+            scenario: GameScenario.AI
         }
     ], [
         {
             order: 12,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Hier fordert die KI einige persönlichen Daten. Entscheide, welche du teilen willst und welche du lieber für dich behältst! Einige könnten hier hilfreich für den Aufsatz sein.",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 13,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Richtig! Diese Seite ist nicht nicht vertrauenswürdig! Lass uns gemeinsam auf die Merkmale schauen...",
-            scenario: GameScenario.Shopping
-        },{
-            order: 13,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Leider Falsch! Auch wenn diese Seite verlockende Angebote hat, solltest du auf folgende Merkmale achten...",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Tippe nun alle Ziffern (1-4) in das Eingabefeld, welche Informationen du mit der KI teilen würdest!",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 14,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Diesmal ist das Impressum zwar vorhanden. Aber nicht ganz vollständig! ",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Du musst mindestens eine Ziffer eingeben.Alle deine Ziffern müssen zwischen 1 und 4 sein. Bitte gib diese an!",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 15,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Der Name ist zwar vorhanden, jedoch ist die Adresse nicht sichtbar. “Irgendwo in Deutschland” ist hier auffällig!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Leider waren bei deiner Eingabe Daten dabei, welche du lieber nicht teilen solltest. Aber lass uns dies noch einmal gemeinsam durchgehen!",
+            scenario: GameScenario.AI
+        }, {
+            order: 15,
+            canClickNext: true,
+            reachablePoints: 0,
+            textToSpeech: "Sehr gut! Du hast einige Daten angegeben, welche zu einem besseren Aufsatz führen könnten. Zudem hast du sensible Informationen für dich behalten. Lass uns trotzdem nochmal kurz sensible Daten besprechen, die du besser nicht teilen solltest!",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 16,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Außerdem haben wir hier unseriöse Rabatte und Angebote, die den Kunden unter Druck setzen sollen! ",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Achtung! Mit deinem Geburtsdatum können Dritte dein Alter berechnen. In Kombination mit anderen persönlichen Informationen – wie deinem Namen oder deiner Klassenstufe – erhöht sich das Risiko von Identitätsdiebstahl.",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 17,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Ist diese Webseite vertrauenswürdig?",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Teile dein Geburtsdatum nur, wenn es wirklich notwendig ist!",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 18,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Dein Name ist eine persönliche Information, die leicht mit anderen Daten verknüpft werden kann.",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 19,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Richtig diese Seite ist vertrauenswürdig! Lass uns gemeinsam analysieren, woran du das erkennen kannst",
-            scenario: GameScenario.Shopping
-        },{
-            order: 19,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Leider falsch! Diese Seite scheint vertrauenswürdig zu sein! Aber nicht schlimm, ich zeige dir, woran du das erkennen kannst!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Statt deinen vollständigen Namen zu verwenden, kannst du in solchen Fällen auch ein Pseudonym oder nur deine Initialen angeben. Das schützt deine Identität und erfüllt trotzdem den Zweck.",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 20,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Das Impressum ist vollständig vorhanden mit Namen , Adresse und weiteren Kontaktangaben",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Auch bei Interessen solltest du vorsichtig sein: Allgemeine Angaben wie ‚Sport‘ schützen deine Privatsphäre besser als spezifische Details wie ‚Fortnite spielen‘.",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 21,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Zudem enthält die Seite keine unrealistischen Angebote oder Rabatte! Dies ist ein seriöses Zeichen!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Je allgemeiner du bleibst, desto weniger persönliche Rückschlüsse können andere ziehen!",
+            scenario: GameScenario.AI
         }
-    ],[
+    ], [
         {
             order: 22,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Wir haben jetzt eine seriöse Webseite gefunden – es kann losgehen! Arbeite deine Shoppingliste ab und füge die benötigten Produkte in den Warenkorb hinzu. Falls du dir unsicher bist, kannst du die Liste jederzeit im Lexikon nachschauen",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Du hast dich bisher richtig gut geschlagen! Im folgenden schauen wir uns ein kleines weiteres Beispiel an, damit du zum Profi im Thema Datenschutz mit KI wirst!",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 23,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Nehmen wir an, dass du dir im Sportunterricht eine Verletzung an der Schulter zugezogen hast. Jetzt hattest du einen MRT-Termin und fragst nun die KI ob sie dir erklären kann, was du dir zugezogen hast.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 24,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Gute Wahl! Du hast nicht nur deine Shoppingliste clever abgearbeitet, sondern auch noch Geld gespart – und das ganz ohne unnötige Daten preiszugeben. Weiter so, Agent!",
-            scenario: GameScenario.Shopping
-        },{
-            order: 24,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Alles klar, du hast das Angebot abgelehnt. Aber denk daran: Nicht jedes Sparangebot ist automatisch eine Falle. Manchmal lohnt es sich, genauer hinzuschauen. Weiter mit der Mission!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Klicken Sie auf den Plus-Button, um die Datei hinzuzufügen.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 25,
             canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Entscheide dich ob du deine Handynummer für weiteren Rabatt angeben willst oder nicht. Tippe dafür auf das jeweilige Feld!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Würdest du das so absenden damit die KI dir genau erklären kann was du möglicherweise hast?",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 26,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Genau richtig! Gib hier besser nicht deine Handynummer an. Jede Angabe bedeutet zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke verwendet werden könnten – auch gegen dich.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Stop! Nicht absenden! Du solltest einer KI niemals solch hochsensible Daten preisgeben, die auf dich zurückführbar sind!",
+            scenario: GameScenario.AI
         },{
             order: 26,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Vorsicht! Gib deine Handynummer besser nicht preis. Jede Angabe liefert zusätzliche Daten, die gesammelt und möglicherweise für andere Zwecke genutzt werden können – auch gegen dich.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Richtig! Ein vollständiges medizinisches Dokument solltest du niemals einfach so einer KI zur verfügung stellen.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 27,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Fast geschafft! Überprüfe jetzt deinen Warenkorb: Sind alle Produkte richtig? Wenn alles passt, klicke auf Bestellung abschließen, um deine Mission abzuschließen.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "In einem ärztlichen Befund stehen viele deiner persönlichen Daten und natürlich medizinische Daten, die du nicht einfach so ins Internet schicken solltest.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 28,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Wenn du nicht mehr bis zu deinem Arzttermin warten möchtest, kannst du die KI dennoch nutzen um dir  beispielsweise eine unbekannte Begriffe erklären zu lassen.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 29,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Gut gemacht! Du hast aufmerksam geprüft und unnötige Werbung vermieden. Ein wichtiger Schritt, um sicher und datenbewusst einzukaufen!",
-            scenario: GameScenario.Shopping
-        },{
-            order: 29,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Oh nein, das Häkchen war schon gesetzt! Dadurch hast du dich unbemerkt für den Newsletter angemeldet. Das zeigt, wie wichtig es ist, auch die kleinsten Details im Checkout zu prüfen.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Auf diese Art und Weise wird zumindest kein direkter Rückschluss auf dich gezogen.",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 30,
-            canClickNext: true,
+            canClickNext: false,
             reachablePoints: 0,
-            textToSpeech: "Gut gemacht, Agent! Beim Online-Shopping ist es wichtig, dass die Webseite, auf der du einkaufen möchtest, vertrauenswürdig ist. Ein gutes Impressum und echte Kontaktmöglichkeiten sind ein Muss!",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Deine Nachricht könnte zum Beispiel wie folgt aussehen:",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 31,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Aber Achtung! Auch auf vertrauenswürdigen Webseiten können Fallen lauern.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Eine mögliche Antwort der KI könnte wie folgt aussehen:",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 32,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Manchmal wirst du mit Angeboten gelockt, die deine persönlichen Daten verlangen – wie zum Beispiel deine Telefonnummer. Das kann später zu personalisierter Werbung führen.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Wie du siehst kannst du auch so an Informationen kommen, ohne leichtsinnig sensible Daten preiszugeben.Lade niemals einfach so persönliche Dokumente ohne vorherige Prüfung hoch!",
+            scenario: GameScenario.AI
         }
     ],[
         {
             order: 33,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Natürlich gibt es auch legitime Angebote, bei denen du sparen kannst – du musst immer abwägen, ob es wirklich sinnvoll ist!",
-            scenario: GameScenario.Shopping
-        }
-    ],[
-        {
-            order: 34,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Generell solltest du beim Online-Shopping auf sogenannte Dark Patterns achten. Das sind Designelemente, die dich unbewusst zu Entscheidungen drängen, die nicht in deinem besten Interesse sind.",
-            scenario: GameScenario.Shopping
-        }
-    ],[
-        {
-            order: 35,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Ein Beispiel, das wir in unserem Spiel hatten, war die Pre-Checked Box – ein automatisch gesetztes Häkchen, das dich z. B. für einen Newsletter anmeldet, wenn du nicht aufpasst.",
-            scenario: GameScenario.Shopping
-        }
-    ],[
-        {
-            order: 36,
-            canClickNext: true,
-            reachablePoints: 0,
-            textToSpeech: "Hier sind noch ein paar weitere wichtige Dark Patterns - wenn du mehr darüber erfahren willst, lies im Lexikon nach.",
-            scenario: GameScenario.Shopping
+            textToSpeech: "Mit Hilfe dieser Informationen, hast du schonmal ein gutes grundlegendes Verständnis gewonnen, um Daten gegenüber Künstlicher Intelligenz zu schützen.",
+            scenario: GameScenario.AI
         }
     ]
 ];

@@ -13,7 +13,9 @@ export class HausaufgabeComponent {
 
   }
 onButtonClick() {
-  this.ai.next()
+  if(this.ai.currentIndex == 4){
+    this.ai.next()
+  }
 }
 
 }

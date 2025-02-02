@@ -14,5 +14,18 @@ import { ChatbotComponent } from "./chatbot/chatbot.component";
 })
 export class AiComponent {
   constructor(protected ai:AiService){}
+  getclass():string{
+    if(this.ai.spypostion == 0){
+      return "spy0"
+    }else if(this.ai.spypostion == 1){
+      return "spy1"
+    }
+    else if (this.ai.spypostion == 2){
+      return "spy2"
+    }else
+    {
+      return "spy3"
+    }
+  }
 
 }

@@ -7,11 +7,16 @@
   background-color: #FFFFFF;
 }
 
-h1, p,textarea,.message {
+h1, p,textarea,.message,button {
   font-family: 'Righteous', sans-serif;
+}
+.input-red::placeholder {
+  color: red;
 }
 h1{
   font-size: 32px;
+  padding: 0px;
+  margin-bottom: 0px;
 }
 .virtual-chat-header {
   text-align: center;
@@ -45,6 +50,9 @@ h1{
   color: #ffffff;
   text-align: left;
 }
+.bot-blue{
+  background-color: #00246b;
+}
 .chat-interface {
   flex-grow: 1;
   display: flex;
@@ -53,11 +61,13 @@ h1{
   align-items: center;
   background-color: #FFFFFF;
   padding-bottom: 5vw;
+  overflow-y: auto;
 }
 .input-container {
   display: flex;
   width: 50%;
   align-items: center;
+  flex-direction: column;
   background-color: #f5f5f5;
   border: 1px solid #d1d1d1;
   padding: 10px 15px;
@@ -65,7 +75,26 @@ h1{
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 30px;
 }
-
+.file{
+  width: 20%;
+  align-self: flex-start;
+  text-align: left;
+  border-radius: 5px;
+}
+.chattext{
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+  width: 100%;
+}
+.input-red1 {
+  border: 2px solid red; 
+  color: black;
+}
+.input-red2 {
+  border: 2px solid rgb(0, 255, 26); 
+  color: black;
+}
 textarea {
   flex-grow: 1;
   border: none;
@@ -75,7 +104,7 @@ textarea {
   color: #333;
   outline: none;
   resize: none;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .icon-button {
@@ -107,4 +136,27 @@ textarea {
 .help-text {
   font-size: 32px;
   margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 30px;
+  width: 50%;
+}
+
+.send-button1, .do-not-send-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #8AAAE5;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.send-button1:hover, .do-not-send-button:hover {
+  background-color: #7799CC;
 }
