@@ -92,10 +92,8 @@ export class GameService {
   addPoints(pointsToAdd: number) {
     if (this.currentUser?.id) {
       this.userService.addPoints(this.currentUser?.id, pointsToAdd).subscribe(d => {
-        console.log("this.cuurent user is " + this.currentUser)
         if (this.currentUser) {
-          console.log("this is set in here")
-          this.currentUser.points += d.points;
+          this.currentUser.points = d.points;
           localStorage.setItem("user", JSON.stringify(this.currentUser))
         }
       });
