@@ -37,4 +37,8 @@ export class CompletionService {
     return ret;
   }
 
+  logout(){
+    this.completedList = [];
+  }
+
 }

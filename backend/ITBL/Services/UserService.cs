@@ -39,7 +39,7 @@ namespace ITBL.Services
 
         public async Task<IEnumerable<User>> GetAllFromClass(int schoolClassId)
         {
-            return await _context.Users.Where(x =>x.SchoolClassId == schoolClassId).ToListAsync();
+            return await _context.Users.Where(x => x.SchoolClassId == schoolClassId).ToListAsync();
         }
 
         public async Task<User> GetById(int id)
@@ -60,7 +60,7 @@ namespace ITBL.Services
             if (u != null)
             {
                 SchoolClass? sc = await _context.SchoolClasses.Where(x => x.Name.Equals(schoolClassName)).FirstOrDefaultAsync();
-                if(sc != null)
+                if (sc != null)
                 {
                     sc.Users.Add(u);
                     await _context.SaveChangesAsync();
@@ -72,6 +72,21 @@ namespace ITBL.Services
                 throw new Exception();
             }
             return u;
+        }
+
+        public async Task<User> AddPoints(int userId, int points)
+        {
+            User? u = await _context.Users.FindAsync(userId);
+            if (u != null)
+            {
+                u.Points += points;
+                await _context.SaveChangesAsync();
+                return u;
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
     }
 }

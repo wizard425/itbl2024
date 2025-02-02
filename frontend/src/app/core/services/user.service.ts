@@ -19,7 +19,7 @@ export class UserService extends BaseService<User> {
     return this.http.get<User>(environment.baseUrl + this.url + "/addToClass/" + userId + "/" + className);
   }
 
-  addPoints(userId: number, points: number){
+  addPoints(userId: number, points: number): Observable<User> {
     return this.http.get<User>(environment.baseUrl + this.url + "/addpoints/" + userId + "/" + points);
   }
 

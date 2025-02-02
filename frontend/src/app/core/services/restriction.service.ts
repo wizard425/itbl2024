@@ -33,8 +33,18 @@ export class RestrictionService {
     return !this.clickableList.some(a => a === request);
   }
 
-  setFullList(setOfRestrictions: Array<GameScenario>){
+  setFullList(setOfRestrictions: Array<GameScenario>) {
     this.clickableList = setOfRestrictions;
+  }
+
+  logout() {
+    this.clickableList = [
+      GameScenario.AI,
+      GameScenario.Computer,
+      GameScenario.Cookies,
+      GameScenario.Shopping,
+      GameScenario.SocialMedia
+    ];
   }
 
 }
