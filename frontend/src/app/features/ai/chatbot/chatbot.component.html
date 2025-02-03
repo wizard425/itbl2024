@@ -1,0 +1,34 @@
+<div class="full-screen-container">
+    <div class="virtual-chat-header">
+        <h1>VIRTUELLER KI-CHAT</h1>
+    </div>
+    <div class="chat-interface">
+        <div *ngFor="let message of messages"
+            [ngClass]="{'user-message-box': message.sender === 'user', 'bot-message-box': message.sender === 'bot','bot-blue': message.sender === 'bot' && ai.currentIndex ==32}"
+            class="message">
+            <p *ngIf="message.sender === 'user'" class="message-text">{{ message.text }}</p>
+            <app-speaking-text [text]='message.text' [typingSpeed]="10"
+                *ngIf="message.sender === 'bot'"></app-speaking-text>
+        </div>
+        <div class="button-container" *ngIf="ai.currentIndex == 24">
+            <button class="send-button1" (click)="send()">Absenden</button>
+            <button class="do-not-send-button" (click)="doNotSend()">Nicht absenden</button>
+        </div>
+
+        <p class="help-text" *ngIf="showHelpText">Wie kann ich dir helfen?</p>
+        <div class="input-container" [ngClass]="{'input-red1': Inputerror , 'input-red2': correctan}">
+            <img *ngIf="ai.showfile" src="/assets/ai/file.png" alt="Upload" class="file">
+            <div class="chattext">
+                <textarea #textarea [placeholder]="placeholder" [ngClass]="{'input-red': Inputerror}"
+                    (keydown.enter)="sendMessage(); $event.preventDefault()"></textarea>
+                <button class="icon-button upload-button" (click)="addfile()">
+                    <img src="/assets/ai/plusi.png" alt="Upload">
+                </button>
+                <button class="icon-button send-button" (click)="sendMessage()">
+                    <img src="/assets/ai/sendi.png" alt="Send">
+                </button>
+            </div>
+        </div>
+    </div>
+    <img src="/assets/ai/navbar.png" alt="Navbar" class="navbar">
+</div>

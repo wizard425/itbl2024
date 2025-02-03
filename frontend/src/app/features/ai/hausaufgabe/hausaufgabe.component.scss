@@ -1,0 +1,33 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-button {
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #0d00c6;
+        padding: 0.5vw;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 2vw;
+        font-family: 'Righteous', sans-serif;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+        &:hover {
+            transform: translateX(-50%) scale(1.1);
+            background-color: #0056b3;
+        }
+    }
+}

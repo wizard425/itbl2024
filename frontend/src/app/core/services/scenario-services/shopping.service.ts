@@ -2,8 +2,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingSteps } from '../../../features/shopping/shopping-steps';
 import { BaseScenarioService } from './base-scenario.service';
 import { GameStep } from '../../../shared/gameUtilities/GameStep';
-import { BehaviorSubject } from 'rxjs';
-import { BlobOptions } from 'buffer';
 import { CompletionService } from '../completion.service';
 import { Router } from '@angular/router';
 import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
