@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ShelfComponent } from "./shelf/shelf.component";
 import { SpyComponent } from "../../../core/components/spy/spy.component";
 import { CookieService } from '../../../core/services/scenario-services/cookie.service';
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './kitchen.component.html',
   styleUrl: './kitchen.component.scss'
 })
-export class KitchenComponent {
+export class KitchenComponent implements OnInit{
 
   constructor(protected cookieService: CookieService,
     protected lexicon: LexiconService,
@@ -30,5 +30,16 @@ export class KitchenComponent {
     }
     this.cookieService.next()
   }
+
+    ngOnInit(): void {
+      // Wir fügen einen neuen Zustand in den Verlauf ein, um den Zurück-Button zu blockieren.
+      window.history.pushState(null, '', window.location.href);
+    }
+  
+    @HostListener('window:popstate', ['$event'])
+    onPopState(event: PopStateEvent) {
+      // Verhindere die Navigation zurück.
+      window.history.pushState(null, '', window.location.href);
+    }
 
 }

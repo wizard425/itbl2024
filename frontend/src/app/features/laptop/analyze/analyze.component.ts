@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { PasswordService } from '../../../core/services/scenario-services/password.service';
 import { OnlinePasswordService } from '../../../core/services/online-password.service';
 import { CommonModule } from '@angular/common';
@@ -45,6 +45,7 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
+    window.history.pushState(null, '', window.location.href);
     this.intervalId = setInterval(() => {
       this.currentStep = (this.currentStep + 1);
       if (this.currentStep > 3) {
@@ -52,6 +53,14 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
       }
     }, 3000);
   }
+
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event: PopStateEvent) {
+    // Verhindere die Navigation zurück.
+    window.history.pushState(null, '', window.location.href);
+  }
+
 
   ngOnDestroy() {
     clearInterval(this.intervalId); // Intervall bei Zerstörung der Komponente stoppen
@@ -78,10 +87,10 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
     if (this.num() > 0) {
       points++;
     }
-    if(this.sonderzeichen() > 0){
+    if (this.sonderzeichen() > 0) {
       points++;
     }
-    if(this.wdh()[1] == 0){
+    if (this.wdh()[1] == 0) {
       points++;
     }
 
@@ -137,6 +146,7 @@ export class AnalyzeComponent implements OnInit, OnDestroy {
     // TODO add points to user
     this.com.addToCompleted(GameScenario.Computer);
     this.game.addPoints(this.overAllPoints());
+    this.game.currentScenario = GameScenario.All
     this.router.navigate(['../../'], { relativeTo: this.ac });
   }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../../../../shared/gameUtilities/game.service';
 import { GameScenario } from '../../../../shared/gameUtilities/GameScenario';
@@ -38,9 +38,16 @@ export class LandingPageComponent implements OnInit {
       this.dialog.open(AllcompletedDialogComponent, {
         width: '400px',
       });
-
     }
+    window.history.pushState(null, '', window.location.href);
+
   }
+
+    @HostListener('window:popstate', ['$event'])
+    onPopState(event: PopStateEvent) {
+      // Verhindere die Navigation zurück.
+      window.history.pushState(null, '', window.location.href);
+    }
 
   public get scenarios(): typeof GameScenario {
     return GameScenario;
@@ -61,7 +68,10 @@ export class LandingPageComponent implements OnInit {
   clicked(scenario: GameScenario, link: string) {
     // not restricted and not completed yet
     if(this.restriction.canClick(scenario) && !this.completionService.isCompleted(scenario)){
+      console.log("gamescen set to " + scenario.toString)
+      this.game.currentScenario = scenario;
       this.router.navigate([link], {relativeTo: this.activatedRoute});
+      // sets scenario to not let player go back
     }
   }
 

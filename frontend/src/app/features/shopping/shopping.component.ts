@@ -1,4 +1,4 @@
-import { Component, Inject, ViewChild } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
 import { ShoppingService } from '../../core/services/scenario-services/shopping.service';
 import { SpyComponent } from "../../core/components/spy/spy.component";
 import { CommonModule } from '@angular/common';
@@ -19,8 +19,20 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './shopping.component.html',
   styleUrl: './shopping.component.scss'
 })
-export class ShoppingComponent {
-  constructor( protected shopping: ShoppingService,
+export class ShoppingComponent implements OnInit {
+
+  ngOnInit(): void {
+    // Wir fügen einen neuen Zustand in den Verlauf ein, um den Zurück-Button zu blockieren.
+    window.history.pushState(null, '', window.location.href);
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event: PopStateEvent) {
+    // Verhindere die Navigation zurück.
+    window.history.pushState(null, '', window.location.href);
+  }
+
+  constructor(protected shopping: ShoppingService,
     private gameService: GameService) {
   }
   spyclass() {

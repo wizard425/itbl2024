@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from '../../../core/services/scenario-services/cookie.service';
 import { BakerComponent } from "../../../core/components/baker/baker.component";
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { ActivatedRoute, RouteConfigLoadStart, Router } from '@angular/router';
   templateUrl: './bakery-inside.component.html',
   styleUrl: './bakery-inside.component.scss'
 })
-export class BakeryInsideComponent {
+export class BakeryInsideComponent implements OnInit {
 
   private _showButton: boolean = false;
 
@@ -30,5 +30,16 @@ export class BakeryInsideComponent {
     this.cookieService.next();
     this.router.navigate([`../kitchen`], { relativeTo: this.route });
   }
+
+    ngOnInit(): void {
+      // Wir fügen einen neuen Zustand in den Verlauf ein, um den Zurück-Button zu blockieren.
+      window.history.pushState(null, '', window.location.href);
+    }
+  
+    @HostListener('window:popstate', ['$event'])
+    onPopState(event: PopStateEvent) {
+      // Verhindere die Navigation zurück.
+      window.history.pushState(null, '', window.location.href);
+    }
 
 }

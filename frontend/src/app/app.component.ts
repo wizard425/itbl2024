@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GameService } from './shared/gameUtilities/game.service';
 import { GameStep } from './shared/gameUtilities/GameStep';
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   title = 'itbl2024';
 
-  protected isLoading : boolean = true;
+  protected isLoading: boolean = true;
 
   constructor(private game: GameService,
     private completed: CompletionService,
@@ -29,7 +29,26 @@ export class AppComponent implements OnInit {
     protected imageLoaderService: ImageLoadingService
   ) { }
 
+
+  @HostListener('document:visibilitychange', [])
+  onVisibilityChange() {
+    localStorage.setItem("currScen", JSON.stringify(this.game.currentScenario))
+    console.log('Seite wird geschlossen. Session gespeichert.');
+    if (document.visibilityState === 'hidden') {
+      console.log('Der Nutzer hat den Tab verlassen.');
+    }
+  }
+
   ngOnInit(): void {
+    const g = localStorage.getItem("currScen")
+    console.log(g)
+    if (g != null) {
+      console.log("game zugewiesen")
+      console.log("DAVOR " + this.game)
+      this.game.currentScenario = JSON.parse(g)
+      console.log("DANACH" + this.game)
+
+    }
 
     this.imageLoaderService.loadImages(imageUrls)
       .then(() => {

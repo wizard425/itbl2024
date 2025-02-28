@@ -1,3 +1,4 @@
+<app-loader [isLoading]="loading"></app-loader>
 <div class="container">
 
     <div class="list">
@@ -39,5 +40,10 @@
 
         </div>
     </div>
+
+    <button mat-fab extended style="position: absolute; right: 50px; bottom: 50px;" (click)="loadRanks()">
+        <mat-icon>refresh</mat-icon>
+        Aktualisieren
+    </button>
 
 </div>

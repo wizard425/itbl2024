@@ -13,11 +13,12 @@ import { environment } from '../../../../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { DuplicateNameComponent } from '../duplicate-name/duplicate-name.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from "../../../core/components/loading-component/loader.component";
 
 @Component({
   selector: 'app-start-name',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, RouterModule, CommonModule, MatSnackBarModule],
+  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, RouterModule, CommonModule, MatSnackBarModule, LoaderComponent],
   templateUrl: './start-name.component.html',
   styleUrls: ['./start-name.component.scss'] // Corrected 'styleUrl' to 'styleUrls'
 })
@@ -31,9 +32,12 @@ export class StartNameComponent {
     private snackBar: MatSnackBar
   ) { }
 
+  protected loading : boolean = false;
+
   start() {
     const name = this.nameInput.nativeElement.value;
     if (name) {
+      this.loading = true;
       this.userService.create({
         name: name,
         points: 0
@@ -45,13 +49,15 @@ export class StartNameComponent {
         this.snackBar.open("Spieler erfolgreich erstellt!", "Ok", {
           duration: 2000,
         })
+        this.loading = false;
         this.router.navigate([`../class`], { relativeTo: this.route });
       }, err => {
+        this.loading = false;
         this.dialog.open(DuplicateNameComponent);
       });
       ;
     } else {
-      alert("please enter ur name")
+      alert("Please enter your name")
     }
   }
 }
