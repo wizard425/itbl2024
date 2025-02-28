@@ -29,7 +29,7 @@ export const routes: Routes = [
     {
         path: "",
         redirectTo: "/start/1",
-        pathMatch: 'full'
+        pathMatch: 'full',
     },
     {
         path: "start",
@@ -78,7 +78,7 @@ export const routes: Routes = [
                     {
                         path: "monitor",
                         title: "Computer | " + AppTitle,
-                        component: MonitorComponent
+                        component: MonitorComponent,
                     },
                     {
                         path: "game",

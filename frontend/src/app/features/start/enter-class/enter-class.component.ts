@@ -9,18 +9,20 @@ import { GameService } from '../../../shared/gameUtilities/game.service';
 import { UserService } from '../../../core/services/user.service';
 import { environment } from '../../../../../environments/environment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoaderComponent } from '../../../core/components/loading-component/loader.component';
 
 
 @Component({
   selector: 'app-enter-class',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, RouterModule, CommonModule],
+  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, RouterModule, CommonModule, LoaderComponent],
   templateUrl: './enter-class.component.html',
   styleUrl: './enter-class.component.scss'
 })
 export class EnterClassComponent {
   @ViewChild('nameInput') nameInput!: ElementRef;
 
+  protected loading : boolean = false;
 
   constructor(private gameService: GameService,
     private userService: UserService,
@@ -32,9 +34,10 @@ export class EnterClassComponent {
 
   addClass() {
     if (this.gameService.currentUser != undefined) {
-      {
+
         const name = this.nameInput.nativeElement.value;
         if (name && this.gameService.currentUser.id) {
+          this.loading = true;
           this.userService.addToClass(this.gameService.currentUser.id, name).subscribe(x => {
             this.gameService.currentUser = x;
             if(environment.storeUser){
@@ -43,6 +46,7 @@ export class EnterClassComponent {
             this.snackBar.open("Erfolgreich in Klasse eingeschrieben", "Ok", {
               duration: 2000
             })
+            this.loading = false;
             this.router.navigate([`/cockpit`]);
           });
         } else if (this.gameService.currentUser.id) {
@@ -50,7 +54,6 @@ export class EnterClassComponent {
         } else {
           console.log("something went wrong");
         }
-      }
     }
   }
 

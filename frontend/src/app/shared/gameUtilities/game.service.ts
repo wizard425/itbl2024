@@ -9,6 +9,7 @@ import { BaseScenarioService } from '../../core/services/scenario-services/base-
 import { UserService } from '../../core/services/user.service';
 import { CompletionService } from '../../core/services/completion.service';
 import { RestrictionService } from '../../core/services/restriction.service';
+import { GameScenario } from './GameScenario';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class GameService {
   private _unlockedChapters: Chapter[] = [Chapters[1]];
   private _currentScenarioService: BaseScenarioService | undefined;
 
+  private _currentScenario: GameScenario |undefined = GameScenario.All;
 
   constructor(public intro: IntroService,
     private userService: UserService,
@@ -60,6 +62,14 @@ export class GameService {
   public set currentScenarioService(value: BaseScenarioService | undefined) {
     this._currentScenarioService = value;
   }
+
+  public get currentScenario(): GameScenario | undefined  {
+    return this._currentScenario;
+  }
+  public set currentScenario(value: GameScenario | undefined) {
+    this._currentScenario = value;
+  }
+
 
   nextGameStep() {
     if (this.currentGameStep.order < gameStoryLine.length && !this.scenarioInProgress()) {
