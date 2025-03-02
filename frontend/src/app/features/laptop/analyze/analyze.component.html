@@ -1,6 +1,100 @@
 <div class="container">
 
-    {{passwordService.password}}
+    <div class="analyzer-container">
+        <div class="animation" *ngIf="currentStep < 4">
+            <div class="icon" *ngIf="currentStep === 0">
+                <img src="/assets/password/ruler.png" />
+            </div>
+            <div class="icon" *ngIf="currentStep === 1">
+                <img src="/assets/password/gear.png" />
+            </div>
+            <div class="icon" *ngIf="currentStep === 2">
+                <img src="/assets/password/star.png" />
+            </div>
+            <div class="icon" *ngIf="currentStep === 3">
+                <img src="/assets/password/network.png" />
+            </div>
+            <div class="text">
+                {{ steps[currentStep] }}
+            </div>
+            <div class="progress-bar">
+                <mat-progress-bar mode="indeterminate" style="margin-top: 35px; width: 50%;"></mat-progress-bar>
+            </div>
+        </div>
+
+        <div *ngIf="currentStep > 3" class="small">
+
+            <div>
+                <h6>
+                    Länge
+                </h6>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Dein Passwort hat die Länge {{this.passwordService.password.length}}.<br></span>
+                    <span><b>{{lengthPoints()}}/6 Punkte</b></span>
+                </div>
+            </div>
+
+            <div>
+                <h6>
+                    Zeichenvielfalt
+                </h6>
+                <div>
+                    Dein Passwort enthält
+                    <ul>
+                        <li>
+                            <span> {{uppercase()}} Großbuchstaben</span>
+                            <span><b>{{uppercase() > 0 ? 1 : 0}}/1 Punkte</b></span>
+                        </li>
+                        <li>
+                            <span>{{lowercase()}} Kleinbuchstaben</span>
+                            <span><b>{{lowercase() > 0 ? 1 : 0}}/1 Punkte</b></span>
+                        </li>
+                        <li>
+                            <span>{{num()}} Nummern</span>
+                            <span><b>{{num() > 0 ? 1 : 0}}/1 Punkte</b></span>
+                        </li>
+                        <li>
+                            <span>{{sonderzeichen()}} Sonderzeichen</span>
+                            <span><b>{{sonderzeichen() > 0 ? 1 : 0}}/1 Punkte</b></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h6>
+                    Komplexität
+                </h6>
+                <div>
+                    Wir haben das Passwort mit den 100.000 meist-genutzen Passwörter verglichen. Dabei haben wir mit
+                    einem Algorithmus analysiert,
+                    dass dein Passwort {{levenshtein}} Änderungen braucht um auch darin vorzukommen.
+                </div>
+            </div>
+
+            <div>
+                <h6>
+                    Wiederholungen
+                </h6>
+                <div style="display: flex;justify-content: space-between;">
+                    <span>
+                        @if(wdh()[1] > 0){
+                            Dein Passwort enthält {{wdh()[1]}} mal {{wdh()[0]}}.
+                        }
+                        @if(wdh()[1] == 0){
+                            Dein Passwort enthält keine Wiederholungen. Sehr gut!
+                        }
+                        </span>
+                    <span><b>{{wdh()[1] > 0 ? 0 : 1}}/1 Punkte</b></span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;" (click)="goToEnd()">
+                <button mat-flat-button>Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <app-spy *ngIf="currentStep > 3" style="position: absolute; bottom: 50px; left: 20px;"></app-spy>
     
 
 </div>

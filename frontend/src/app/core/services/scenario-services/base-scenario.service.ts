@@ -46,4 +46,8 @@ export abstract class BaseScenarioService {
 
   abstract next() : GameStep;
 
+  public logout() {
+    this.currentIndex = 0;
+  }
+
 }

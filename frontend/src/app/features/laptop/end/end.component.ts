@@ -1,14 +1,15 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ScenarioComponent } from '../../../core/components/scenario-interface/scenario.component';
+import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
 
 @Component({
-  selector: 'app-cookie',
+  selector: 'app-end',
   standalone: true,
-  imports: [RouterModule],
-  templateUrl: './cookie.component.html',
-  styleUrl: './cookie.component.scss'
+  imports: [],
+  templateUrl: './end.component.html',
+  styleUrl: './end.component.scss'
 })
-export class CookieComponent implements OnInit{
+export class EndComponent implements OnInit {
 
   ngOnInit(): void {
     // Wir fügen einen neuen Zustand in den Verlauf ein, um den Zurück-Button zu blockieren.

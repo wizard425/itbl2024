@@ -42,5 +42,14 @@ namespace ITBL.Controllers
             return ret;
         }
 
+        [HttpGet]
+        [Route("addpoints/{userId}/{points}")]
+        public async Task<User> AddPoints([FromRoute] int userId, [FromRoute] int points)
+        {
+            User ret = await _userService.AddPoints(userId, points);
+
+            return ret;
+        }
+
     }
 }
