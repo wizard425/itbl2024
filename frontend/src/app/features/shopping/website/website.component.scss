@@ -6,7 +6,16 @@
 .back3 {
     background-color: white;
 }
-
+.arrow{
+    width: 150px;
+    height: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.footer-arrow{
+    display: flex;
+    flex-direction: row;
+}
 .header1,
 .header3 {
     background-color: #1d1d1d;
