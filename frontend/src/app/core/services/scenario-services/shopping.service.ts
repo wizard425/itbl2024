@@ -5,6 +5,7 @@ import { GameStep } from '../../../shared/gameUtilities/GameStep';
 import { CompletionService } from '../completion.service';
 import { Router } from '@angular/router';
 import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
+import { GameService } from '../../../shared/gameUtilities/game.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,9 @@ export class ShoppingService extends BaseScenarioService {
   GivedphoneN: boolean = false;
   showcheckout: boolean = false;
   answers: boolean[] = [false, false, false, false]
+  evaluation: boolean[] = [false, false, false, false, false, false]
   constructor(private router: Router,
-    private completion: CompletionService) {
+    private completion: CompletionService,private gameService: GameService) {
     super(ShoppingSteps)
   }
   public override get currentGameStep(): GameStep {
@@ -38,6 +40,7 @@ export class ShoppingService extends BaseScenarioService {
       if (this.angebotAngenommen == 0) {
         return this.scenarioSteps[this.currentIndex][1];
       } else {
+        this.evaluation[3] = true;
         return this.scenarioSteps[this.currentIndex][0];
       }
     }
@@ -45,6 +48,7 @@ export class ShoppingService extends BaseScenarioService {
       if (this.GivedphoneN) {
         return this.scenarioSteps[this.currentIndex][1];
       } else {
+        this.evaluation[4] = true;
         return this.scenarioSteps[this.currentIndex][0];
       }
     }
@@ -52,6 +56,7 @@ export class ShoppingService extends BaseScenarioService {
       if (this.newslatter) {
         return this.scenarioSteps[this.currentIndex][1];
       } else {
+        this.evaluation[5] = true;
         return this.scenarioSteps[this.currentIndex][0];
       }
     }
@@ -59,11 +64,17 @@ export class ShoppingService extends BaseScenarioService {
       if (this.answers[0] || this.answers[1]) {
         return this.scenarioSteps[this.currentIndex][1];
       } else {
+        if (this.currentIndex == 6) {
+          this.evaluation[0] = true;
+        } else {
+          this.evaluation[1] = true
+        }
         return this.scenarioSteps[this.currentIndex][0];
       }
     }
     if (this.currentIndex == 18) {
       if (this.answers[0] || this.answers[1]) {
+        this.evaluation[2] = true;
         return this.scenarioSteps[this.currentIndex][0];
       } else {
         return this.scenarioSteps[this.currentIndex][1];
@@ -125,9 +136,50 @@ export class ShoppingService extends BaseScenarioService {
     if (this.currentIndex == 35) {
       this.completion.addToCompleted(GameScenario.Shopping);
       this.router.navigate(["/cockpit"]);
+      this.gameService.addPoints(this.calculatePoints(this.evaluation))
     }
     this.currentIndex++;
     return this.currentGameStep;
   }
+
+
+  calculatePoints(answers: boolean[]): number {
+    console.log(answers)
+    let points = 0;
+    let streak3 = 0;
+    let streak4 = 0;
+
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i]) {
+        points += 4;
+        streak3++;
+        streak4++;
+      } else {
+        points -= 2;
+        streak3 = 0;
+        streak4 = 0;
+      }
+
+      if (streak3 === 3) {
+        points += 3;
+        streak3 = 0;
+      }
+
+      if (streak4 === 4) {
+        points += 4;
+        streak4 = 0;
+      }
+      if(points<0){
+        points = 0;
+      }
+    }
+
+    if (answers.every(answer => answer === true)) {
+      points += 3;
+    }
+
+    return points;
+  }
+
 }
 
