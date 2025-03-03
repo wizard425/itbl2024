@@ -46,8 +46,16 @@
     </div>
     <footer class="footer">
         <div class="footer-content">
-            <span [innerHTML]="websites[shopping.webnumber].footerLeft"></span>
-            <span [innerHTML]="websites[shopping.webnumber].footerRight"></span>
+            <div class="footer-arrow">
+                <div>
+                    <span [innerHTML]="websites[shopping.webnumber].footerLeft"></span>
+                </div>
+                <img src="assets/shopping/arrowleft.png" alt="" class="arrow" *ngIf="(shopping.currentIndex ==7 || shopping.currentIndex == 13 || shopping.currentIndex == 19)">
+            </div>
+            <div class="footer-arrow">
+                <img src="assets/shopping/arrowright.png" alt="" class="arrow" *ngIf="(shopping.currentIndex ==9 || shopping.currentIndex == 14|| shopping.currentIndex == 19)">
+                <div><span [innerHTML]="websites[shopping.webnumber].footerRight"></span></div>
+            </div>
         </div>
     </footer>
 </div>

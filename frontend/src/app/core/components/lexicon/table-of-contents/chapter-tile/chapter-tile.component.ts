@@ -23,9 +23,7 @@ export class ChapterTileComponent {
 
   goToChapter() {
     this.game.unlockedChapters.forEach(c => {
-      if (c.id == this.chapter?.id) {
-        this.lexicon.setChapter(this.chapter);
-      }
+      this.lexicon.setChapter(this.chapter);
     })
   }
 
@@ -36,7 +34,7 @@ export class ChapterTileComponent {
         return false;
       }
     }
-    return true;
+    return false;
   }
 
 }

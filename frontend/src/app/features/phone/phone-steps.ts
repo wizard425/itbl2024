@@ -236,7 +236,7 @@ export const PhoneSteps: GameStep[][] = [
             order: 26,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Glückwunsch! Mit diesem Spiel hast du X-Punkte verdient! Checke deinen aktuellen Score auf der Startseite ab!",
+            textToSpeech: "Glückwunsch! Mit diesem Spiel hast du %X-Punkte verdient! Checke deinen aktuellen Score auf der Startseite ab!",
             scenario: GameScenario.SocialMedia
         }
     ]

@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ScenarioComponent } from '../../../core/components/scenario-interface/scenario.component';
 import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
 
 @Component({

@@ -6,6 +6,7 @@ import { BaseScenarioService } from './base-scenario.service';
 import { GameStep } from '../../../shared/gameUtilities/GameStep';
 import { Subject } from 'rxjs';
 import { GameScenario } from '../../../shared/gameUtilities/GameScenario';
+import { GameService } from '../../../shared/gameUtilities/game.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -57,6 +58,7 @@ export class AiService extends BaseScenarioService {
     if (this.currentIndex == 32) {
       this.completion.addToCompleted(GameScenario.AI);
       this.router.navigate(["/cockpit"]);
+      this.gameService.addPoints(this.calculate_point())
     }
     if (this.currentIndex == 3 || this.currentIndex == 6) {
       this.Hidespy = true;
@@ -74,7 +76,23 @@ export class AiService extends BaseScenarioService {
   }
 
   constructor(private router: Router,
-    private completion: CompletionService) {
+    private completion: CompletionService, private gameService: GameService) {
     super(AISteps)
+  }
+  calculate_point(): number {
+    var point = 0;
+    if (this.firstq) {
+      point = + 10;
+    } else { point = -5; }
+    if (this.secq) {
+      point = + 10;
+    } else { point = -5; }
+    if (this.firstq && this.secq) {
+      point = point + 2;
+    }
+    if (point < 0) {
+      point = 0;
+    }
+    return point;
   }
 }
