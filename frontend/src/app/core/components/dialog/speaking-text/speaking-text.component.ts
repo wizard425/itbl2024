@@ -15,7 +15,7 @@ export class SpeakingTextComponent implements OnChanges {
   @Input() text: string = '';
   @Output() finishedChangedTo = new EventEmitter<boolean>();
   displayedText: string = '';  // Text, der Buchstabe für Buchstabe angezeigt wird
-  @Input() typingSpeed: number = 1;   // Geschwindigkeit in Millisekunden
+  @Input() typingSpeed: number = 30;   // Geschwindigkeit in Millisekunden
   private subscription: Subscription | undefined;
 
   constructor(protected game: GameService,
