@@ -37,6 +37,7 @@ export class LandingPageComponent implements OnInit {
 
       this.dialog.open(AllcompletedDialogComponent, {
         width: '400px',
+        disableClose: true
       });
     }
     window.history.pushState(null, '', window.location.href);
