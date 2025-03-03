@@ -33,7 +33,6 @@ export class GameComponent implements OnInit {
   constructor(protected lexicon: LexiconService,
     protected dialog: MatDialog
   ) {
-    lexicon.isVisible = true;
   }
 
   protected get buttonVisible(): boolean {

@@ -19,7 +19,6 @@ export class KitchenComponent implements OnInit{
     protected router: Router,
     private route: ActivatedRoute
   ){
-    lexicon.isVisible = true;
     this.cookieService.currentIndex = 8;
   }
 

@@ -84,8 +84,5 @@ export class LandingPageComponent implements OnInit {
       this.restriction.free(GameScenario.Cookies);
       this.restriction.free(GameScenario.SocialMedia);
     }
-    if(this.game.currentGameStep.order == 15) {
-      this.lexicon.isVisible = true;
-    }
   }
 }
