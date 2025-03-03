@@ -11,7 +11,6 @@ export class LexiconService {
   private lexiconContent: DoublePage[] = [];
   private currentIndex = 0;
   private currentPage: DoublePage;
-  private _isVisible = false;
 
 
   constructor() {
@@ -55,13 +54,6 @@ export class LexiconService {
 
   hasPreviousPage(): boolean {
     return this.currentIndex > 0;
-  }
-
-  public get isVisible() {
-    return this._isVisible;
-  }
-  public set isVisible(value) {
-    this._isVisible = value;
   }
 
   private setPage(index: number) {

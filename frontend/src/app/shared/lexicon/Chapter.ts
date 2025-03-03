@@ -10,31 +10,31 @@ export const Chapters: Chapter[] = [
     {
         id: 1,
         name: "Passwort",
-        startsAtPage: 1,
-        isLocked: true
+        startsAtPage: 3,
+        isLocked: false
     },
     {
         id: 2,
         name: "Cookies",
         startsAtPage: 1,
-        isLocked: true
+        isLocked: false
     },
     {
         id: 3,
         name: "AI",
-        startsAtPage: 20,
-        isLocked: true
+        startsAtPage: 4,
+        isLocked: false
     },
     {
         id: 4,
         name: "Shopping",
-        startsAtPage: 30,
-        isLocked: true
+        startsAtPage: 3,
+        isLocked: false
     },
     {
         id: 5,
         name: "Social Media",
-        startsAtPage: 40,
-        isLocked: true
+        startsAtPage: 4,
+        isLocked: false
     },
 ]

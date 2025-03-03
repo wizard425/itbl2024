@@ -63,6 +63,8 @@ export const imageUrls = [
     'assets/shopping/paypal.png',
     'assets/shopping/redshoe.png',
     'assets/shopping/shoppinglist.png',
+    'assets/shopping/arrowright.png',
+    'assets/shopping/arrowleft.png',
     'assets/shopping/warenkorb.png',
 
 

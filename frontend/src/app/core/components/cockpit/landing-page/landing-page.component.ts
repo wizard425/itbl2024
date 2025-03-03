@@ -37,6 +37,7 @@ export class LandingPageComponent implements OnInit {
 
       this.dialog.open(AllcompletedDialogComponent, {
         width: '400px',
+        disableClose: true
       });
     }
     window.history.pushState(null, '', window.location.href);
@@ -83,9 +84,6 @@ export class LandingPageComponent implements OnInit {
       this.restriction.free(GameScenario.Shopping);
       this.restriction.free(GameScenario.Cookies);
       this.restriction.free(GameScenario.SocialMedia);
-    }
-    if(this.game.currentGameStep.order == 15) {
-      this.lexicon.isVisible = true;
     }
   }
 }

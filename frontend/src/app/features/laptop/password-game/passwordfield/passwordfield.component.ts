@@ -33,7 +33,6 @@ export class PasswordfieldComponent {
   constructor(private router: Router, private act: ActivatedRoute, private passwordService: PasswordService,
     protected lex: LexiconService
   ) {
-lex.isVisible = true;
   }
 
   goToAnalyze() {
