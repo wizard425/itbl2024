@@ -57,29 +57,29 @@ export const LexiconContent: DoublePage[] = [
         },
         rightPage: {
             title: "Online Shopping",
-            content: "<p>Nicht jede Webseite ist vertrauenswürdig. Darauf solltest du achten:</p>\n<ul>\n    <li>Impressum und Kontakt prüfen: Fehlende oder unklare Angaben sind ein Warnsignal.</li>\n    <li>Unrealistische Rabatte hinterfragen: „80 % auf alles“ ist oft Betrug.</li>\n    <li>Druck durch Countdown-Timer: Viele Webseiten setzen auf künstliche Zeitlimits.</li>\n    <li>Nur notwendige Daten angeben: Telefonnummer oder Geburtsdatum sind meist nicht erforderlich.</li>\n    <li>Sichere Zahlungsmethoden nutzen: Nur bekannte Anbieter wie Kreditkarte oder PayPal wählen.</li>\n</ul>",
+            content: "<p>Nicht jede Webseite ist vertrauenswürdig. Darauf solltest du achten:</p>\n<ul>\n    <li>Impressum und Kontakt prüfen: Fehlende oder unklare Angaben sind ein Warnsignal.</li>\n    <li>Unrealistische Rabatte hinterfragen: „80 % auf alles“ ist oft Betrug.</li>\n <li>Druck durch Countdown-Timer: Viele Webseiten setzen auf künstliche Zeitlimits.</li>\n    <li>Nur notwendige Daten angeben: Telefonnummer oder Geburtsdatum sind meist nicht erforderlich.</li>\n    <li>Sichere Zahlungsmethoden nutzen: Nur bekannte Anbieter wie Kreditkarte oder PayPal wählen.</li>\n</ul>",
             pageNumber: 7
         }
     },{
         leftPage: {
-            title: "KI",
-            content: "<p>KI kann hilfreich sein, aber es gibt Datenschutzrisiken. Wichtige Punkte:</p>\n<ul>\n    <li>Keine persönlichen Daten eingeben: Name, Adresse oder Telefonnummer nicht teilen.</li>\n    <li>Keine sensiblen Informationen preisgeben: Arztberichte oder Passwörter gehören nicht in eine KI-Anfrage.</li>\n    <li>Allgemeine Fragen stellen: Formulierungen so wählen, dass keine Rückschlüsse auf persönliche Daten möglich sind.</li>\n    <li>Ergebnisse kritisch hinterfragen: KI kann Fehler machen und falsche Informationen liefern.</li>\n</ul>",
+            title: "",
+            content: "<h6>Dark Patterns</h6><ul><li>Dark Patterns sind manipulative Design-Tricks, die Nutzer dazu bringen, ungewollte Entscheidungen zu treffen, zB. ein Abo abzuschließen oder Daten preiszugeben. Häufig verwendete Beispiele sind versteckte Kosten, irreführende Buttons oder erschwerte Kündigungen.</li></ul>",
             pageNumber: 8
         },
         rightPage: {
-            title: "Social Media",
-            content: "<p>Nicht jedes Profil ist echt. So kannst du vertrauenswürdige von unseriösen Accounts unterscheiden:</p>\n<ul>\n    <li>Gemeinsame Follower prüfen: Echte Profile haben oft gemeinsame Freunde oder Follower aus deinem Umfeld.</li>\n    <li>Bilder genau anschauen: Vertrauenswürdige Profile nutzen echte, konsistente Bilder – Fake-Accounts haben oft stockartige, zu perfekte oder gestohlene Bilder.</li>\n    <li>Aktivität überprüfen: Echte Profile posten regelmäßig, interagieren natürlich und haben sinnvolle Kommentare. Fake-Profile wirken oft leer oder haben generische Beiträge.</li>\n</ul>",
+            title: "KI",
+            content: "<p>KI kann hilfreich sein, aber es gibt Datenschutzrisiken. Wichtige Punkte:</p>\n<ul>\n    <li>Keine persönlichen Daten eingeben: Name, Adresse oder Telefonnummer nicht teilen.</li>\n    <li>Keine sensiblen Informationen preisgeben: Arztberichte oder Passwörter gehören nicht in eine KI-Anfrage.</li>\n    <li>Allgemeine Fragen stellen: Formulierungen so wählen, dass keine Rückschlüsse auf persönliche Daten möglich sind.</li>\n    <li>Ergebnisse kritisch hinterfragen: KI kann Fehler machen und falsche Informationen liefern.</li>\n</ul>",
             pageNumber: 9
         }
     },{
         leftPage: {
-            title: "",
-            content: "<ul><li>Follower und Followings checken: Auffällig sind extrem viele oder fast keine Follower sowie unausgewogene Verhältnisse (z. B. folgt 1000+, aber kaum jemand folgt zurück).</li>\n    <li>Account-Details ansehen: Neue Accounts ohne Biografie oder mit merkwürdigen Links sind verdächtig.</li></ul>",
+            title: "Social Media",
+            content: "<p>Nicht jedes Profil ist echt. So kannst du vertrauenswürdige von unseriösen Accounts unterscheiden:</p>\n<ul>\n    <li>Gemeinsame Follower prüfen: Echte Profile haben oft gemeinsame Freunde oder Follower aus deinem Umfeld.</li>\n    <li>Bilder genau anschauen: Vertrauenswürdige Profile nutzen echte, konsistente Bilder – Fake-Accounts haben oft stockartige, zu perfekte oder gestohlene Bilder.</li>\n    <li>Aktivität überprüfen: Echte Profile posten regelmäßig, interagieren natürlich und haben sinnvolle Kommentare. Fake-Profile wirken oft leer oder haben generische Beiträge.</li>\n</ul>",
             pageNumber: 10
         },
         rightPage: {
             title: "",
-            content: "",
+            content: "<ul><li>Follower und Followings checken: Auffällig sind extrem viele oder fast keine Follower sowie unausgewogene Verhältnisse (z. B. folgt 1000+, aber kaum jemand folgt zurück).</li>\n    <li>Account-Details ansehen: Neue Accounts ohne Biografie oder mit merkwürdigen Links sind verdächtig.</li></ul>",
             pageNumber: 11
         }
     }
