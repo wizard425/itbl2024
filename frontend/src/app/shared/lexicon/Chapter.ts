@@ -34,7 +34,7 @@ export const Chapters: Chapter[] = [
     {
         id: 5,
         name: "Social Media",
-        startsAtPage: 4,
+        startsAtPage: 5,
         isLocked: false
     },
 ]

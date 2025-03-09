@@ -222,7 +222,7 @@ export const AISteps: GameStep[][] = [
             order: 26,
             canClickNext: true,
             reachablePoints: 0,
-            textToSpeech: "Richtig! Ein vollständiges medizinisches Dokument solltest du niemals einfach so einer KI zur verfügung stellen.",
+            textToSpeech: "Richtig! Ein vollständiges medizinisches Dokument solltest du niemals einfach so einer KI zur Verfügung stellen.",
             scenario: GameScenario.AI
         }
     ],[
