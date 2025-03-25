@@ -4,11 +4,12 @@ import { SpyComponent } from "../../core/components/spy/spy.component";
 import { HausaufgabeComponent } from "./hausaufgabe/hausaufgabe.component";
 import { CommonModule } from '@angular/common';
 import { ChatbotComponent } from "./chatbot/chatbot.component";
+import { ConsentDialogComponent } from "../../core/components/consent/consent-dialog/consent-dialog.component";
 
 @Component({
   selector: 'app-ai',
   standalone: true,
-  imports: [SpyComponent, HausaufgabeComponent, CommonModule, ChatbotComponent],
+  imports: [SpyComponent, HausaufgabeComponent, CommonModule, ChatbotComponent, ConsentDialogComponent],
   templateUrl: './ai.component.html',
   styleUrl: './ai.component.scss'
 })

@@ -60,7 +60,7 @@ export const LexiconContent: DoublePage[] = [
             content: "<p>Nicht jede Webseite ist vertrauenswürdig. Darauf solltest du achten:</p>\n<ul>\n    <li>Impressum und Kontakt prüfen: Fehlende oder unklare Angaben sind ein Warnsignal.</li>\n    <li>Unrealistische Rabatte hinterfragen: „80 % auf alles“ ist oft Betrug.</li>\n <li>Druck durch Countdown-Timer: Viele Webseiten setzen auf künstliche Zeitlimits.</li>\n    <li>Nur notwendige Daten angeben: Telefonnummer oder Geburtsdatum sind meist nicht erforderlich.</li>\n    <li>Sichere Zahlungsmethoden nutzen: Nur bekannte Anbieter wie Kreditkarte oder PayPal wählen.</li>\n</ul>",
             pageNumber: 7
         }
-    },{
+    }, {
         leftPage: {
             title: "",
             content: "<h6>Dark Patterns</h6><ul><li>Dark Patterns sind manipulative Design-Tricks, die Nutzer dazu bringen, ungewollte Entscheidungen zu treffen, zB. ein Abo abzuschließen oder Daten preiszugeben. Häufig verwendete Beispiele sind versteckte Kosten, irreführende Buttons oder erschwerte Kündigungen.</li></ul>",
@@ -71,7 +71,7 @@ export const LexiconContent: DoublePage[] = [
             content: "<p>KI kann hilfreich sein, aber es gibt Datenschutzrisiken. Wichtige Punkte:</p>\n<ul>\n    <li>Keine persönlichen Daten eingeben: Name, Adresse oder Telefonnummer nicht teilen.</li>\n    <li>Keine sensiblen Informationen preisgeben: Arztberichte oder Passwörter gehören nicht in eine KI-Anfrage.</li>\n    <li>Allgemeine Fragen stellen: Formulierungen so wählen, dass keine Rückschlüsse auf persönliche Daten möglich sind.</li>\n    <li>Ergebnisse kritisch hinterfragen: KI kann Fehler machen und falsche Informationen liefern.</li>\n</ul>",
             pageNumber: 9
         }
-    },{
+    }, {
         leftPage: {
             title: "Social Media",
             content: "<p>Nicht jedes Profil ist echt. So kannst du vertrauenswürdige von unseriösen Accounts unterscheiden:</p>\n<ul>\n    <li>Gemeinsame Follower prüfen: Echte Profile haben oft gemeinsame Freunde oder Follower aus deinem Umfeld.</li>\n    <li>Bilder genau anschauen: Vertrauenswürdige Profile nutzen echte, konsistente Bilder – Fake-Accounts haben oft stockartige, zu perfekte oder gestohlene Bilder.</li>\n    <li>Aktivität überprüfen: Echte Profile posten regelmäßig, interagieren natürlich und haben sinnvolle Kommentare. Fake-Profile wirken oft leer oder haben generische Beiträge.</li>\n</ul>",
@@ -81,6 +81,28 @@ export const LexiconContent: DoublePage[] = [
             title: "",
             content: "<ul><li>Follower und Followings checken: Auffällig sind extrem viele oder fast keine Follower sowie unausgewogene Verhältnisse (z. B. folgt 1000+, aber kaum jemand folgt zurück).</li>\n    <li>Account-Details ansehen: Neue Accounts ohne Biografie oder mit merkwürdigen Links sind verdächtig.</li></ul>",
             pageNumber: 11
+        }
+    }, {
+        leftPage: {
+            title: "Informationspflicht",
+            content: "<p><strong>Informationspflicht gemäß Art. 13 DSGVO</strong></p><p><strong>für das Web-Game „Cyber Spion“</strong></p><p><strong>1. Verantwortlicher</strong><br>Cyber Spion Studios GmbH<br>Musterstraße 12, 12345 Musterstadt<br>E-Mail: support@cyberspion.com<br>Telefon: +49 123 456789</p><p><strong>2. Zwecke der Datenverarbeitung</strong></p><ul><li>Bereitstellung des Spiels „Cyber Spion“</li><li>Verwaltung von Nutzerkonten</li><li>Verbesserung des Spielerlebnisses</li><li>Schutz vor Betrug und Missbrauch</li><li>Erfüllung gesetzlicher Verpflichtungen</li></ul>",
+            pageNumber: 12
+        },
+        rightPage: {
+            title: "",
+            content: "<p><strong>3. Rechtsgrundlage der Verarbeitung</strong></p><ul><li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Vertragserfüllung)</li><li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (Berechtigtes Interesse)</li><li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> (Einwilligung für Marketing)</li></ul><p><strong>4. Erhobene Daten</strong></p><ul><li>Benutzername, E-Mail-Adresse, Passwort</li><li>IP-Adresse, Geräteinformationen</li><li>Spielverhalten (z. B. Fortschritt, Highscores)</li><li>Zahlungsinformationen (bei In-Game-Käufen)</li></ul><p><strong>5. Empfänger der Daten</strong></p><ul><li>Hosting-Dienstleister</li><li>Zahlungsanbieter (bei Käufen)</li><li>Behörden (falls gesetzlich erforderlich)</li></ul><p>",
+            pageNumber: 13
+        }
+    },{
+        leftPage: {
+            title: "",
+            content: "<strong><p>6. Speicherdauer</strong></p><ul><li>Nutzerkonto-Daten: Bis zur Kontolöschung</li><li>Zahlungsdaten: Entsprechend steuerlichen Vorgaben</li><li>Log-Dateien: 30 Tage</li></ul><p><strong>7. Ihre Rechte</strong></p><ul><li>Auskunft (Art. 15 DSGVO)</li><li>Berichtigung (Art. 16 DSGVO)</li><li>Löschung (Art. 17 DSGVO)</li><li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li><li>Datenübertragbarkeit (Art. 20 DSGVO)</li><li>Widerspruch (Art. 21 DSGVO)</li></ul><p><strong>8. Widerrufsrecht bei Einwilligung</strong></p><p>Falls wir Ihre Daten auf Basis einer Einwilligung verarbeiten, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>",
+            pageNumber: 14
+        },
+        rightPage: {
+            title: "",
+            content: "<p><strong>9. Beschwerderecht</strong></p><p>Sie können sich jederzeit bei der Datenschutzbehörde Ihres Landes beschweren.</p>",
+            pageNumber: 15
         }
     }
 ]
