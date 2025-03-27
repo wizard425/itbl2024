@@ -46,7 +46,7 @@ export const LexiconContent: DoublePage[] = [
         },
         rightPage: {
             title: "",
-            content: "<h6>Milch</h6><p>Milch sorgt f&uuml;r ein angenehmes Finish und eine verbesserte Textur. Sie repr&auml;sentiert Funktionen, die die Benutzererfahrung verbessern, wie personalisierte Vorschl&auml;ge.</p>",
+            content: "<h6>Milch</h6><p>Milch sorgt f&uuml;r ein angenehmes Finish und eine verbesserte Textur. Sie repr&auml;sentiert Funktionen, die die Benutzererfahrung verbessern, wie personalisierte Vorschl&auml;ge.</p> <h6>Ei</h6><p>Ei ist eine grundlegende Zutat, die daf&uuml;r sorgt, dass alles zusammenh&auml;lt. Es steht f&uuml;r die grundlegenden Funktionen einer Website, die notwendig sind, um sie zu betreiben.</p><p>&nbsp;</p>",
             pageNumber: 5
         }
     }, {
@@ -85,23 +85,23 @@ export const LexiconContent: DoublePage[] = [
     }, {
         leftPage: {
             title: "Informationspflicht",
-            content: "<p><strong>Informationspflicht gemäß Art. 13 DSGVO</strong></p><p><strong>für das Web-Game „Cyber Spion“</strong></p><p><strong>1. Verantwortlicher</strong><br>Cyber Spion Studios GmbH<br>Musterstraße 12, 12345 Musterstadt<br>E-Mail: support@cyberspion.com<br>Telefon: +49 123 456789</p><p><strong>2. Zwecke der Datenverarbeitung</strong></p><ul><li>Bereitstellung des Spiels „Cyber Spion“</li><li>Verwaltung von Nutzerkonten</li><li>Verbesserung des Spielerlebnisses</li><li>Schutz vor Betrug und Missbrauch</li><li>Erfüllung gesetzlicher Verpflichtungen</li></ul>",
+            content: "<p><strong>Informationspflicht gemäß Art. 13 DSGVO</strong></p><p><strong>für das Web-Game „Cyber Spion“</strong></p><p><strong>1. Verantwortlicher</strong><br>Musterunternehmen GmbH<br>Beispielstraße 1, 12345 Beispielstadt<br>E-Mail: kontakt@musterunternehmen.de<br>Telefon: +49 123 456789</p><p><strong>2. Zwecke der Datenverarbeitung</strong></p><ul><li>Bereitstellung des Spiels „Cyber Spion“</li><li>Verwaltung von Nutzerkonten</li><li>Veröffentlichung des Benutzernamens und der Punkte im Leaderboard</li></ul>",
             pageNumber: 12
         },
         rightPage: {
             title: "",
-            content: "<p><strong>3. Rechtsgrundlage der Verarbeitung</strong></p><ul><li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Vertragserfüllung)</li><li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (Berechtigtes Interesse)</li><li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> (Einwilligung für Marketing)</li></ul><p><strong>4. Erhobene Daten</strong></p><ul><li>Benutzername, E-Mail-Adresse, Passwort</li><li>IP-Adresse, Geräteinformationen</li><li>Spielverhalten (z. B. Fortschritt, Highscores)</li><li>Zahlungsinformationen (bei In-Game-Käufen)</li></ul><p><strong>5. Empfänger der Daten</strong></p><ul><li>Hosting-Dienstleister</li><li>Zahlungsanbieter (bei Käufen)</li><li>Behörden (falls gesetzlich erforderlich)</li></ul><p>",
+            content: "<p><strong>3. Erhobene Daten</strong></p><ul><li>Benutzername</li><li>Erreichte Punkte im Spiel</li></ul><p><strong>4. Empfänger der Daten</strong></p><ul><li>Hosting-Dienstleister (zur Bereitstellung der Web-App)</li></ul><p><strong>5. Speicherdauer</strong></p><ul><li><strong>Log-Dateien:</strong> Bis zum Ausloggen des Nutzers. Beim Ausloggen wird die Einwilligung widerrufen, und die Daten werden gelöscht.</li></ul> ",
             pageNumber: 13
         }
     },{
         leftPage: {
             title: "",
-            content: "<strong><p>6. Speicherdauer</strong></p><ul><li>Nutzerkonto-Daten: Bis zur Kontolöschung</li><li>Zahlungsdaten: Entsprechend steuerlichen Vorgaben</li><li>Log-Dateien: 30 Tage</li></ul><p><strong>7. Ihre Rechte</strong></p><ul><li>Auskunft (Art. 15 DSGVO)</li><li>Berichtigung (Art. 16 DSGVO)</li><li>Löschung (Art. 17 DSGVO)</li><li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li><li>Datenübertragbarkeit (Art. 20 DSGVO)</li><li>Widerspruch (Art. 21 DSGVO)</li></ul><p><strong>8. Widerrufsrecht bei Einwilligung</strong></p><p>Falls wir Ihre Daten auf Basis einer Einwilligung verarbeiten, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>",
+            content: "<p><strong>6. Ihre Rechte</strong></p><ul><li><strong>Auskunft</strong> (Art. 15 DSGVO) – Welche Daten wir über Sie speichern</li><li><strong>Berichtigung</strong> (Art. 16 DSGVO) – Korrektur unrichtiger Daten</li><li><strong>Löschung</strong> (Art. 17 DSGVO) – Recht auf Vergessenwerden</li><li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li><li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li><li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li></ul> <p><strong>7. Widerrufsrecht bei Einwilligung</strong></p><p>Falls wir Ihre Daten auf Basis einer Einwilligung verarbeiten, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Beim Ausloggen wird Ihre Einwilligung automatisch widerrufen.</p>",
             pageNumber: 14
         },
         rightPage: {
             title: "",
-            content: "<p><strong>9. Beschwerderecht</strong></p><p>Sie können sich jederzeit bei der Datenschutzbehörde Ihres Landes beschweren.</p>",
+            content: "<p><strong>8. Beschwerderecht</strong></p><p>Sie können sich jederzeit bei der Datenschutzbehörde Ihres Landes beschweren.</p>",
             pageNumber: 15
         }
     }
