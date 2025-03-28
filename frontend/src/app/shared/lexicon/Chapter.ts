@@ -36,5 +36,10 @@ export const Chapters: Chapter[] = [
         name: "Social Media",
         startsAtPage: 5,
         isLocked: false
-    },
+    },{
+        id: 6,
+        name: "Informationspflicht",
+        startsAtPage: 6,
+        isLocked: false
+    }
 ]

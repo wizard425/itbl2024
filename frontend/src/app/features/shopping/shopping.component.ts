@@ -11,11 +11,12 @@ import { GameService } from '../../shared/gameUtilities/game.service';
 import { GameScenario } from '../../shared/gameUtilities/GameScenario';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ConsentDialogComponent } from "../../core/components/consent/consent-dialog/consent-dialog.component";
 
 @Component({
   selector: 'app-shopping',
   standalone: true,
-  imports: [SpyComponent, CommonModule, ShoppingListComponent, WebsiteComponent, CheckoutComponent, PayoutComponent],
+  imports: [SpyComponent, CommonModule, ShoppingListComponent, WebsiteComponent, CheckoutComponent, PayoutComponent, ConsentDialogComponent],
   templateUrl: './shopping.component.html',
   styleUrl: './shopping.component.scss'
 })

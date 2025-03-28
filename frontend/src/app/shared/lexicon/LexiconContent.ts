@@ -46,7 +46,7 @@ export const LexiconContent: DoublePage[] = [
         },
         rightPage: {
             title: "",
-            content: "<h6>Milch</h6><p>Milch sorgt f&uuml;r ein angenehmes Finish und eine verbesserte Textur. Sie repr&auml;sentiert Funktionen, die die Benutzererfahrung verbessern, wie personalisierte Vorschl&auml;ge.</p>",
+            content: "<h6>Milch</h6><p>Milch sorgt f&uuml;r ein angenehmes Finish und eine verbesserte Textur. Sie repr&auml;sentiert Funktionen, die die Benutzererfahrung verbessern, wie personalisierte Vorschl&auml;ge.</p> <h6>Ei</h6><p>Ei ist eine grundlegende Zutat, die daf&uuml;r sorgt, dass alles zusammenh&auml;lt. Es steht f&uuml;r die grundlegenden Funktionen einer Website, die notwendig sind, um sie zu betreiben.</p><p>&nbsp;</p>",
             pageNumber: 5
         }
     }, {
@@ -60,7 +60,7 @@ export const LexiconContent: DoublePage[] = [
             content: "<p>Nicht jede Webseite ist vertrauenswürdig. Darauf solltest du achten:</p>\n<ul>\n    <li>Impressum und Kontakt prüfen: Fehlende oder unklare Angaben sind ein Warnsignal.</li>\n    <li>Unrealistische Rabatte hinterfragen: „80 % auf alles“ ist oft Betrug.</li>\n <li>Druck durch Countdown-Timer: Viele Webseiten setzen auf künstliche Zeitlimits.</li>\n    <li>Nur notwendige Daten angeben: Telefonnummer oder Geburtsdatum sind meist nicht erforderlich.</li>\n    <li>Sichere Zahlungsmethoden nutzen: Nur bekannte Anbieter wie Kreditkarte oder PayPal wählen.</li>\n</ul>",
             pageNumber: 7
         }
-    },{
+    }, {
         leftPage: {
             title: "",
             content: "<h6>Dark Patterns</h6><ul><li>Dark Patterns sind manipulative Design-Tricks, die Nutzer dazu bringen, ungewollte Entscheidungen zu treffen, zB. ein Abo abzuschließen oder Daten preiszugeben. Häufig verwendete Beispiele sind versteckte Kosten, irreführende Buttons oder erschwerte Kündigungen.</li></ul>",
@@ -71,7 +71,7 @@ export const LexiconContent: DoublePage[] = [
             content: "<p>KI kann hilfreich sein, aber es gibt Datenschutzrisiken. Wichtige Punkte:</p>\n<ul>\n    <li>Keine persönlichen Daten eingeben: Name, Adresse oder Telefonnummer nicht teilen.</li>\n    <li>Keine sensiblen Informationen preisgeben: Arztberichte oder Passwörter gehören nicht in eine KI-Anfrage.</li>\n    <li>Allgemeine Fragen stellen: Formulierungen so wählen, dass keine Rückschlüsse auf persönliche Daten möglich sind.</li>\n    <li>Ergebnisse kritisch hinterfragen: KI kann Fehler machen und falsche Informationen liefern.</li>\n</ul>",
             pageNumber: 9
         }
-    },{
+    }, {
         leftPage: {
             title: "Social Media",
             content: "<p>Nicht jedes Profil ist echt. So kannst du vertrauenswürdige von unseriösen Accounts unterscheiden:</p>\n<ul>\n    <li>Gemeinsame Follower prüfen: Echte Profile haben oft gemeinsame Freunde oder Follower aus deinem Umfeld.</li>\n    <li>Bilder genau anschauen: Vertrauenswürdige Profile nutzen echte, konsistente Bilder – Fake-Accounts haben oft stockartige, zu perfekte oder gestohlene Bilder.</li>\n    <li>Aktivität überprüfen: Echte Profile posten regelmäßig, interagieren natürlich und haben sinnvolle Kommentare. Fake-Profile wirken oft leer oder haben generische Beiträge.</li>\n</ul>",
@@ -81,6 +81,28 @@ export const LexiconContent: DoublePage[] = [
             title: "",
             content: "<ul><li>Follower und Followings checken: Auffällig sind extrem viele oder fast keine Follower sowie unausgewogene Verhältnisse (z. B. folgt 1000+, aber kaum jemand folgt zurück).</li>\n    <li>Account-Details ansehen: Neue Accounts ohne Biografie oder mit merkwürdigen Links sind verdächtig.</li></ul>",
             pageNumber: 11
+        }
+    }, {
+        leftPage: {
+            title: "Informationspflicht",
+            content: "<p><strong>Informationspflicht gemäß Art. 13 DSGVO</strong></p><p><strong>für das Web-Game „Cyber Spion“</strong></p><p><strong>1. Verantwortlicher</strong><br>Musterunternehmen GmbH<br>Beispielstraße 1, 12345 Beispielstadt<br>E-Mail: kontakt@musterunternehmen.de<br>Telefon: +49 123 456789</p><p><strong>2. Zwecke der Datenverarbeitung</strong></p><ul><li>Bereitstellung des Spiels „Cyber Spion“</li><li>Verwaltung von Nutzerkonten</li><li>Veröffentlichung des Benutzernamens und der Punkte im Leaderboard</li></ul>",
+            pageNumber: 12
+        },
+        rightPage: {
+            title: "",
+            content: "<p><strong>3. Erhobene Daten</strong></p><ul><li>Benutzername</li><li>Erreichte Punkte im Spiel</li></ul><p><strong>4. Empfänger der Daten</strong></p><ul><li>Hosting-Dienstleister (zur Bereitstellung der Web-App)</li></ul><p><strong>5. Speicherdauer</strong></p><ul><li><strong>Log-Dateien:</strong> Bis zum Ausloggen des Nutzers. Beim Ausloggen wird die Einwilligung widerrufen, und die Daten werden gelöscht.</li></ul> ",
+            pageNumber: 13
+        }
+    },{
+        leftPage: {
+            title: "",
+            content: "<p><strong>6. Ihre Rechte</strong></p><ul><li><strong>Auskunft</strong> (Art. 15 DSGVO) – Welche Daten wir über Sie speichern</li><li><strong>Berichtigung</strong> (Art. 16 DSGVO) – Korrektur unrichtiger Daten</li><li><strong>Löschung</strong> (Art. 17 DSGVO) – Recht auf Vergessenwerden</li><li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li><li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li><li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li></ul> <p><strong>7. Widerrufsrecht bei Einwilligung</strong></p><p>Falls wir Ihre Daten auf Basis einer Einwilligung verarbeiten, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Beim Ausloggen wird Ihre Einwilligung automatisch widerrufen.</p>",
+            pageNumber: 14
+        },
+        rightPage: {
+            title: "",
+            content: "<p><strong>8. Beschwerderecht</strong></p><p>Sie können sich jederzeit bei der Datenschutzbehörde Ihres Landes beschweren.</p>",
+            pageNumber: 15
         }
     }
 ]

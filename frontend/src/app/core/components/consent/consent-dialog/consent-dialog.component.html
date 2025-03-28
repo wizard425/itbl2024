@@ -1,0 +1,57 @@
+<div class="dialog-overlay" *ngIf="isVisible">
+  <div class="dialog-content">
+    <h3>Einwilligungserklärung</h3>
+
+    <div class="dialog-body">
+      <p><strong>1. Verantwortlicher</strong></p>
+      <p>Die Web-App <strong>"Cyber Spion"</strong> wird betrieben von [Ihr Unternehmen/Name], mit Sitz in [Adresse]. 
+         Bei Fragen zum Datenschutz können Sie uns unter [E-Mail-Adresse] kontaktieren.</p>
+
+      <p><strong>2. Zweck der Verarbeitung</strong></p>
+      <p>Diese Web-App ist ein Spiel, das Schülern beibringt, sich in der digitalen Welt zu schützen. 
+         Die verarbeiteten Daten dienen dazu, folgende Funktionen bereitzustellen:</p>
+      <ul>
+        <li>Benutzerregistrierung mit einem Benutzernamen</li>
+        <li>Veröffentlichung des Benutzernamens und der erreichten Punkte im Leaderboard</li>
+      </ul>
+
+      <p><strong>3. Rechtsgrundlage der Verarbeitung</strong></p>
+      <p>Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.</p>
+
+      <p><strong>4. Erhobene Daten</strong></p>
+      <p>Folgende personenbezogene Daten werden verarbeitet:</p>
+      <ul>
+        <li>Benutzername</li>
+        <li>Erreichte Punkte im Spiel</li>
+      </ul>
+
+      <p><strong>5. Weitergabe von Daten</strong></p>
+      <p>Ihre Daten werden <strong>nicht</strong> an Dritte weitergegeben, es sei denn, dies ist gesetzlich erforderlich oder dient der Sicherheit der Anwendung.</p>
+
+      <p><strong>6. Dauer der Speicherung</strong></p>
+      <p>Die Daten werden so lange gespeichert, wie es für die Nutzung der App erforderlich ist oder bis Sie Ihre Einwilligung widerrufen.</p>
+
+      <p><strong>7. Ihre Rechte</strong></p>
+      <p>Sie haben das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong> über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+        <li><strong>Widerruf der Einwilligung</strong> jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+        <li><strong>Beschwerde bei einer Aufsichtsbehörde</strong>, wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten rechtswidrig erfolgt (Art. 77 DSGVO).</li>
+      </ul>
+
+      <p><strong>8. Widerruf der Einwilligung</strong></p>
+      <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie uns unter [E-Mail-Adresse] kontaktieren. 
+         Die bis zum Widerruf erfolgte Verarbeitung bleibt rechtmäßig.</p>
+    </div>
+
+    <div class="dialog-footer">
+      <label for="accept-checkbox">
+        <input type="checkbox" id="accept-checkbox" [(ngModel)]="isChecked" />
+        Ich willige in die Verarbeitung meiner Daten gemäß dieser Erklärung ein.
+      </label>
+      <button id="continue-button" [disabled]="!isChecked" (click)="onContinue()">Weiter</button>
+    </div>
+  </div>
+</div>
